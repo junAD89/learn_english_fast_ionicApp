@@ -1,0 +1,7 @@
+{
+  "name": "learnAnglish",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
