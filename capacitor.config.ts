@@ -10,7 +10,7 @@ const config: MyCapacitorConfig = {
   appName: 'learnAnglish',
   webDir: 'dist',
   liveUpdates: {
-    appId: 'fast.learn.english',
+    appId: '654159aa',
     channel: 'Production',
     autoUpdateMethod: 'background',
     maxVersions: 2
