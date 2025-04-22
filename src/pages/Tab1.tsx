@@ -1,23 +1,36 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonButton, IonPage } from '@ionic/react';
 import './Tab1.css';
+import ButtonPrincipale from '../components/Button.tsx/ButtonPrincipale';
+import axios from 'axios';
 
 const Tab1: React.FC = () => {
+
+  const handleServer = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/test", {
+        message: "Je suis beau",
+
+      })
+
+      console.log(response.data);
+
+    } catch (error) {
+
+      alert(error);
+
+    }
+  }
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
-      </IonContent>
+
+      <IonButton
+        onClick={() => {
+          handleServer()
+        }}
+      >
+
+        handle server
+      </IonButton>
     </IonPage>
   );
 };

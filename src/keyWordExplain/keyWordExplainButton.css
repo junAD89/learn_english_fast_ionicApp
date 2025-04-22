@@ -1,0 +1,14 @@
+.showcase_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.showcase_button {
+    position: absolute;
+    border-radius: 20px;
+    margin-bottom: 20vh;
+}

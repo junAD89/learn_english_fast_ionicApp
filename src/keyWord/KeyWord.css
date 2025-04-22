@@ -1,0 +1,16 @@
+.keywordContainer {
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+
+
+    h1 {
+        font-family: "Poppins";
+        font-size: 50px;
+        font-weight: 700;
+    }
+}

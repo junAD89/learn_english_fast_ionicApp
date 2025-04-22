@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">learnAnglish</string>
+    <string name="title_activity_main">learnAnglish</string>
+    <string name="package_name">fast.learn.english</string>
+    <string name="custom_url_scheme">fast.learn.english</string>
+</resources>
