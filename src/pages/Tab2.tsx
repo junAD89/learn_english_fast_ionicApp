@@ -2,7 +2,7 @@ import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from 
 import './Tab2.css';
 import KeyWordData from '../keyWord/KeyWord';
 import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DiamonContext } from '../Context/DiamonContext/DiamonContext';
 
 
@@ -10,6 +10,7 @@ const Tab2: React.FC = () => {
 
 
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
+  const [userkeyWord, setUserkeyWord] = useState("");
 
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Tab2: React.FC = () => {
       </h1> */}
 
       <KeyWordData />
-      <KeyWordExplainButton />
+      <KeyWordExplainButton userkeyWord={userkeyWord} />
     </IonPage>
   );
 };
