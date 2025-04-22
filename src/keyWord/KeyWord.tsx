@@ -79,7 +79,7 @@ function KeyWordData() {
 
 
         // on met la reponse dans la constante de userkeyWord
-        setUserkeyWord(serverResponse);
+        setUserkeyWord(serverResponse || "");
 
 
         // alert(JSON.stringify(serverResponse))
