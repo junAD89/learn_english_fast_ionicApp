@@ -1,9 +1,20 @@
 import type { CapacitorConfig } from '@capacitor/cli';
+import { LiveUpdateConfig } from '@capacitor/live-updates';
 
-const config: CapacitorConfig = {
+interface MyCapacitorConfig extends CapacitorConfig {
+  liveUpdates: LiveUpdateConfig;
+}
+
+const config: MyCapacitorConfig = {
   appId: 'fast.learn.english',
   appName: 'learnAnglish',
-  webDir: 'dist'
+  webDir: 'dist',
+  liveUpdates: {
+    appId: 'fast.learn.english',
+    channel: 'Production',
+    autoUpdateMethod: 'background',
+    maxVersions: 2
+  }
 };
 
 export default config;
