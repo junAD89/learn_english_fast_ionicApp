@@ -2,6 +2,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import './Tab3.css';
 import * as LiveUpdates from '@capacitor/live-updates';
 
+
+import Modal from "react-modal";
 const Tab3: React.FC = () => {
 
 
@@ -16,6 +18,7 @@ const Tab3: React.FC = () => {
       alert('Update status: ' + (result as any).status);
 
     } catch (err) {
+
       console.error('Live update error:', err);
       alert('Erreur Live Update');
     }

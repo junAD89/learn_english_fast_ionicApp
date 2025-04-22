@@ -11,7 +11,17 @@ const Tab2: React.FC = () => {
 
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
   const [userkeyWord, setUserkeyWord] = useState("");
+  // Initialisation de l'état `serverResponse` dans Tab2
 
+  const [serverResponse, setServerResponse] = useState<string>("");
+
+
+
+  const handleSrverResponseProps = (response: string) => {
+    setServerResponse(response);
+    console.log("La reponse du serveur est :", response);
+
+  }
 
   useEffect(() => {
     if (diamondNumber <= 0) {
@@ -26,7 +36,7 @@ const Tab2: React.FC = () => {
       </h1> */}
 
       <KeyWordData />
-      <KeyWordExplainButton userkeyWord={userkeyWord} />
+      <KeyWordExplainButton userkeyWord={userkeyWord} serverResponse={serverResponse} />
     </IonPage>
   );
 };
