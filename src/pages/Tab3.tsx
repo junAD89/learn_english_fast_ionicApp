@@ -32,6 +32,7 @@ const Tab3: React.FC = () => {
     <IonPage>
       <h1>
         Avant le Appflow
+        apres le Appflow
       </h1>
 
       <button onClick={checkUpdate}>
