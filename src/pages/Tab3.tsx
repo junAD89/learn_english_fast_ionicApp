@@ -1,9 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab3.css';
 import * as LiveUpdates from '@capacitor/live-updates';
 
 
 import Modal from "react-modal";
+import { useState } from 'react';
 const Tab3: React.FC = () => {
 
 
@@ -27,6 +28,15 @@ const Tab3: React.FC = () => {
 
 
 
+  const [modalIsOpen, setIsOpen] = useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
 
 
 
@@ -41,6 +51,21 @@ const Tab3: React.FC = () => {
       <button onClick={checkUpdate}>
         Tester mise à jour
       </button>
+
+
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Exemple Modal">
+        <div>Contenu ici</div>
+        <button onClick={closeModal}>Fermer</button>
+      </Modal>
+      <IonButton
+        onClick={() => openModal()}
+      >
+        show pop
+      </IonButton>
     </IonPage>
   );
 };
