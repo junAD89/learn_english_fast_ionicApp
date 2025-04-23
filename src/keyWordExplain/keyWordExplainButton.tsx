@@ -7,13 +7,12 @@ import { useState } from "react";
 
 interface KeyWordExplainButtonProps {
     userkeyWord: string;
-    serverResponse: string;
 
 }
 
 
 
-function KeyWordExplainButton({ userkeyWord, serverResponse }: KeyWordExplainButtonProps) {
+function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
 
     const [serverExple, setServerExple] = useState<string>(""); // ou un objet ou tableau si nécessaire
 

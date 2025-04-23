@@ -22,11 +22,16 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
 
-      <IonButton onClick={openModal}>
+      <IonButton
+        style={{
+          marginTop: '20vh',
+        }}
+        onClick={openModal}>
         Ouvrir Modal
       </IonButton>
 
       <Modal
+
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Exemple Modal"

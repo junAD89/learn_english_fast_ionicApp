@@ -36,7 +36,7 @@ const Tab2: React.FC = () => {
       </h1> */}
 
       <KeyWordData />
-      <KeyWordExplainButton userkeyWord={userkeyWord} serverResponse={serverResponse} />
+      <KeyWordExplainButton userkeyWord={userkeyWord} />
     </IonPage>
   );
 };
