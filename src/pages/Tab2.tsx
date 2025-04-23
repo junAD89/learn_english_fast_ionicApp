@@ -6,7 +6,13 @@ import { useContext, useEffect, useState } from 'react';
 import { DiamonContext } from '../Context/DiamonContext/DiamonContext';
 
 
+
 const Tab2: React.FC = () => {
+
+
+
+
+
 
 
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)

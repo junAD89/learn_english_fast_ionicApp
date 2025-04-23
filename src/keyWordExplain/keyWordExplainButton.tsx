@@ -5,6 +5,11 @@ import axios from 'axios';
 import { useState } from "react";
 
 
+
+import Modal from "react-modal";
+
+
+
 interface KeyWordExplainButtonProps {
     userkeyWord: string;
 
@@ -13,6 +18,18 @@ interface KeyWordExplainButtonProps {
 
 
 function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
+
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+
 
     const [serverExple, setServerExple] = useState<string>(""); // ou un objet ou tableau si nécessaire
 
@@ -55,6 +72,19 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
 
                 {serverExple}
             </h1>
+            <IonButton
+                onClick={() => openModal()}
+            >
+                show pop
+            </IonButton>
+
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Exemple Modal">
+                <div>Contenu ici</div>
+                <button onClick={closeModal}>Fermer</button>
+            </Modal>
         </div>
     )
 }
