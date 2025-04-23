@@ -10,6 +10,11 @@ const config: CapacitorConfig = {
       channel: 'Production',
       autoUpdateMethod: 'background',
       maxVersions: 2
+    },
+    LocalNotifications: {
+      smallIcon: 'ic_stat_myicon',
+      iconColor: '#488AFF',
+      sound: 'beep.wav',
     }
   }
 };

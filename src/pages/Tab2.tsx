@@ -5,7 +5,7 @@ import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
 import { useContext, useEffect, useState } from 'react';
 import { DiamonContext } from '../Context/DiamonContext/DiamonContext';
 
-
+import { LocalNotifications } from "@capacitor/local-notifications";
 
 const Tab2: React.FC = () => {
 
@@ -29,6 +29,16 @@ const Tab2: React.FC = () => {
 
   }
 
+
+  ////demander la permission a l user 
+
+  const checkPermission = async () => {
+    const permission = await LocalNotifications.requestPermissions();
+
+    alert("voici la permission donne :" + JSON.stringify(permission));
+  }
+
+
   useEffect(() => {
     if (diamondNumber <= 0) {
       console.log("Les diamonds sont finis");
@@ -37,6 +47,15 @@ const Tab2: React.FC = () => {
   })
   return (
     <IonPage>
+
+      <IonButton
+        style={{
+          marginTop: "20vh",
+        }}
+        onClick={() => checkPermission()}
+      >
+        checkPermission
+      </IonButton>
       {/* <h1>
         Voici le nmbre de diamand: {diamondNumber}
       </h1> */}

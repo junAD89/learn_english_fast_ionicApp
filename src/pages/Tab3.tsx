@@ -59,7 +59,9 @@ const Tab3: React.FC = () => {
         onRequestClose={closeModal}
         contentLabel="Exemple Modal">
         <div>Contenu ici</div>
-        <button onClick={closeModal}>Fermer</button>
+        <IonButton onClick={closeModal}>
+          Fermer
+        </IonButton>
       </Modal>
       <IonButton
         onClick={() => openModal()}

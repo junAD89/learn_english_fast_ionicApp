@@ -3,44 +3,55 @@ import './Tab1.css';
 import ButtonPrincipale from '../components/Button.tsx/ButtonPrincipale';
 import axios from 'axios';
 
-import Modal from "react-modal";
 import { useState } from 'react';
+import { LocalNotifications } from '@capacitor/local-notifications';
+import { toast, Toaster } from 'sonner';
 
 
 const Tab1: React.FC = () => {
 
-  const [modalIsOpen, setIsOpen] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
+
+  const handleNotification = async () => {
+    toast.success("notification envoyée")
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: "titre de la notification ",
+          body: "Ceci est le body",
+          id: Date.now() % 100000,
+
+          schedule: { at: new Date(Date.now() + 1000 * 5) },
+          sound: undefined,
+        }
+      ]
+    })
   }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <IonPage>
+      <Toaster />
+
+      <h1
+        style={{
+          marginTop: "20vh",
+          fontSize: "30px",
+          textAlign: "center",
+        }}
+      >
+        hi what 's up
+      </h1>
 
       <IonButton
+        expand="block"
         style={{
-          marginTop: '20vh',
+          margin: "20px",
+          fontSize: "18px"
         }}
-        onClick={openModal}>
-        Ouvrir Modal
-      </IonButton>
-
-      <Modal
-
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Exemple Modal"
+        onClick={handleNotification}
       >
-        <div>Contenu ici</div>
-        <button onClick={closeModal}>Fermer</button>
-      </Modal>
-
-    </IonPage>
+        Click Me
+      </IonButton>
+    </IonPage >
   );
 }
 

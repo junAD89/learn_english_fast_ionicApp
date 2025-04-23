@@ -38,52 +38,58 @@ import '@ionic/react/css/display.css';
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* import '@ionic/react/css/palettes/dark.always.css'; */
-/* import '@ionic/react/css/palettes/dark.class.css'; */
+
+
+import '@ionic/react/css/palettes/dark.class.css';
+
 import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
 import { House, User } from 'lucide-react';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
+import { ServerResponseProvider } from './Context/ServerResponseContext';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <DiamonContextProvider>
-      <IonReactRouter>
-        <IonTabs>
-          <IonRouterOutlet>
-            <Route exact path="/tab1">
-              <Tab1 />
-            </Route>
-            <Route exact path="/tab2">
-              <Tab2 />
-            </Route>
-            <Route path="/tab3">
-              <Tab3 />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/tab2" />
-            </Route>
-          </IonRouterOutlet>
-          <IonTabBar slot="bottom">
-            <IonTabButton className='not_important_tab' tab="tab1" href="/tab1">
-              <IonIcon aria-hidden="true" icon={triangle} />
-            </IonTabButton>
-            <IonTabButton tab="tab2" href="/tab2">
-              <House />
-              <IonLabel>Keyword</IonLabel>
+    <ServerResponseProvider>
+      <DiamonContextProvider>
+        <IonReactRouter>
+          <IonTabs>
+            <IonRouterOutlet>
+              <Route exact path="/tab1">
+                <Tab1 />
+              </Route>
+              <Route exact path="/tab2">
+                <Tab2 />
+              </Route>
+              <Route path="/tab3">
+                <Tab3 />
+              </Route>
+              <Route exact path="/">
+                <Redirect to="/tab2" />
+              </Route>
+            </IonRouterOutlet>
+            <IonTabBar slot="bottom">
+              <IonTabButton className='not_important_tab' tab="tab1" href="/tab1">
+                <IonIcon aria-hidden="true" icon={triangle} />
+              </IonTabButton>
+              <IonTabButton tab="tab2" href="/tab2">
+                <House />
+                <IonLabel>Keyword</IonLabel>
 
-            </IonTabButton>
-            <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
-              <User />
-            </IonTabButton>
-          </IonTabBar>
-        </IonTabs>
-      </IonReactRouter>
-    </DiamonContextProvider>
+              </IonTabButton>
+              <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
+                <User />
+              </IonTabButton>
+            </IonTabBar>
+          </IonTabs>
+        </IonReactRouter>
+      </DiamonContextProvider>
+
+    </ServerResponseProvider>
 
   </IonApp>
 );
