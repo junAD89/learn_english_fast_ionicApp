@@ -1,4 +1,4 @@
-package fast.learn.english;
+package com.studiesapp.nom;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">learnAnglish</string>
     <string name="title_activity_main">learnAnglish</string>
-    <string name="package_name">fast.learn.english</string>
-    <string name="custom_url_scheme">fast.learn.english</string>
+    <string name="package_name">com.studiesapp.nom</string>
+    <string name="custom_url_scheme">com.studiesapp.nom</string>
 </resources>

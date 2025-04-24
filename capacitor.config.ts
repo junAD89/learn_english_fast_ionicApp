@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'fast.learn.english',
+  appId: 'com.studiesapp.nom',
   appName: 'learnAnglish',
   webDir: 'dist',
   plugins: {
