@@ -2,17 +2,19 @@
 import "./keyWordExplainButton.css";
 import { IonButton } from '@ionic/react';
 import axios from 'axios';
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 
+import { ServerResponseContext } from "../Context/ServerResponseContext";
 interface KeyWordExplainButtonProps {
     userkeyWord: string;
 
 }
 
 
-
 function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
+    const { serverResponse, setServerResponse } = useContext(ServerResponseContext);
+    //  pour envoyer la reponse au context
 
     const [serverExple, setServerExple] = useState<string>(""); // ou un objet ou tableau si nécessaire
 
@@ -33,7 +35,7 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
             alert(serverResponse);
 
             setServerExple(serverResponse);
-
+            setServerResponse(serverResponse);
         } catch (error) {
             alert(error);
         }
@@ -53,7 +55,7 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
 
 
 
-                {serverExple}
+                {serverResponse}
             </h1>
         </div>
     )

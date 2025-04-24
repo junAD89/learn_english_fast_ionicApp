@@ -79,17 +79,17 @@ const App: React.FC = () => (
               </Route>
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
-              <IonTabButton className='not_important_tab' tab="tab1" href="/tab1">
+              {/* <IonTabButton className='not_important_tab' tab="tab1" href="/tab1">
                 <IonIcon aria-hidden="true" icon={triangle} />
-              </IonTabButton>
+              </IonTabButton> */}
               <IonTabButton tab="tab2" href="/tab2">
                 <House />
                 <IonLabel>Keyword</IonLabel>
 
               </IonTabButton>
-              <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
+              {/* <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
                 <User />
-              </IonTabButton>
+              </IonTabButton> */}
             </IonTabBar>
           </IonTabs>
         </IonReactRouter>

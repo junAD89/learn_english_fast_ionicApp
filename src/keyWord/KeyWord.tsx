@@ -23,8 +23,6 @@ function KeyWordData() {
         // recuperer le jour actuel
         const today = daysjs().format('YYYY-MM-DD');
 
-
-
         getEnglishData();
 
 

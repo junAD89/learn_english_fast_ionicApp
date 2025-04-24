@@ -42,17 +42,14 @@ const Tab2: React.FC = () => {
   return (
     <IonPage>
 
-      <IonButton
+      {/* <IonButton
         style={{
           marginTop: "20vh",
         }}
         onClick={() => checkPermission()}
       >
         checkPermission
-      </IonButton>
-      {/* <h1>
-        Voici le nmbre de diamand: {diamondNumber}
-      </h1> */}
+      </IonButton> */}
 
       <KeyWordData />
       <KeyWordExplainButton userkeyWord={userkeyWord} />
