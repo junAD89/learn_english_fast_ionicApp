@@ -49,10 +49,33 @@ import './theme/variables.css';
 import { House, User } from 'lucide-react';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
+import { useEffect } from 'react';
+import { PushNotifications } from '@capacitor/push-notifications';
 
 setupIonicReact();
 
+
+useEffect(() => {
+  PushNotifications.addListener('registration', (token) => {
+    console.log('Push registration success, token: ' + token.value);
+  });
+  PushNotifications.addListener('registrationError', (err) => {
+    console.log('Error on registration:' + err.error);
+  });
+
+  PushNotifications.addListener('pushNotificationReceived', (notification) => {
+    console.log('Push received:' + JSON.stringify(notification));
+  })
+
+})
+
+
+
 const App: React.FC = () => (
+
+
+
+
   <IonApp>
     <ServerResponseProvider>
       <DiamonContextProvider>
