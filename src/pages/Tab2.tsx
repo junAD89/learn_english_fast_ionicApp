@@ -9,12 +9,6 @@ import { LocalNotifications } from "@capacitor/local-notifications";
 
 const Tab2: React.FC = () => {
 
-
-
-
-
-
-
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
   const [userkeyWord, setUserkeyWord] = useState("");
   // Initialisation de l'état `serverResponse` dans Tab2

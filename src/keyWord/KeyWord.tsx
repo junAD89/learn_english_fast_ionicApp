@@ -12,6 +12,7 @@ import { toast, Toaster } from 'sonner';
 import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
 
 import "./KeyWord.css";
+
 function KeyWordData() {
 
     ////partie de use effect
