@@ -48,7 +48,6 @@ function KeyWordData() {
 
 
 
-        alert('incrementDayIndex different');
         setDayIndex(prev => {
             const newIndex = prev + 1;
             localStorage.setItem('dayIndex', String(newIndex));
