@@ -17,13 +17,11 @@ const Tab3: React.FC = () => {
   const checkUpdate = async () => {
     try {
       const result = await LiveUpdates.sync();
-      console.log('Live update result:', result);
-      alert('Update status: ' + (result as any).status);
-
+      alert('Live update result:' + result);
+      alert('État de la mise à jour : ' + (result as any).status);
     } catch (err) {
-
-      console.error('Live update error:', err);
-      alert('Erreur Live Update');
+      alert('Erreur Live Update:' + err);
+      alert('Erreur Live Update : ' + (err as any).message);
     }
   };
 
@@ -76,3 +74,15 @@ const Tab3: React.FC = () => {
 };
 
 export default Tab3;
+
+
+const checkUpdate = async () => {
+  try {
+    const result = await LiveUpdates.sync();
+    console.log('Live update result:', result);
+    alert('État de la mise à jour : ' + (result as any).status);
+  } catch (err) {
+    console.error('Erreur Live Update:', err);
+    alert('Erreur Live Update : ' + (err as any).message);
+  }
+};

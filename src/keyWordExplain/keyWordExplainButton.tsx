@@ -26,14 +26,11 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
 
     const handleServer = async () => {
         try {
-            // const response = await axios.post("http://localhost:3000/chat", {
             const response = await axios.post("https://fastenglishserver-chat.glitch.me/chat", {
                 message: userkeyWord
             });
 
             const serverResponse = JSON.stringify(response.data);
-            console.log(serverResponse);
-            alert("hi" + serverResponse);
 
             setServerExple(serverResponse);
 

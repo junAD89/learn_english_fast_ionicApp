@@ -23,5 +23,9 @@ export default function AdBanner() {
         showBanner()
     }, []) // ✅ ceci évite que la pub soit appelée à chaque render
 
-    return <div>AdBanner</div>
+    return <div>
+        <br />
+        <br />
+
+    </div>
 }

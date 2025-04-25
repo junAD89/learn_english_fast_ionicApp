@@ -11,6 +11,7 @@ import { LocalNotifications } from "@capacitor/local-notifications";
 import Modal from "react-modal";
 import { ServerResponseContext } from '../Context/ServerResponseContext';
 import AdBanner from '../AdmobPages/AdBanner';
+import AdInterticial from '../AdmobPages/AdInterticial';
 
 
 
@@ -63,12 +64,9 @@ const Tab2: React.FC = () => {
     }
   }, [serverResponse]);
 
-  useEffect(() => {
-    if (diamondNumber <= 0) {
-      console.log("Les diamonds sont finis");
 
-    }
-  })
+
+
   return (
     <div>
 
@@ -91,14 +89,12 @@ const Tab2: React.FC = () => {
 
 
 
-        <p>
-          Hi it up
-          now
-        </p>
+
         <KeyWordData />
         <KeyWordExplainButton userkeyWord={userkeyWord} />
 
       </div>
+      <AdInterticial />
       <AdBanner />
 
     </div >
