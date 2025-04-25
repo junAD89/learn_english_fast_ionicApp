@@ -91,9 +91,9 @@ const App: React.FC = () => {
                   <House />
                   <IonLabel>Keyword</IonLabel>
                 </IonTabButton>
-                {/* <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
+                <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
                   <User />
-                </IonTabButton> */}
+                </IonTabButton>
               </IonTabBar>
             </IonTabs>
           </IonReactRouter>
