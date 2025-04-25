@@ -10,6 +10,7 @@ import { LocalNotifications } from "@capacitor/local-notifications";
 
 import Modal from "react-modal";
 import { ServerResponseContext } from '../Context/ServerResponseContext';
+import AdBanner from '../AdmobPages/AdBanner';
 
 
 
@@ -90,11 +91,15 @@ const Tab2: React.FC = () => {
 
 
 
-
+        <p>
+          Hi
+        </p>
         <KeyWordData />
         <KeyWordExplainButton userkeyWord={userkeyWord} />
 
       </div>
+      <AdBanner />
+
     </div >
   );
 };
