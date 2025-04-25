@@ -11,9 +11,12 @@ export const ServerResponseContext = createContext<ServerResponseContextType>({
     setServerResponse: () => { },
 })
 
+
 type Props = {
     children: React.ReactNode;
 }
+
+
 
 export const ServerResponseProvider = ({ children }: Props) => {
     const [serverResponse, setServerResponse] = useState("");

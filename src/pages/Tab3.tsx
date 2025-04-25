@@ -4,11 +4,13 @@ import * as LiveUpdates from '@capacitor/live-updates';
 
 
 import Modal from "react-modal";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ServerResponseContext } from '../Context/ServerResponseContext';
 const Tab3: React.FC = () => {
 
 
 
+  const { serverResponse, setServerResponse } = useContext(ServerResponseContext)
 
 
 
@@ -28,7 +30,7 @@ const Tab3: React.FC = () => {
 
 
 
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(true);
   function openModal() {
     setIsOpen(true);
   }
@@ -45,6 +47,7 @@ const Tab3: React.FC = () => {
     <IonPage>
       <h1>
         Avant le Appflow
+        { }
         apres le Appflow
       </h1>
 

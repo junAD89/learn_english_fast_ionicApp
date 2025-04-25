@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCard, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab2.css';
 import KeyWordData from '../keyWord/KeyWord';
 import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
@@ -7,21 +7,27 @@ import { DiamonContext } from '../Context/DiamonContext/DiamonContext';
 
 import { LocalNotifications } from "@capacitor/local-notifications";
 
+
+import Modal from "react-modal";
+import { ServerResponseContext } from '../Context/ServerResponseContext';
+
+
+
+
 const Tab2: React.FC = () => {
 
+
+  ///importation des contextes
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
+
+  const { serverResponse, setServerResponse } = useContext(ServerResponseContext)
+
   const [userkeyWord, setUserkeyWord] = useState("");
-  // Initialisation de l'état `serverResponse` dans Tab2
 
-  const [serverResponse, setServerResponse] = useState<string>("");
-
+  const [modalVisbility, setModalVisbility] = useState(false)
 
 
-  const handleSrverResponseProps = (response: string) => {
-    setServerResponse(response);
-    console.log("La reponse du serveur est :", response);
 
-  }
 
 
   ////demander la permission a l user 
@@ -33,6 +39,29 @@ const Tab2: React.FC = () => {
   }
 
 
+
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+  useEffect(() => {
+    if (serverResponse) {
+      setIsOpen(true)
+    } else {
+      setIsOpen(false)
+    }
+  })
+
+
+
+  useEffect(() => {
+    if (serverResponse) {
+      setIsOpen(true);
+    }
+  }, [serverResponse]);
+
   useEffect(() => {
     if (diamondNumber <= 0) {
       console.log("Les diamonds sont finis");
@@ -40,7 +69,7 @@ const Tab2: React.FC = () => {
     }
   })
   return (
-    <IonPage>
+    <div>
 
       {/* <IonButton
         style={{
@@ -51,9 +80,22 @@ const Tab2: React.FC = () => {
         checkPermission
       </IonButton> */}
 
-      <KeyWordData />
-      <KeyWordExplainButton userkeyWord={userkeyWord} />
-    </IonPage>
+
+
+
+      <div className='serverResponseContainer'>
+        {serverResponse}
+      </div>
+      <div>
+
+
+
+
+        <KeyWordData />
+        <KeyWordExplainButton userkeyWord={userkeyWord} />
+
+      </div>
+    </div >
   );
 };
 

@@ -30,11 +30,15 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
                 message: userkeyWord
             });
 
-            const serverResponse = response.data;
+            const serverResponse = JSON.stringify(response.data);
             console.log(serverResponse);
-            alert(serverResponse);
+            alert("hi" + serverResponse);
 
             setServerExple(serverResponse);
+
+
+            ////inserer la reponse du serveur dans le context pour 
+            // pouvoir l utiliser dans les autres pages 
             setServerResponse(serverResponse);
         } catch (error) {
             alert(error);
@@ -51,12 +55,7 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
                 Voir des exemples
             </IonButton>
 
-            <h1 className="serverResponse">
 
-
-
-                {serverResponse}
-            </h1>
         </div>
     )
 }
