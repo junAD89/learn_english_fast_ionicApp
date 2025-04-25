@@ -92,7 +92,7 @@ const Tab2: React.FC = () => {
 
 
         <p>
-          Hi
+          Hi it up
         </p>
         <KeyWordData />
         <KeyWordExplainButton userkeyWord={userkeyWord} />
