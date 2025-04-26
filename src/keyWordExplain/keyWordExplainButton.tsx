@@ -1,6 +1,5 @@
 
 import "./keyWordExplainButton.css";
-import { IonButton } from '@ionic/react';
 import axios from 'axios';
 import { useContext, useState } from "react";
 
@@ -48,10 +47,13 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
     return (
         <div className='showcase_container'>
             <motion.div
+                onClick={() => {
+                    handleServer()
+                }}
                 className='showcase_button'
                 initial={{ rotate: "0deg" }}
                 animate={{ rotate: "360deg" }}
-                transition={{ ease: "easeOut", duration: 2, repeat: Infinity }}
+                transition={{ ease: "easeOut", duration: 2 }}
 
 
             >
@@ -59,14 +61,7 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
                 <BadgeInfo size={30} />
 
             </motion.div>
-            {/* <IonButton
-                onClick={() => {
-                    handleServer()
-                }}
-                className='showcase_button'>
 
-                Voir des exemples
-            </IonButton> */}
 
 
         </div >
