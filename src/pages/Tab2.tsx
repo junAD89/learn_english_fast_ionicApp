@@ -108,9 +108,14 @@ const Tab2: React.FC = () => {
 
 
 
-
+        {/* pour obtenir le mots de data json en local en fonction du jour */}
         <KeyWordData />
+
+
+        {/* pour contacter le vrai serveur en ligne */}
         <KeyWordExplainButton userkeyWord={userkeyWord} />
+
+
 
       </div>
       <AdInterticial />
