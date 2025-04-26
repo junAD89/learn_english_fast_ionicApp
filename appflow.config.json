@@ -1,12 +1,3 @@
 {
-    "appId": "com.studiesapp.nom",
-    "organization": "votre_organisation_réelle",
-    "environments": {
-        "production": {
-            "env": {}
-        },
-        "development": {
-            "env": {}
-        }
-    }
+    "appId": "com.studiesapp.nom"
 }
