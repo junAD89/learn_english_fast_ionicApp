@@ -50,6 +50,7 @@ import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { useEffect } from 'react';
 import axios from 'axios';
+import KeyWordData from './keyWord/KeyWord';
 
 setupIonicReact();
 
@@ -89,6 +90,7 @@ const App: React.FC = () => {
           <IonReactRouter>
             <IonTabs>
               <IonRouterOutlet>
+                <Route exact path="/json" component={KeyWordData} />
                 <Route exact path="/tab1">
                   <Tab1 />
                 </Route>

@@ -1,33 +1,157 @@
 {
-    "day1": "Travel",
-    "day2": "Food",
-    "day3": "Technology",
-    "day4": "Sports",
-    "day5": "Health",
-    "day6": "Education",
-    "day7": "Environment",
-    "day8": "Music",
-    "day9": "Movies",
-    "day10": "Friendship",
-    "day11": "Family",
-    "day12": "Dreams",
-    "day13": "Culture",
-    "day14": "Nature",
-    "day15": "Work",
-    "day16": "Hobbies",
-    "day17": "Books",
-    "day18": "Art",
-    "day19": "Science",
-    "day20": "History",
-    "day21": "Travel",
-    "day22": "Food",
-    "day23": "Technology",
-    "day24": "Sports",
-    "day25": "Health",
-    "day26": "Education",
-    "day27": "Environment",
-    "day28": "Music",
-    "day29": "Movies",
-    "day30": "Friendship",
-    "day31": "Family"
+    "day1": {
+        "word": "Travel",
+        "signification": "Journeying to explore new places",
+        "example": "She went on a trip to Europe"
+    },
+    "day2": {
+        "word": "Food",
+        "signification": "The nourishment of the body",
+        "example": "I ate a delicious meal"
+    },
+    "day3": {
+        "word": "Technology",
+        "signification": "The application of scientific knowledge",
+        "example": "The new smartphone is amazing"
+    },
+    "day4": {
+        "word": "Sports",
+        "signification": "Physical activities for enjoyment and fitness",
+        "example": "I played soccer with my friends"
+    },
+    "day5": {
+        "word": "Health",
+        "signification": "The state of well-being",
+        "example": "She is feeling very healthy"
+    },
+    "day6": {
+        "word": "Education",
+        "signification": "The process of acquiring knowledge and skills",
+        "example": "I studied computer science at university"
+    },
+    "day7": {
+        "word": "Environment",
+        "signification": "The natural surroundings",
+        "example": "The forest is a beautiful place"
+    },
+    "day8": {
+        "word": "Music",
+        "signification": "The art of expressing emotions through sound",
+        "example": "She loves listening to classical music"
+    },
+    "day9": {
+        "word": "Movies",
+        "signification": "The art of storytelling through visual and auditory experiences",
+        "example": "I watched a great movie last night"
+    },
+    "day10": {
+        "word": "Friendship",
+        "signification": "The bond between two people",
+        "example": "We have a wonderful friendship"
+    },
+    "day11": {
+        "word": "Family",
+        "signification": "The extended group of people living together",
+        "example": "My family is very important to me"
+    },
+    "day12": {
+        "word": "Dreams",
+        "signification": "The aspirations of the future",
+        "example": "I have a dream of becoming a doctor"
+    },
+    "day13": {
+        "word": "Culture",
+        "signification": "The customs and traditions of a particular group of people",
+        "example": "The art of painting is very important to my culture"
+    },
+    "day14": {
+        "word": "Nature",
+        "signification": "The physical and biological world",
+        "example": "The trees are beautiful in the spring"
+    },
+    "day15": {
+        "word": "Work",
+        "signification": "The process of producing or achieving something",
+        "example": "I am working on a new project"
+    },
+    "day16": {
+        "word": "Hobbies",
+        "signification": "The activities that one enjoys for pleasure",
+        "example": "I enjoy painting and playing guitar"
+    },
+    "day17": {
+        "word": "Books",
+        "signification": "The written works of knowledge",
+        "example": "I read a lot of books this year"
+    },
+    "day18": {
+        "word": "Art",
+        "signification": "The expression of creativity through visual or performing arts",
+        "example": "The artist painted a beautiful painting"
+    },
+    "day19": {
+        "word": "Science",
+        "signification": "The study of the natural world and its processes",
+        "example": "The scientist discovered a new drug"
+    },
+    "day20": {
+        "word": "History",
+        "signification": "The record of past events and civilizations",
+        "example": "The history of the world is fascinating"
+    },
+    "day21": {
+        "word": "Travel",
+        "signification": "Journeying to explore new places",
+        "example": "She went on a trip to Europe"
+    },
+    "day22": {
+        "word": "Food",
+        "signification": "The nourishment of the body",
+        "example": "I ate a delicious meal"
+    },
+    "day23": {
+        "word": "Technology",
+        "signification": "The application of scientific knowledge",
+        "example": "The new smartphone is amazing"
+    },
+    "day24": {
+        "word": "Sports",
+        "signification": "Physical activities for enjoyment and fitness",
+        "example": "I played soccer with my friends"
+    },
+    "day25": {
+        "word": "Health",
+        "signification": "The state of well-being",
+        "example": "She is feeling very healthy"
+    },
+    "day26": {
+        "word": "Education",
+        "signification": "The process of acquiring knowledge and skills",
+        "example": "I studied computer science at university"
+    },
+    "day27": {
+        "word": "Environment",
+        "signification": "The natural surroundings",
+        "example": "The forest is a beautiful place"
+    },
+    "day28": {
+        "word": "Music",
+        "signification": "The art of expressing emotions through sound",
+        "example": "She loves listening to classical music"
+    },
+    "day29": {
+        "word": "Movies",
+        "signification": "The art of storytelling through visual and auditory experiences",
+        "example": "I watched a great movie last night"
+    },
+    "day30": {
+        "word": "Friendship",
+        "signification": "The bond between two people",
+        "example": "We have a wonderful friendship"
+    },
+    "day31": {
+        "word": "Family",
+        "signification": "The extended group of people living together",
+        "example": "My family is very important to me"
+    }
 }

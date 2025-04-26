@@ -63,7 +63,10 @@ function KeyWordData() {
         return Number(localStorage.getItem('dayIndex')) || 1;
     });
 
+
+    // use state pour recuperer le mot et la data correspondante de la journee actuel
     const [userkeyWord, setUserkeyWord] = useState("");
+    const [significationOfKeyWord, setSignificationOfKeyWord] = useState("");
 
 
 
@@ -75,20 +78,30 @@ function KeyWordData() {
 
         const serverResponse = response.data[`day${dayIndex}`];
 
-
+        const { word, signification } = serverResponse;
         // on met la reponse dans la constante de userkeyWord
-        setUserkeyWord(serverResponse || "");
+
+
+        setUserkeyWord(word || "");
+        setSignificationOfKeyWord(signification || "");
 
 
         // alert(JSON.stringify(serverResponse))
     }
     return (
         <div className='keywordContainer'>
+
             <Toaster />
+
+
 
             <h1 className='keywordText'
             >
                 {userkeyWord}
+
+                <p>
+                    {significationOfKeyWord}
+                </p>
             </h1>
 
             <KeyWordExplainButton userkeyWord={userkeyWord} />
