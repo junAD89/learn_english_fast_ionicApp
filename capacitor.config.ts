@@ -8,7 +8,7 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   plugins: {
     LiveUpdates: {  // Notez que c'est "LiveUpdates" et non "liveUpdates"
-      appId: 'com.studiesapp.nom',
+      appId: 'e4c57dff',
       channel: 'Production',
       autoUpdateMethod: 'background',
       maxVersions: 2
