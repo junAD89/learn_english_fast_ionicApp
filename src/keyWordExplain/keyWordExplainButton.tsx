@@ -14,7 +14,9 @@ interface KeyWordExplainButtonProps {
 }
 
 
-function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
+function KeyWordExplainButton({
+
+    userkeyWord }: KeyWordExplainButtonProps) {
     const { serverResponse, setServerResponse } = useContext(ServerResponseContext);
     //  pour envoyer la reponse au context
 
@@ -28,18 +30,21 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
 
     const handleServer = async () => {
         try {
-            const response = await axios.post("https://fastenglishserver-chat.glitch.me/chat", {
+            // const response = await axios.post("https://fastenglishserver-chat.glitch.me/chat", {
+            const response = await axios.post("http://localhost:3000/chat", {
                 message: userkeyWord
             });
 
+
+
             const serverResponse = JSON.stringify(response.data);
 
-            setServerExple(serverResponse);
+            // setServerExple(serverResponse);
 
 
-            ////inserer la reponse du serveur dans le context pour 
-            // pouvoir l utiliser dans les autres pages 
-            setServerResponse(serverResponse);
+            ////on envoie la reponse au context et on le parse pour qu il soit lisible 
+            // au language humain
+            setServerResponse(JSON.parse(serverResponse));
         } catch (error) {
             alert(error);
         }
