@@ -6,6 +6,9 @@ import { useContext, useState } from "react";
 
 
 import { ServerResponseContext } from "../Context/ServerResponseContext";
+import { BadgeInfo } from "lucide-react";
+
+import { motion } from "framer-motion";
 interface KeyWordExplainButtonProps {
     userkeyWord: string;
 
@@ -44,17 +47,29 @@ function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
     }
     return (
         <div className='showcase_container'>
-            <IonButton
+            <motion.div
+                className='showcase_button'
+                initial={{ rotate: "0deg" }}
+                animate={{ rotate: "360deg" }}
+                transition={{ ease: "easeOut", duration: 2, repeat: Infinity }}
+
+
+            >
+
+                <BadgeInfo size={30} />
+
+            </motion.div>
+            {/* <IonButton
                 onClick={() => {
                     handleServer()
                 }}
                 className='showcase_button'>
 
                 Voir des exemples
-            </IonButton>
+            </IonButton> */}
 
 
-        </div>
+        </div >
     )
 }
 
