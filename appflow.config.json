@@ -1,6 +1,6 @@
 {
-    "appId": "e4c57dff",
-    "organization": "votre_organisation",
+    "appId": "com.studiesapp.nom",
+    "organization": "votre_organisation_réelle",
     "environments": {
         "production": {
             "env": {}
