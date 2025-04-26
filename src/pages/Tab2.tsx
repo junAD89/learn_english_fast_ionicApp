@@ -12,6 +12,7 @@ import Modal from "react-modal";
 import { ServerResponseContext } from '../Context/ServerResponseContext';
 import AdBanner from '../AdmobPages/AdBanner';
 import AdInterticial from '../AdmobPages/AdInterticial';
+import axios from 'axios';
 
 
 
@@ -67,6 +68,24 @@ const Tab2: React.FC = () => {
 
 
 
+  const hookUpServer = async () => {
+    const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
+
+    console.log(response.data);
+
+  }
+  const testServer = async () => {
+    const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
+
+    console.log(response.data);
+
+  }
+
+
+  useEffect(() => {
+    hookUpServer();
+    testServer();
+  }, []);
   return (
     <div>
 

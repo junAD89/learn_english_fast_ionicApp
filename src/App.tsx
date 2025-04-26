@@ -49,6 +49,7 @@ import { House, User } from 'lucide-react';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { useEffect } from 'react';
+import axios from 'axios';
 
 setupIonicReact();
 
@@ -58,10 +59,28 @@ const initializeAdmob = async () => {
   });
 };
 
+const hookUpServer = async () => {
+  const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
+
+  console.log(response.data);
+
+}
+const testServer = async () => {
+  const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
+
+  console.log(response.data);
+
+}
+
+
+
 const App: React.FC = () => {
   useEffect(() => {
     initializeAdmob();
+    hookUpServer();
+    testServer();
   }, []);
+
 
   return (
     <IonApp>
@@ -91,9 +110,9 @@ const App: React.FC = () => {
                   <House />
                   <IonLabel>Keyword</IonLabel>
                 </IonTabButton>
-                {/* <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
+                <IonTabButton className='not_important_tab' tab="tab3" href="/tab3">
                   <User />
-                </IonTabButton> */}
+                </IonTabButton>
               </IonTabBar>
             </IonTabs>
           </IonReactRouter>

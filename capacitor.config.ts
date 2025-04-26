@@ -1,23 +1,18 @@
 import type { CapacitorConfig } from '@capacitor/cli';
-import { LiveUpdateConfig } from '@capacitor/live-updates';
 
-// Étendre l'interface CapacitorConfig pour inclure liveUpdates
-interface MyCapacitorConfig extends CapacitorConfig {
-  liveUpdates: LiveUpdateConfig;
-}
 
-const config: MyCapacitorConfig = {
+
+const config: CapacitorConfig = {
   appId: 'com.studiesapp.nom',
-  appName: 'learnAnglish',
+  appName: 'FastEnglish',
   webDir: 'dist',
-  // Déplacer LiveUpdates hors des plugins
-  liveUpdates: {
-    appId: 'com.studiesapp.nom',
-    channel: 'Production',
-    autoUpdateMethod: 'background',
-    maxVersions: 2
-  },
   plugins: {
+    LiveUpdates: {  // Notez que c'est "LiveUpdates" et non "liveUpdates"
+      appId: 'com.studiesapp.nom',
+      channel: 'Production',
+      autoUpdateMethod: 'background',
+      maxVersions: 2
+    },
     LocalNotifications: {
       smallIcon: 'ic_stat_myicon',
       iconColor: '#488AFF',

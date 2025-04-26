@@ -1,0 +1,12 @@
+{
+    "appId": "votre_app_id",
+    "organization": "votre_organisation",
+    "environments": {
+        "production": {
+            "env": {}
+        },
+        "development": {
+            "env": {}
+        }
+    }
+}
