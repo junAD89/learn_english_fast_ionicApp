@@ -86,6 +86,8 @@ const Tab2: React.FC = () => {
     hookUpServer();
     testServer();
   }, []);
+
+
   return (
     <div>
 
@@ -104,6 +106,7 @@ const Tab2: React.FC = () => {
       <div className='serverResponseContainer'>
         {serverResponse}
       </div>
+
       <div>
 
 
