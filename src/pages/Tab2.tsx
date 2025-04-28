@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonActionSheet, IonButton, IonCard, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab2.css';
 import KeyWordData from '../keyWord/KeyWord';
 import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
@@ -44,18 +44,9 @@ const Tab2: React.FC = () => {
 
 
 
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  function closeModal() {
-    setIsOpen(false)
-  }
-  useEffect(() => {
-    if (serverResponse) {
-      setIsOpen(true)
-    } else {
-      setIsOpen(false)
-    }
-  })
+
 
 
 
@@ -88,6 +79,8 @@ const Tab2: React.FC = () => {
   }, []);
 
 
+
+
   return (
     <div>
 
@@ -103,9 +96,24 @@ const Tab2: React.FC = () => {
 
 
 
-      <div className='serverResponseContainer'>
-        {serverResponse}
-      </div>
+
+      <IonActionSheet
+        isOpen={isOpen}
+        header={serverResponse}
+        onDidDismiss={() => setIsOpen(false)}
+        buttons={[
+          {
+            // text: serverResponse,
+            role: 'destructive',
+            data: {
+              action: "delete"
+            }
+          },
+
+        ]}
+      >
+
+      </IonActionSheet>
 
       <div>
 

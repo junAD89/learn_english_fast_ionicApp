@@ -59,7 +59,7 @@ function KeyWordExplainButton({
                 className='showcase_button'
                 initial={{ rotate: "0deg" }}
                 animate={{ rotate: "360deg" }}
-                transition={{ ease: "easeOut", duration: 2 }}
+                transition={{ ease: "easeOut", duration: 1 }}
 
 
             >
