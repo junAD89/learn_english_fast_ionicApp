@@ -57,17 +57,27 @@ function KeyWordExplainButton({
                     handleServer()
                 }}
                 className='showcase_button'
-                initial={{ rotate: "0deg" }}
-                animate={{ rotate: "360deg" }}
-                transition={{ ease: "easeOut", duration: 1 }}
+                whileTap={{ scale: 0.9 }}
 
 
             >
 
-                <BadgeInfo size={30} />
+
+                {/* <BadgeInfo size={30} /> */}
+                <button className="startLesson_button">
+                    Commencer la partie
+                </button>
 
             </motion.div>
 
+            {/* <motion.button
+
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileTap={{ scale: 0.95, rotate: -2 }}
+            >
+                Clique-moi
+            </motion.button> */}
 
 
         </div >

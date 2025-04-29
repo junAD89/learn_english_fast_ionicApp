@@ -97,7 +97,7 @@ const Tab2: React.FC = () => {
 
 
 
-      <IonActionSheet
+      {/* <IonActionSheet
         isOpen={isOpen}
         header={serverResponse}
         onDidDismiss={() => setIsOpen(false)}
@@ -113,7 +113,7 @@ const Tab2: React.FC = () => {
         ]}
       >
 
-      </IonActionSheet>
+      </IonActionSheet> */}
 
       <div>
 

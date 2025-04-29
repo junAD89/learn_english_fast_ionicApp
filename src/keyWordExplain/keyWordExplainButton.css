@@ -26,3 +26,16 @@
     margin-bottom: 15vh;
 
 }
+
+.startLesson_button {
+    background-color: aliceblue;
+    color: black;
+    padding: 20px 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 25px;
+
+
+
+    margin-top: 20vh;
+}

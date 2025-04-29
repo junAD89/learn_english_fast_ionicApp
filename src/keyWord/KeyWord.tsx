@@ -86,7 +86,6 @@ function KeyWordData() {
         setSignificationOfKeyWord(signification || "");
 
 
-        // alert(JSON.stringify(serverResponse))
     }
     return (
         <div className='keywordContainer'>
@@ -95,14 +94,21 @@ function KeyWordData() {
 
 
 
-            <h1 className='keywordText'
+            <div className='keywordText'
             >
-                {userkeyWord}
+
+                <h3>
+                    Le mot du jour est :
+                </h3>
+                <h1>
+                    {userkeyWord}
+
+                </h1>
 
                 <p>
                     {significationOfKeyWord}
                 </p>
-            </h1>
+            </div>
 
             <KeyWordExplainButton userkeyWord={userkeyWord} />
         </div >
