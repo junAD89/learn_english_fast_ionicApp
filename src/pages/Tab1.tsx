@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { toast, Toaster } from 'sonner';
+import PushNotificationPerms from '../components/PushNotificationPerms/PushNotificationPerms';
 
 
 const Tab1: React.FC = () => {
@@ -51,6 +52,8 @@ const Tab1: React.FC = () => {
       >
         Click Me
       </IonButton>
+
+      <PushNotificationPerms />
     </IonPage >
   );
 }
