@@ -12,7 +12,7 @@ export default function AdBanner() {
             adId: 'ca-app-pub-9593128253360038/5083770900', // ID test
             adSize: BannerAdSize.BANNER,
             position: BannerAdPosition.BOTTOM_CENTER,
-            isTesting: false,
+            isTesting: true,
             margin: 0,
         }
 

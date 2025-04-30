@@ -1,11 +1,30 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonPage } from '@ionic/react';
 import './Tab3.css';
 
 import dayjs from "dayjs";
 import { useEffect, useState } from 'react';
 import { DiffIcon } from 'lucide-react';
 
+import { Share } from "@capacitor/share";
+
+
 const Tab3: React.FC = () => {
+
+
+  const shareFunction = async () => {
+    try {
+      alert("shared")
+
+      await Share.share({
+        title: 'See cool stuff',
+        text: 'Really awesome thing you need to see right meow',
+        // url: 'URL_ADDRESSframework.com/',
+        dialogTitle: 'Share with buddies'
+      })
+    } catch (error) {
+      alert(error)
+    }
+  }
 
 
   const [visibleDate, setVisibleDate] = useState(0);
@@ -38,13 +57,21 @@ const Tab3: React.FC = () => {
 
 
 
-
-
-
-
-
   return (
     <IonPage>
+
+      <IonButton
+        style={
+          {
+            marginTop: "20vh",
+          }
+        }
+        onClick={() => {
+          shareFunction()
+        }}
+      >
+        shareFunction
+      </IonButton>
       <DiffIcon />
       <h1>
         {

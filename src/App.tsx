@@ -51,6 +51,7 @@ import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { useEffect } from 'react';
 import axios from 'axios';
 import KeyWordData from './keyWord/KeyWord';
+import CoursesPages from './CoursesPages/CoursesPages';
 
 setupIonicReact();
 
@@ -90,6 +91,8 @@ const App: React.FC = () => {
           <IonReactRouter>
             <IonTabs>
               <IonRouterOutlet>
+                <Route exact path="/courses" component={CoursesPages} />
+
                 <Route exact path="/json" component={KeyWordData} />
                 <Route exact path="/tab1">
                   <Tab1 />
