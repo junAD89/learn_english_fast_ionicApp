@@ -1,4 +1,3 @@
-import { IonActionSheet, IonButton, IonCard, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab2.css';
 import KeyWordData from '../keyWord/KeyWord';
 import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
@@ -129,7 +128,7 @@ const Tab2: React.FC = () => {
 
 
       </div>
-      <AdInterticial />
+      {/* <AdInterticial /> */}
       <AdBanner />
 
     </div >
