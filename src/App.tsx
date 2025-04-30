@@ -108,9 +108,13 @@ const App: React.FC = () => {
                 </Route>
               </IonRouterOutlet>
               <IonTabBar slot="bottom">
+
+                {/* 
                 <IonTabButton className='not_important_tab' tab="tab1" href="/tab1">
                   <IonIcon aria-hidden="true" icon={triangle} />
                 </IonTabButton>
+
+                 */}
                 <IonTabButton tab="tab2" href="/tab2">
                   <House />
                   <IonLabel>Keyword</IonLabel>
