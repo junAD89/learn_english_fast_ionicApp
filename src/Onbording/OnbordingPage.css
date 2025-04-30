@@ -1,0 +1,340 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+}
+
+/* Viewport Meta Tag (assurez-vous de l'avoir dans votre HTML) */
+/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* Onboarding Wrapper */
+.onboarding-wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #fce7f3 0%, #fff1f2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Onboarding Container */
+.onboarding-container {
+    width: 100%;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Swiper Slide Content */
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: -30px 2rem;
+    padding-top: 5vh;
+    height: -90px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+/* Slide Title */
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Welcome Container */
+.welcome-container {
+    margin: 3rem 0;
+    position: relative;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.welcome-image {
+    width: 100%;
+    height: auto;
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Welcome Description */
+.welcome-description {
+    font-size: 1.25rem;
+    color: #4a5568;
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+
+/* Letter Types Container */
+.letter-types-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
+    padding-bottom: 80px;
+}
+
+/* Letter Option */
+.letter-option {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    margin: 0.75rem 0;
+    border: 2px solid rgba(255, 107, 107, 0.1);
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.letter-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.letter-option.selected {
+    border: 2px solid #ff6b6b;
+    background: #fff8f8;
+}
+
+/* Option Content */
+.option-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 70px;
+}
+
+/* Option Icon */
+.option-icon {
+    font-size: 2rem;
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff8f8;
+    border-radius: 12px;
+}
+
+/* Option Text */
+.option-text {
+    flex: 1;
+    text-align: left;
+}
+
+.letter-option h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.letter-option p {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #718096;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 2rem;
+    position: fixed;
+    bottom: 2vh;
+    /* Valeur par défaut pour les écrans plus grands */
+    left: 0;
+    z-index: 10;
+    background: transparent;
+    transition: bottom 0.3s ease;
+    /* Ajout d'une transition douce pour l'animation */
+}
+
+.navigation-buttons.slide-two {
+    bottom: 5vh;
+    /* Ajuste cette valeur selon la hauteur que tu veux */
+}
+
+/* Button Styles */
+.button {
+    padding: 0.875rem 2.5rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(240, 101, 149, 0.2);
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 101, 149, 0.3);
+}
+
+.button-secondary {
+    background: transparent;
+    color: #718096;
+    border: 2px solid #e2e8f0;
+}
+
+.button-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e0;
+}
+
+/* Custom Bullet for Swiper */
+.custom-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.custom-bullet.swiper-pagination-bullet-active {
+    background: #ff6b6b;
+    width: 24px;
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Mobile First */
+
+/* Petits téléphones (portrait) */
+@media (max-width: 375px) {
+    .navigation-buttons {
+        bottom: 8vh;
+        /* Ajuste pour les très petits écrans */
+    }
+
+    .navigation-buttons.slide-two {
+        bottom: 11vh;
+        /* Ajuste cette valeur selon la hauteur que tu veux */
+    }
+}
+
+/* Téléphones plus grands (portrait) */
+@media (min-width: 376px) and (max-width: 767px) {
+    .navigation-buttons {
+        bottom: 6vh;
+        /* Ajuste pour les téléphones de taille moyenne */
+    }
+
+    .navigation-buttons.slide-two {
+        bottom: 9vh;
+        /* Ajuste cette valeur selon la hauteur que tu veux */
+    }
+}
+
+/* Tablettes et téléphones en paysage */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navigation-buttons {
+        bottom: 4vh;
+        /* Ajuste pour les tablettes et les téléphones en paysage */
+    }
+
+    .navigation-buttons.slide-two {
+        bottom: 7vh;
+        /* Ajuste cette valeur selon la hauteur que tu veux */
+    }
+}
+
+/* Écrans plus grands (ordinateurs de bureau, etc.) */
+@media (min-width: 1024px) {
+    .navigation-buttons {
+        bottom: 2vh;
+        /* Revenir à la valeur par défaut pour les grands écrans */
+    }
+
+    .navigation-buttons.slide-two {
+        bottom: 5vh;
+        /* Ajuste cette valeur selon la hauteur que tu veux */
+    }
+}
