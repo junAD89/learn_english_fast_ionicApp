@@ -5,6 +5,7 @@ http://ionicframework.com/docs/theming/ */
 :root.md {
     --ion-background-color: #1D4247;
 
+
     ion-tab-bar {
         border: none;
         background: transparent;
@@ -29,6 +30,8 @@ http://ionicframework.com/docs/theming/ */
 }
 
 
+
+/* 
 @media (prefers-color-scheme: dark) {
     :root.md {
         --ion-background-color: #1D4247;
@@ -44,4 +47,4 @@ http://ionicframework.com/docs/theming/ */
 
 
     }
-}
+} */

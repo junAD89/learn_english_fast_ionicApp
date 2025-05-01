@@ -8,25 +8,23 @@ import { ServerResponseContext } from "../Context/ServerResponseContext";
 import { BadgeInfo } from "lucide-react";
 
 import { motion } from "framer-motion";
+import { useHistory } from "react-router";
 interface KeyWordExplainButtonProps {
     userkeyWord: string;
 
 }
 
 
-function KeyWordExplainButton({
+function KeyWordExplainButton({ userkeyWord }: KeyWordExplainButtonProps) {
 
-    userkeyWord }: KeyWordExplainButtonProps) {
+
+    const history = useHistory();
+
     const { serverResponse, setServerResponse } = useContext(ServerResponseContext);
     //  pour envoyer la reponse au context
 
-    const [serverExple, setServerExple] = useState<string>(""); // ou un objet ou tableau si nécessaire
 
 
-    const handleClick = () => {
-        console.log(userkeyWord);
-        alert(userkeyWord);
-    };
 
     const handleServer = async () => {
         try {
@@ -54,7 +52,7 @@ function KeyWordExplainButton({
         <div className='showcase_container'>
             <motion.div
                 onClick={() => {
-                    handleServer()
+                    history.push("/courses")
                 }}
                 className='showcase_button'
                 whileTap={{ scale: 0.9 }}

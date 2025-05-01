@@ -14,7 +14,11 @@ import AdInterticial from '../AdmobPages/AdInterticial';
 import axios from 'axios';
 
 
+import Lottie from "lottie-react";
 
+// import animaTion from "../assets/lottieAnimations";
+
+import lottieFile from "../assets/lottieAnimations/animation.json";
 
 const Tab2: React.FC = () => {
 
@@ -39,6 +43,7 @@ const Tab2: React.FC = () => {
 
     alert("voici la permission donne :" + JSON.stringify(permission));
   }
+
 
 
 
@@ -83,6 +88,7 @@ const Tab2: React.FC = () => {
   return (
     <div>
 
+      <Lottie animationData={lottieFile} loop={true} />
       {/* <IonButton
         style={{
           marginTop: "20vh",
@@ -96,23 +102,7 @@ const Tab2: React.FC = () => {
 
 
 
-      {/* <IonActionSheet
-        isOpen={isOpen}
-        header={serverResponse}
-        onDidDismiss={() => setIsOpen(false)}
-        buttons={[
-          {
-            // text: serverResponse,
-            role: 'destructive',
-            data: {
-              action: "delete"
-            }
-          },
 
-        ]}
-      >
-
-      </IonActionSheet> */}
 
       <div>
 

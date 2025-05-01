@@ -79,7 +79,8 @@ const AppWithTabs: React.FC = () => {
   const location = useLocation();
 
   const noTabsRoutes = [
-    "/onbordingpage"
+    "/onbordingpage",
+    "/courses"
   ];
 
   const hideTabs = noTabsRoutes.some(route => location.pathname.startsWith(route));
