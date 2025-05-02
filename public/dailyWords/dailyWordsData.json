@@ -17,7 +17,8 @@
     "day4": {
         "word": "Sports 🤾‍♂️",
         "signification": "Physical activities for enjoyment and fitness",
-        "example": "I played soccer with my friends"
+        "example": "I played soccer with my friends",
+        "exp": 10
     },
     "day5": {
         "word": "Health 💖💖",
@@ -26,17 +27,20 @@
         "example1": "She is very healthy",
         "examplefr1": "Elle est en tres bonne sante",
         "example2": "Eat great food to boost your healthy",
-        "examplefr2": "Mange de la bonne nourriture pour ameliorer votre sante"
+        "examplefr2": "Mange de la bonne nourriture pour ameliorer votre sante",
+        "exp": 10
     },
     "day6": {
         "word": "Education 💪",
         "signification": "The process of acquiring knowledge and skills",
-        "example": "I studied computer science at university"
+        "example": "I studied computer science at university",
+        "exp": 15
     },
     "day7": {
         "word": "Environment ",
         "signification": "The natural surroundings",
-        "example": "The forest is a beautiful place"
+        "example": "The forest is a beautiful place",
+        "exp": 15
     },
     "day8": {
         "word": "Music 🎵",
