@@ -1,56 +1,60 @@
 {
     "day1": {
-        "word": "Travel",
+        "word": "Travel ✈🧳",
         "signification": "Journeying to explore new places",
         "example": "She went on a trip to Europe"
     },
     "day2": {
-        "word": "Food",
+        "word": "Food 🥑🍉",
         "signification": "The nourishment of the body",
         "example": "I ate a delicious meal"
     },
     "day3": {
-        "word": "Technology",
+        "word": "Technology 👩‍💻",
         "signification": "The application of scientific knowledge",
         "example": "The new smartphone is amazing"
     },
     "day4": {
-        "word": "Sports",
+        "word": "Sports 🤾‍♂️",
         "signification": "Physical activities for enjoyment and fitness",
         "example": "I played soccer with my friends"
     },
     "day5": {
-        "word": "Health",
-        "signification": "The state of well-being",
-        "example": "She is feeling very healthy"
+        "word": "Health 💖💖",
+        "signification": "The state of  well-being",
+        "courses": "ON utilise le mots Health pour parler de la sante vous avez des example comme :",
+        "example1": "She is very healthy",
+        "examplefr1": "Elle est en tres bonne sante",
+        "example2": "Eat great food to boost your healthy",
+        "examplefr2": "Mange de la bonne nourriture pour ameliorer votre sante"
     },
     "day6": {
-        "word": "Education",
+        "word": "Education 💪",
         "signification": "The process of acquiring knowledge and skills",
         "example": "I studied computer science at university"
     },
     "day7": {
-        "word": "Environment",
+        "word": "Environment ",
         "signification": "The natural surroundings",
         "example": "The forest is a beautiful place"
     },
     "day8": {
-        "word": "Music",
+        "word": "Music 🎵",
         "signification": "The art of expressing emotions through sound",
         "example": "She loves listening to classical music"
     },
     "day9": {
-        "word": "Movies",
+        "word": "Movies 🎬🍿",
         "signification": "The art of storytelling through visual and auditory experiences",
         "example": "I watched a great movie last night"
     },
     "day10": {
-        "word": "Friendship",
+        "word": "Friendship 😁😁",
         "signification": "The bond between two people",
         "example": "We have a wonderful friendship"
     },
     "day11": {
-        "word": "Family",
+        "word": "Family 👨‍👩‍👧‍👦",
         "signification": "The extended group of people living together",
         "example": "My family is very important to me"
     },

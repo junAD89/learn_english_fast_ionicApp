@@ -7,8 +7,8 @@ export default function CoursesPages() {
         <IonPage>
             <div>CoursesPages</div>
             <IonTabBar>
-                <IonTabButton tab='/home' href='/home'>
 
+                <IonTabButton tab='/tab2' href='/tab2'>
                     VALIDER
                 </IonTabButton>
 

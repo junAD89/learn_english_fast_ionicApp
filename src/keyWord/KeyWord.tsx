@@ -1,5 +1,7 @@
 //////ici on recupere juste les donnes json en local dans le ficher concerner et on le modifie en fonction du jour 
 ////il n y a rien vers une api exterieur 
+import Lottie from "lottie-react";
+import click from "../assets/lottieAnimations/click.json";
 
 
 import axios from 'axios'
@@ -9,9 +11,10 @@ import daysjs from "dayjs";
 import { toast, Toaster } from 'sonner';
 
 
-import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
 
 import "./KeyWord.css";
+import { motion } from 'framer-motion';
+import { useHistory } from 'react-router';
 
 function KeyWordData() {
 
@@ -68,7 +71,7 @@ function KeyWordData() {
     const [userkeyWord, setUserkeyWord] = useState("");
     const [significationOfKeyWord, setSignificationOfKeyWord] = useState("");
 
-
+    const history = useHistory()
 
 
     ////recupeer l index du jour
@@ -98,7 +101,7 @@ function KeyWordData() {
             >
 
                 <h3>
-                    Le mot du jour est :
+                    🧠 Le mot du jour est :
                 </h3>
                 <h1>
                     {userkeyWord}
@@ -109,8 +112,31 @@ function KeyWordData() {
                     {significationOfKeyWord}
                 </p>
             </div>
+            <div className='showcase_container'>
+                <motion.div
+                    onClick={() => {
+                        history.push("/courses")
+                    }}
+                    className='showcase_button'
+                    whileTap={{ scale: 0.9 }}
 
-            <KeyWordExplainButton userkeyWord={userkeyWord} />
+
+                >
+
+
+                    {/* <BadgeInfo size={30} /> */}
+                    <button className="startLesson_button">
+                        Commencer la partie
+                    </button>
+                    <Lottie animationData={click} loop={true} style={{ width: '100px', height: '100px', alignItems: 'center' }} />
+
+                </motion.div>
+
+
+
+
+            </div >
+
         </div >
     )
 }

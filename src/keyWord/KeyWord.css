@@ -21,3 +21,46 @@
         font-size: 30px;
     }
 }
+
+
+.showcase_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.showcase_button {
+    position: absolute;
+    border-radius: 20px;
+    margin-bottom: 100vh;
+}
+
+
+.serverResponseContainer {
+    font-size: 25px !important;
+    background-color: aliceblue;
+    color: black;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+
+    margin-bottom: 15vh;
+
+}
+
+.startLesson_button {
+    background-color: aliceblue;
+    color: black;
+    padding: 20px 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 25px;
+
+
+
+    margin-top: 50vh;
+}

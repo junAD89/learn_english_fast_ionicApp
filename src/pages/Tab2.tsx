@@ -1,6 +1,5 @@
 import './Tab2.css';
 import KeyWordData from '../keyWord/KeyWord';
-import KeyWordExplainButton from "../keyWordExplain/keyWordExplainButton";
 import { useContext, useEffect, useState } from 'react';
 import { DiamonContext } from '../Context/DiamonContext/DiamonContext';
 
@@ -15,10 +14,13 @@ import axios from 'axios';
 
 
 import Lottie from "lottie-react";
+import click from "../assets/lottieAnimations/click.json";
 
 // import animaTion from "../assets/lottieAnimations";
 
 import lottieFile from "../assets/lottieAnimations/animation.json";
+
+import clickv2 from "../assets/lottieAnimations/clickv2.json";
 
 const Tab2: React.FC = () => {
 
@@ -88,7 +90,6 @@ const Tab2: React.FC = () => {
   return (
     <div>
 
-      <Lottie animationData={lottieFile} loop={true} />
       {/* <IonButton
         style={{
           marginTop: "20vh",
@@ -108,12 +109,12 @@ const Tab2: React.FC = () => {
 
 
 
+
         {/* pour obtenir le mots de data json en local en fonction du jour */}
         <KeyWordData />
 
 
         {/* pour contacter le vrai serveur en ligne */}
-        <KeyWordExplainButton userkeyWord={userkeyWord} />
 
 
 
