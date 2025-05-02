@@ -32,9 +32,7 @@ const Tab2: React.FC = () => {
 
   const { serverResponse, setServerResponse } = useContext(ServerResponseContext)
 
-  const [userkeyWord, setUserkeyWord] = useState("");
 
-  const [modalVisbility, setModalVisbility] = useState(false)
 
 
 

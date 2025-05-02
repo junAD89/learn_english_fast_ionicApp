@@ -101,10 +101,15 @@ const AppWithTabs: React.FC = () => {
 
       {!hideTabs && (
         <IonTabBar slot="bottom">
-          {/* <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="tab1" href="/tab1">
+            <House />
+            <IonLabel>Home</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="tab2" href="/tab2">
             <House />
             <IonLabel>Keyword</IonLabel>
-          </IonTabButton> */}
+          </IonTabButton>
         </IonTabBar>
       )}
     </IonTabs>

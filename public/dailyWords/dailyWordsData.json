@@ -1,5 +1,6 @@
 {
     "day1": {
+        "id": 1,
         "word": "Travel ✈🧳",
         "signification": "Journeying to explore new places",
         "exp": 10,
@@ -10,6 +11,7 @@
         "examplefr2": "Je suis allée a la plage cette semaine"
     },
     "day2": {
+        "id": 2,
         "word": "Food 🥑🍉",
         "signification": "The sustenance needed by the body",
         "example": "I ate a delicious meal",
@@ -21,6 +23,7 @@
         "examplefr2": "Je mange beaucoup de fruit aujourd'hui"
     },
     "day3": {
+        "id": 3,
         "word": "Technology 👩‍💻",
         "signification": "The application of scientific knowledge",
         "exp": 10,
@@ -31,6 +34,7 @@
         "examplefr2": "Je utilise la technologie pour rester connecte"
     },
     "day4": {
+        "id": 4,
         "word": "Sports 🤾‍♂️",
         "signification": "Physical activities for enjoyment and fitness",
         "examplefr1": "I played soccer with my friends",
@@ -39,6 +43,7 @@
         "exp": 10
     },
     "day5": {
+        "id": 5,
         "word": "Health 💖💖",
         "signification": "The state of well-being",
         "courses": "ON utilise le mots Health pour parler de la sante vous avez des example comme :",
@@ -49,6 +54,7 @@
         "exp": 10
     },
     "day6": {
+        "id": 6,
         "word": "Weather 🌤️",
         "signification": "The atmospheric conditions at a particular time and place",
         "courses": "ON utilise le mots Weather pour parler du temps qu'il fait vous avez des example comme :",
@@ -59,6 +65,7 @@
         "exp": 10
     },
     "day7": {
+        "id": 7,
         "word": "Shopping 🛍️",
         "signification": "The activity of buying goods from stores",
         "courses": "ON utilise le mots Shopping pour parler des achats vous avez des example comme :",
@@ -69,6 +76,7 @@
         "exp": 10
     },
     "day8": {
+        "id": 8,
         "word": "Time ⏰",
         "signification": "The measured or measurable period during which an action occurs",
         "courses": "ON utilise le mots Time pour parler du temps qui passe vous avez des example comme :",
@@ -79,6 +87,7 @@
         "exp": 10
     },
     "day9": {
+        "id": 9,
         "word": "Colors 🎨",
         "signification": "The visual perception of different wavelengths of light",
         "courses": "ON utilise le mots Colors pour parler des couleurs vous avez des example comme :",
@@ -89,6 +98,7 @@
         "exp": 10
     },
     "day10": {
+        "id": 10,
         "word": "Animals 🐾",
         "signification": "Living organisms that feed on organic matter",
         "courses": "ON utilise le mots Animals pour parler des animaux vous avez des example comme :",
@@ -99,6 +109,7 @@
         "exp": 10
     },
     "day11": {
+        "id": 11,
         "word": "Emotions 😊",
         "signification": "Natural instinctive feelings",
         "courses": "ON utilise le mots Emotions pour parler des sentiments vous avez des example comme :",
@@ -109,6 +120,7 @@
         "exp": 10
     },
     "day12": {
+        "id": 12,
         "word": "Transportation 🚗",
         "signification": "The means of moving people or goods",
         "courses": "ON utilise le mots Transportation pour parler des moyens de transport vous avez des example comme :",
@@ -119,6 +131,7 @@
         "exp": 10
     },
     "day13": {
+        "id": 13,
         "word": "Education 📚",
         "signification": "The process of teaching and learning",
         "courses": "ON utilise le mots Education pour parler de l'éducation vous avez des example comme :",
@@ -129,6 +142,7 @@
         "exp": 10
     },
     "day14": {
+        "id": 14,
         "word": "Family 👨‍👩‍👧‍👦",
         "signification": "A group of people who are related",
         "courses": "ON utilise le mots Family pour parler de la famille vous avez des example comme :",
@@ -139,6 +153,7 @@
         "exp": 10
     },
     "day15": {
+        "id": 15,
         "word": "Music 🎵",
         "signification": "The art of arranging sounds",
         "courses": "ON utilise le mots Music pour parler de la musique vous avez des example comme :",
@@ -149,6 +164,7 @@
         "exp": 10
     },
     "day16": {
+        "id": 16,
         "word": "Nature 🌿",
         "signification": "The physical world and its features",
         "courses": "ON utilise le mots Nature pour parler de la nature vous avez des example comme :",
@@ -159,6 +175,7 @@
         "exp": 10
     },
     "day17": {
+        "id": 17,
         "word": "Work 💼",
         "signification": "Activity involving mental or physical effort",
         "courses": "ON utilise le mots Work pour parler du travail vous avez des example comme :",
@@ -169,6 +186,7 @@
         "exp": 10
     },
     "day18": {
+        "id": 18,
         "word": "Hobbies 🎨",
         "signification": "Activities done regularly for pleasure",
         "courses": "ON utilise le mots Hobbies pour parler des passe-temps vous avez des example comme :",
@@ -179,6 +197,7 @@
         "exp": 10
     },
     "day19": {
+        "id": 19,
         "word": "Communication 📱",
         "signification": "The exchange of information between people",
         "courses": "ON utilise le mots Communication pour parler de la communication vous avez des example comme :",
@@ -189,6 +208,7 @@
         "exp": 10
     },
     "day20": {
+        "id": 20,
         "word": "Culture 🌍",
         "signification": "The customs and beliefs of a particular society",
         "courses": "ON utilise le mots Culture pour parler de la culture vous avez des example comme :",

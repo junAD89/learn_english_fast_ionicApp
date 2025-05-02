@@ -18,6 +18,9 @@ import { useHistory } from 'react-router';
 
 function KeyWordData() {
 
+    const history = useHistory();
+
+
     ////partie de use effect
     useEffect(() => {
         // recuperer le dernier jour enregistré dans le local storage
@@ -71,7 +74,6 @@ function KeyWordData() {
     const [userkeyWord, setUserkeyWord] = useState("");
     const [significationOfKeyWord, setSignificationOfKeyWord] = useState("");
 
-    const history = useHistory()
 
 
     ////recupeer l index du jour
@@ -89,6 +91,10 @@ function KeyWordData() {
         setSignificationOfKeyWord(signification || "");
 
 
+    }
+
+    const navToCourses = () => {
+        history.push("/courses/123");
     }
     return (
         <div className='keywordContainer'>
@@ -114,9 +120,7 @@ function KeyWordData() {
             </div>
             <div className='showcase_container'>
                 <motion.div
-                    onClick={() => {
-                        history.push("/courses")
-                    }}
+
                     className='showcase_button'
                     whileTap={{ scale: 0.9 }}
 
@@ -125,7 +129,11 @@ function KeyWordData() {
 
 
                     {/* <BadgeInfo size={30} /> */}
-                    <button className="startLesson_button">
+                    <button className="startLesson_button"
+                        onClick={() => {
+                            navToCourses();
+                        }}
+                    >
                         Commencer la partie
                     </button>
                     <Lottie animationData={click} loop={true} style={{ width: '100px', height: '100px', alignItems: 'center' }} />
