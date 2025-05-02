@@ -18,9 +18,11 @@ import click from "../assets/lottieAnimations/click.json";
 
 // import animaTion from "../assets/lottieAnimations";
 
-import lottieFile from "../assets/lottieAnimations/animation.json";
-
+import thunder from "../assets/lottieAnimations/thunder.json";
+import diamond from "../assets/lottieAnimations/diamond.json";
+import fire from "../assets/lottieAnimations/fire.json";
 import clickv2 from "../assets/lottieAnimations/clickv2.json";
+import { IonPage, IonToolbar } from '@ionic/react';
 
 const Tab2: React.FC = () => {
 
@@ -88,16 +90,52 @@ const Tab2: React.FC = () => {
 
 
   return (
-    <div>
+    <IonPage>
 
-      {/* <IonButton
-        style={{
-          marginTop: "20vh",
-        }}
-        onClick={() => checkPermission()}
-      >
-        checkPermission
-      </IonButton> */}
+      <IonToolbar>
+        <div
+          style={{
+            display: 'flex'
+          }}
+        >
+
+          <div style={{
+            display: "flex"
+          }}>
+            <Lottie animationData={fire} style={{
+              width: '50px',
+              height: "59px"
+            }} />
+            <h1>
+              30
+            </h1>
+          </div>
+          <div style={{
+            display: "flex"
+          }}>
+            <Lottie animationData={diamond} style={{
+              width: '100px',
+              height: "59px"
+            }} />
+
+            <h1>
+              20
+            </h1>
+          </div>
+          <div style={{
+            display: "flex"
+          }}>
+            <Lottie animationData={thunder} style={{
+              width: '100px',
+              height: "59px"
+            }} />
+            <h1>
+              10
+            </h1>
+          </div>
+        </div>
+      </IonToolbar>
+
 
 
 
@@ -122,7 +160,7 @@ const Tab2: React.FC = () => {
       {/* <AdInterticial /> */}
       <AdBanner />
 
-    </div >
+    </IonPage>
   );
 };
 

@@ -2,27 +2,45 @@
     "day1": {
         "word": "Travel ✈🧳",
         "signification": "Journeying to explore new places",
-        "example": "She went on a trip to Europe"
+        "exp": 10,
+        "courses": "ON utilise le mots Travel pour parler de voyages vous avez des example comme :",
+        "example1": "She went on a trip to Europe",
+        "examplefr1": "Elle a fait un voyage a Europe",
+        "example2": "I went to the beach this weekend",
+        "examplefr2": "Je suis allée a la plage cette semaine"
     },
     "day2": {
         "word": "Food 🥑🍉",
-        "signification": "The nourishment of the body",
-        "example": "I ate a delicious meal"
+        "signification": "The sustenance needed by the body",
+        "example": "I ate a delicious meal",
+        "exp": 10,
+        "courses": "ON utilise le mots Food pour parler de la nourriture vous avez des example comme :",
+        "example1": "She ate a delicious meal",
+        "examplefr1": "Elle a mange une bonne nourriture",
+        "example2": "I ate a lot of fruit today",
+        "examplefr2": "Je mange beaucoup de fruit aujourd'hui"
     },
     "day3": {
         "word": "Technology 👩‍💻",
         "signification": "The application of scientific knowledge",
-        "example": "The new smartphone is amazing"
+        "exp": 10,
+        "courses": "ON utilise le mots Technology pour parler de la technologie vous avez des example comme :",
+        "example1": "The new smartphone is amazing",
+        "examplefr1": "Le nouveau smartphone est incroyable",
+        "example2": "I use technology to stay connected",
+        "examplefr2": "Je utilise la technologie pour rester connecte"
     },
     "day4": {
         "word": "Sports 🤾‍♂️",
         "signification": "Physical activities for enjoyment and fitness",
-        "example": "I played soccer with my friends",
+        "examplefr1": "I played soccer with my friends",
+        "example2": "I played basketball with my friends",
+        "examplefr2": "J'ai joue au basketball avec mes amis",
         "exp": 10
     },
     "day5": {
         "word": "Health 💖💖",
-        "signification": "The state of  well-being",
+        "signification": "The state of well-being",
         "courses": "ON utilise le mots Health pour parler de la sante vous avez des example comme :",
         "example1": "She is very healthy",
         "examplefr1": "Elle est en tres bonne sante",
@@ -31,135 +49,153 @@
         "exp": 10
     },
     "day6": {
-        "word": "Education 💪",
-        "signification": "The process of acquiring knowledge and skills",
-        "example": "I studied computer science at university",
-        "exp": 15
+        "word": "Weather 🌤️",
+        "signification": "The atmospheric conditions at a particular time and place",
+        "courses": "ON utilise le mots Weather pour parler du temps qu'il fait vous avez des example comme :",
+        "example1": "It's a sunny day today",
+        "examplefr1": "C'est une journée ensoleillée aujourd'hui",
+        "example2": "The weather forecast predicts rain tomorrow",
+        "examplefr2": "Les prévisions météo annoncent de la pluie demain",
+        "exp": 10
     },
     "day7": {
-        "word": "Environment ",
-        "signification": "The natural surroundings",
-        "example": "The forest is a beautiful place",
-        "exp": 15
+        "word": "Shopping 🛍️",
+        "signification": "The activity of buying goods from stores",
+        "courses": "ON utilise le mots Shopping pour parler des achats vous avez des example comme :",
+        "example1": "I went shopping for new clothes",
+        "examplefr1": "Je suis allé acheter de nouveaux vêtements",
+        "example2": "She loves shopping at the mall",
+        "examplefr2": "Elle adore faire du shopping au centre commercial",
+        "exp": 10
     },
     "day8": {
-        "word": "Music 🎵",
-        "signification": "The art of expressing emotions through sound",
-        "example": "She loves listening to classical music"
+        "word": "Time ⏰",
+        "signification": "The measured or measurable period during which an action occurs",
+        "courses": "ON utilise le mots Time pour parler du temps qui passe vous avez des example comme :",
+        "example1": "What time is it?",
+        "examplefr1": "Quelle heure est-il?",
+        "example2": "I don't have enough time to finish",
+        "examplefr2": "Je n'ai pas assez de temps pour finir",
+        "exp": 10
     },
     "day9": {
-        "word": "Movies 🎬🍿",
-        "signification": "The art of storytelling through visual and auditory experiences",
-        "example": "I watched a great movie last night"
+        "word": "Colors 🎨",
+        "signification": "The visual perception of different wavelengths of light",
+        "courses": "ON utilise le mots Colors pour parler des couleurs vous avez des example comme :",
+        "example1": "Blue is my favorite color",
+        "examplefr1": "Le bleu est ma couleur préférée",
+        "example2": "This painting has beautiful colors",
+        "examplefr2": "Cette peinture a de belles couleurs",
+        "exp": 10
     },
     "day10": {
-        "word": "Friendship 😁😁",
-        "signification": "The bond between two people",
-        "example": "We have a wonderful friendship"
+        "word": "Animals 🐾",
+        "signification": "Living organisms that feed on organic matter",
+        "courses": "ON utilise le mots Animals pour parler des animaux vous avez des example comme :",
+        "example1": "Lions are wild animals",
+        "examplefr1": "Les lions sont des animaux sauvages",
+        "example2": "I have a pet dog",
+        "examplefr2": "J'ai un chien comme animal de compagnie",
+        "exp": 10
     },
     "day11": {
-        "word": "Family 👨‍👩‍👧‍👦",
-        "signification": "The extended group of people living together",
-        "example": "My family is very important to me"
+        "word": "Emotions 😊",
+        "signification": "Natural instinctive feelings",
+        "courses": "ON utilise le mots Emotions pour parler des sentiments vous avez des example comme :",
+        "example1": "She feels happy today",
+        "examplefr1": "Elle se sent heureuse aujourd'hui",
+        "example2": "Love is a powerful emotion",
+        "examplefr2": "L'amour est une émotion puissante",
+        "exp": 10
     },
     "day12": {
-        "word": "Dreams",
-        "signification": "The aspirations of the future",
-        "example": "I have a dream of becoming a doctor"
+        "word": "Transportation 🚗",
+        "signification": "The means of moving people or goods",
+        "courses": "ON utilise le mots Transportation pour parler des moyens de transport vous avez des example comme :",
+        "example1": "I take the bus to work",
+        "examplefr1": "Je prends le bus pour aller au travail",
+        "example2": "Trains are fast and efficient",
+        "examplefr2": "Les trains sont rapides et efficaces",
+        "exp": 10
     },
     "day13": {
-        "word": "Culture",
-        "signification": "The customs and traditions of a particular group of people",
-        "example": "The art of painting is very important to my culture"
+        "word": "Education 📚",
+        "signification": "The process of teaching and learning",
+        "courses": "ON utilise le mots Education pour parler de l'éducation vous avez des example comme :",
+        "example1": "She studies at university",
+        "examplefr1": "Elle étudie à l'université",
+        "example2": "Learning new things is important",
+        "examplefr2": "Apprendre de nouvelles choses est important",
+        "exp": 10
     },
     "day14": {
-        "word": "Nature",
-        "signification": "The physical and biological world",
-        "example": "The trees are beautiful in the spring"
+        "word": "Family 👨‍👩‍👧‍👦",
+        "signification": "A group of people who are related",
+        "courses": "ON utilise le mots Family pour parler de la famille vous avez des example comme :",
+        "example1": "I love my family",
+        "examplefr1": "J'aime ma famille",
+        "example2": "We have dinner together every Sunday",
+        "examplefr2": "Nous dînons ensemble tous les dimanches",
+        "exp": 10
     },
     "day15": {
-        "word": "Work",
-        "signification": "The process of producing or achieving something",
-        "example": "I am working on a new project"
+        "word": "Music 🎵",
+        "signification": "The art of arranging sounds",
+        "courses": "ON utilise le mots Music pour parler de la musique vous avez des example comme :",
+        "example1": "She plays the piano beautifully",
+        "examplefr1": "Elle joue magnifiquement du piano",
+        "example2": "I listen to music every day",
+        "examplefr2": "J'écoute de la musique tous les jours",
+        "exp": 10
     },
     "day16": {
-        "word": "Hobbies",
-        "signification": "The activities that one enjoys for pleasure",
-        "example": "I enjoy painting and playing guitar"
+        "word": "Nature 🌿",
+        "signification": "The physical world and its features",
+        "courses": "ON utilise le mots Nature pour parler de la nature vous avez des example comme :",
+        "example1": "The forest is beautiful",
+        "examplefr1": "La forêt est belle",
+        "example2": "We should protect nature",
+        "examplefr2": "Nous devons protéger la nature",
+        "exp": 10
     },
     "day17": {
-        "word": "Books",
-        "signification": "The written works of knowledge",
-        "example": "I read a lot of books this year"
+        "word": "Work 💼",
+        "signification": "Activity involving mental or physical effort",
+        "courses": "ON utilise le mots Work pour parler du travail vous avez des example comme :",
+        "example1": "She works in an office",
+        "examplefr1": "Elle travaille dans un bureau",
+        "example2": "I enjoy my work",
+        "examplefr2": "J'aime mon travail",
+        "exp": 10
     },
     "day18": {
-        "word": "Art",
-        "signification": "The expression of creativity through visual or performing arts",
-        "example": "The artist painted a beautiful painting"
+        "word": "Hobbies 🎨",
+        "signification": "Activities done regularly for pleasure",
+        "courses": "ON utilise le mots Hobbies pour parler des passe-temps vous avez des example comme :",
+        "example1": "Reading is my favorite hobby",
+        "examplefr1": "La lecture est mon passe-temps préféré",
+        "example2": "She collects stamps as a hobby",
+        "examplefr2": "Elle collectionne des timbres comme passe-temps",
+        "exp": 10
     },
     "day19": {
-        "word": "Science",
-        "signification": "The study of the natural world and its processes",
-        "example": "The scientist discovered a new drug"
+        "word": "Communication 📱",
+        "signification": "The exchange of information between people",
+        "courses": "ON utilise le mots Communication pour parler de la communication vous avez des example comme :",
+        "example1": "Good communication is important",
+        "examplefr1": "Une bonne communication est importante",
+        "example2": "We communicate through email",
+        "examplefr2": "Nous communiquons par email",
+        "exp": 10
     },
     "day20": {
-        "word": "History",
-        "signification": "The record of past events and civilizations",
-        "example": "The history of the world is fascinating"
-    },
-    "day21": {
-        "word": "Travel",
-        "signification": "Journeying to explore new places",
-        "example": "She went on a trip to Europe"
-    },
-    "day22": {
-        "word": "Food",
-        "signification": "The nourishment of the body",
-        "example": "I ate a delicious meal"
-    },
-    "day23": {
-        "word": "Technology",
-        "signification": "The application of scientific knowledge",
-        "example": "The new smartphone is amazing"
-    },
-    "day24": {
-        "word": "Sports",
-        "signification": "Physical activities for enjoyment and fitness",
-        "example": "I played soccer with my friends"
-    },
-    "day25": {
-        "word": "Health",
-        "signification": "The state of well-being",
-        "example": "She is feeling very healthy"
-    },
-    "day26": {
-        "word": "Education",
-        "signification": "The process of acquiring knowledge and skills",
-        "example": "I studied computer science at university"
-    },
-    "day27": {
-        "word": "Environment",
-        "signification": "The natural surroundings",
-        "example": "The forest is a beautiful place"
-    },
-    "day28": {
-        "word": "Music",
-        "signification": "The art of expressing emotions through sound",
-        "example": "She loves listening to classical music"
-    },
-    "day29": {
-        "word": "Movies",
-        "signification": "The art of storytelling through visual and auditory experiences",
-        "example": "I watched a great movie last night"
-    },
-    "day30": {
-        "word": "Friendship",
-        "signification": "The bond between two people",
-        "example": "We have a wonderful friendship"
-    },
-    "day31": {
-        "word": "Family",
-        "signification": "The extended group of people living together",
-        "example": "My family is very important to me"
+        "word": "Culture 🌍",
+        "signification": "The customs and beliefs of a particular society",
+        "courses": "ON utilise le mots Culture pour parler de la culture vous avez des example comme :",
+        "example1": "Every country has its own culture",
+        "examplefr1": "Chaque pays a sa propre culture",
+        "example2": "Learning about different cultures is fascinating",
+        "examplefr2": "Apprendre différentes cultures est fascinant",
+        "exp": 10
     }
 }
