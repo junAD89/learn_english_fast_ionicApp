@@ -89,7 +89,7 @@ const AppWithTabs: React.FC = () => {
     <IonTabs>
       <IonRouterOutlet>
         <Route exact path="/onbordingpage" component={OnbordingPage} />
-        <Route exact path="/courses" component={CoursesPages} />
+        <Route exact path="/courses/:id" component={CoursesPages} />
         <Route exact path="/json" component={KeyWordData} />
         <Route exact path="/tab1" component={Tab1} />
         <Route exact path="/tab2" component={Tab2} />
