@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -8,18 +8,27 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import './OnbordingPage.css';
 import { motion } from 'framer-motion';
+import { Swiper as SwiperType } from 'swiper';
 
 const OnbordingPage: React.FC = () => {
     const history = useHistory();
 
 
+    const swiperRef = useRef<SwiperType | null>(null);
 
-
+    const swiperToNext = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slideNext();
+        }
+    }
     return (
         <div className="onboarding-wrapper">
 
 
             <Swiper
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
                 modules={[Pagination]}
                 pagination={true}
                 spaceBetween={0}
@@ -183,7 +192,18 @@ const OnbordingPage: React.FC = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
+
+            <button
+                onClick={() => {
+                    swiperToNext();
+                }}
+            >
+                Aller au slide suivant
+            </button>
+
         </div>
+
+
     );
 
 };

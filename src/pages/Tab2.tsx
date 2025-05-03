@@ -167,7 +167,8 @@ const Tab2: React.FC = () => {
 
       </div>
       {/* <AdInterticial /> */}
-      <AdBanner />
+
+      {/* <AdBanner /> */}
 
     </IonPage>
   );

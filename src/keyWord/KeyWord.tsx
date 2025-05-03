@@ -48,7 +48,6 @@ function KeyWordData() {
     const incrementDayIndex = () => {
 
 
-        const getDayIndex = Number(localStorage.getItem('dayIndex'));
 
 
 
@@ -119,10 +118,9 @@ function KeyWordData() {
                 </p>
             </div>
             <div className='showcase_container'>
-                <motion.div
+                <div
 
                     className='showcase_button'
-                    whileTap={{ scale: 0.9 }}
 
 
                 >
@@ -130,6 +128,8 @@ function KeyWordData() {
 
                     {/* <BadgeInfo size={30} /> */}
                     <motion.button
+                        whileTap={{ scale: 2.9 }}
+
                         animate={{ padding: 10, scale: 1.2 }}
                         transition={{ duration: 3.5, repeat: Infinity, repeatType: "reverse" }}
                         className="startLesson_button"
@@ -140,7 +140,7 @@ function KeyWordData() {
                         Commencer la partie
                     </motion.button>
 
-                </motion.div>
+                </div>
 
 
 
