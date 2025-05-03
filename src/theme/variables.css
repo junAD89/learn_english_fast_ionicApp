@@ -1,23 +1,10 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
-
-
 :root.md {
     --ion-background-color: #1D4247;
 
 
     ion-tab-bar {
-        border: none;
         background: transparent;
-        color: white;
-
-        border-radius: 20px;
-        white-space: nowrap;
-
-
         margin-bottom: 5vh;
-
-
     }
 
     ion-tab-bar ion-tab-button {
@@ -30,21 +17,10 @@ http://ionicframework.com/docs/theming/ */
 }
 
 
+ion-tab-button {
+    background: black;
+}
 
-/* 
-@media (prefers-color-scheme: dark) {
-    :root.md {
-        --ion-background-color: #1D4247;
-
-
-        ion-tab-bar ion-tab-button {
-            border-radius: 20px;
-        }
-
-        .not_important_tab {
-            margin: 60px;
-        }
-
-
-    }
-} */
+ion-toolbar {
+    --background: #1D4247;
+}

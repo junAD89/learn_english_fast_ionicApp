@@ -95,7 +95,12 @@ const Tab2: React.FC = () => {
       <IonToolbar>
         <div
           style={{
-            display: 'flex'
+            display: 'flex',
+            marginTop: '10px',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            width: '100%',
+            color: "white"
           }}
         >
 

@@ -129,14 +129,16 @@ function KeyWordData() {
 
 
                     {/* <BadgeInfo size={30} /> */}
-                    <button className="startLesson_button"
+                    <motion.button
+                        animate={{ padding: 10, scale: 1.2 }}
+                        transition={{ duration: 3.5, repeat: Infinity, repeatType: "reverse" }}
+                        className="startLesson_button"
                         onClick={() => {
                             navToCourses();
                         }}
                     >
                         Commencer la partie
-                    </button>
-                    <Lottie animationData={click} loop={true} style={{ width: '100px', height: '100px', alignItems: 'center' }} />
+                    </motion.button>
 
                 </motion.div>
 

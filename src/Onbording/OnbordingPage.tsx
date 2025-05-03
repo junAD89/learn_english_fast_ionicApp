@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { FaWhatsapp } from "react-icons/fa";
 
 import './OnbordingPage.css';
 import { motion } from 'framer-motion';
@@ -61,7 +62,9 @@ const OnbordingPage: React.FC = () => {
                                     }}
                                     className="option-content">
 
-                                    <div className="option-icon">🎨
+                                    <div className="option-icon">
+                                        <FaWhatsapp />
+
 
                                     </div>
                                     <div className="option-text">
@@ -123,7 +126,7 @@ const OnbordingPage: React.FC = () => {
                                     fontSize: '30px',
                                 }}
                             >
-                                Que souhaitez vous faire avec Fast English
+                                Que souhaitez vous faire avec Fast English?
                             </h1>
                         </div>
 
@@ -138,9 +141,14 @@ const OnbordingPage: React.FC = () => {
                                     className="option-content">
 
                                     <div className="option-text">
-                                        <h2>
-                                            Apprendre quelque mots par jour
-                                        </h2>
+                                        <div className="option-text">
+
+                                            <h2>
+                                                Apprendre quelque mots par jour
+                                            </h2>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </motion.div>
