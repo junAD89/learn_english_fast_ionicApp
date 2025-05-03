@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+
+
 html,
 body {
     width: 100%;
@@ -16,14 +18,11 @@ body {
     position: relative;
 }
 
-/* Viewport Meta Tag (assurez-vous de l'avoir dans votre HTML) */
-/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
 
-/* Onboarding Wrapper */
 .onboarding-wrapper {
     min-height: 100vh;
     width: 100vw;
-    background: linear-gradient(135deg, #fce7f3 0%, #fff1f2 100%);
+    background: #213235;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,11 +31,12 @@ body {
 
 /* Onboarding Container */
 .onboarding-container {
+
     width: 100%;
     height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #1D4247;
     backdrop-filter: blur(10px);
     border-radius: 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -44,6 +44,8 @@ body {
 
 /* Swiper Slide Content */
 .slide-content {
+    color: white;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,8 +58,24 @@ body {
     position: relative;
 }
 
+.slide-question-title {
+    font-size: 2.3rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+
 /* Slide Title */
 .slide-title {
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -90,13 +108,13 @@ body {
 /* Welcome Description */
 .welcome-description {
     font-size: 1.25rem;
-    color: #4a5568;
+    color: white;
     margin-top: 2rem;
     line-height: 1.6;
 }
 
 /* Letter Types Container */
-.letter-types-container {
+.question-types-container {
     width: 100%;
     max-width: 600px;
     padding: 0 1rem;
@@ -104,7 +122,7 @@ body {
 }
 
 /* Letter Option */
-.letter-option {
+.question-option {
     display: flex;
     align-items: center;
     padding: 1.25rem;
@@ -117,17 +135,11 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: scaleIn 0.5s ease-out forwards;
-}
-
-.letter-option:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.letter-option.selected {
     border: 2px solid #ff6b6b;
-    background: #fff8f8;
+
 }
+
+
 
 /* Option Content */
 .option-content {
@@ -156,14 +168,13 @@ body {
     text-align: left;
 }
 
-.letter-option h3 {
-    margin: 0;
+.question-option {
     font-size: 1.1rem;
     color: #2d3748;
     font-weight: 600;
 }
 
-.letter-option p {
+.question-option p {
     margin: 0.25rem 0 0;
     font-size: 0.9rem;
     color: #718096;
@@ -174,79 +185,9 @@ body {
     overflow: hidden;
 }
 
-/* Navigation Buttons */
-.navigation-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 0 2rem;
-    position: fixed;
-    bottom: 2vh;
-    /* Valeur par défaut pour les écrans plus grands */
-    left: 0;
-    z-index: 10;
-    background: transparent;
-    transition: bottom 0.3s ease;
-    /* Ajout d'une transition douce pour l'animation */
-}
 
-.navigation-buttons.slide-two {
-    bottom: 5vh;
-    /* Ajuste cette valeur selon la hauteur que tu veux */
-}
 
-/* Button Styles */
-.button {
-    padding: 0.875rem 2.5rem;
-    border-radius: 50px;
-    border: none;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
 
-.button-primary {
-    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(240, 101, 149, 0.2);
-}
-
-.button-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(240, 101, 149, 0.3);
-}
-
-.button-secondary {
-    background: transparent;
-    color: #718096;
-    border: 2px solid #e2e8f0;
-}
-
-.button-secondary:hover {
-    background: #f8fafc;
-    border-color: #cbd5e0;
-}
-
-/* Custom Bullet for Swiper */
-.custom-bullet {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #e2e8f0;
-    margin: 0 6px;
-    transition: all 0.3s ease;
-    opacity: 0.5;
-}
-
-.custom-bullet.swiper-pagination-bullet-active {
-    background: #ff6b6b;
-    width: 24px;
-    opacity: 1;
-}
 
 /* Animations */
 @keyframes floating {
