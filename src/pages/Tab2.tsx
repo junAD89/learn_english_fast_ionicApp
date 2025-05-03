@@ -23,6 +23,7 @@ import diamond from "../assets/lottieAnimations/diamond.json";
 import fire from "../assets/lottieAnimations/fire.json";
 import clickv2 from "../assets/lottieAnimations/clickv2.json";
 import { IonPage, IonToolbar } from '@ionic/react';
+import { useHistory } from 'react-router';
 
 const Tab2: React.FC = () => {
 
@@ -85,6 +86,7 @@ const Tab2: React.FC = () => {
   }, []);
 
 
+  const history = useHistory();
 
 
   return (
@@ -97,9 +99,13 @@ const Tab2: React.FC = () => {
           }}
         >
 
-          <div style={{
-            display: "flex"
-          }}>
+          <div
+            onClick={() => {
+              history.push("/onbordingpage")
+            }}
+            style={{
+              display: "flex"
+            }}>
             <Lottie animationData={fire} style={{
               width: '50px',
               height: "59px"

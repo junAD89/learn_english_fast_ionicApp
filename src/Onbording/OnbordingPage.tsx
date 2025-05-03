@@ -31,9 +31,7 @@ const OnbordingPage: React.FC = () => {
                             Booster votre anglais
 
                         </h1>
-                        <h2>
-                            🚀
-                        </h2>
+
                     </div>
                     <div className="welcome-container">
 
@@ -63,7 +61,9 @@ const OnbordingPage: React.FC = () => {
                                     }}
                                     className="option-content">
 
-                                    <div className="option-icon">🎨</div>
+                                    <div className="option-icon">🎨
+
+                                    </div>
                                     <div className="option-text">
                                         <h2
 
