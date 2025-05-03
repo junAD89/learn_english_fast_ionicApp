@@ -10,6 +10,11 @@ import './OnbordingPage.css';
 import { motion } from 'framer-motion';
 import { Swiper as SwiperType } from 'swiper';
 
+
+import { addDoc, collection } from "firebase/firestore";
+import { IonButton } from '@ionic/react';
+
+import db from "../FirebaseConfig/fire-config";
 const OnbordingPage: React.FC = () => {
     const history = useHistory();
 
@@ -200,6 +205,22 @@ const OnbordingPage: React.FC = () => {
             >
                 Aller au slide suivant
             </button>
+
+
+            <IonButton
+                onClick={async () => {
+                    try {
+                        const docRef = await addDoc(collection(db, "howDiscoverApp"), {
+                            reasons: "facebook",
+                        });
+                        console.log("Document ajouté avec succès");
+                    } catch (error) {
+                        console.error("Erreur lors de l'ajout du document : ", error);
+                    }
+                }}
+            >
+                Add doc
+            </IonButton>
 
         </div>
 
