@@ -40,30 +40,36 @@ export const StreakContextProvider = ({ children }: Props) => {
         console.log("lastDate", lastDate);
         console.log("new date", nowDate);
 
-        // if (lastDate) {
-        //     const lastDateParsed = dayjs(lastDate);
-        //     if (lastDateParsed.isValid()) {
-        //         const difference = nowDate.diff(lastDateParsed, "day");
-        //         console.log("difference", difference);
+        if (lastDate) {
+            const lastDateParsed = dayjs(lastDate);
+            if (lastDateParsed.isValid()) {
+                const difference = nowDate.diff(lastDateParsed, "day");
+                console.log("difference", difference);
 
-        //         if (difference > 1) {
-        //             incrementStreakNumber();
-        //             localStorage.setItem("streakDate", nowDate.toString());
-        //             localStorage.setItem("Number_Of_streak", (streakNumber + 1).toString()); // Utiliser la nouvelle valeur calculée
-        //         } else {
-        //             setStreakNumber(0);
-        //             localStorage.setItem("Number_Of_streak", "1");
-        //         }
-        //     } else {
-        //         console.log("Invalid lastDate format");
-        //     }
-        // }
-        // // else {
-        // console.log("No lastDate in localStorage");
-        // localStorage.setItem("streakDate", nowDate.toString());
-        // localStorage.setItem("Number_Of_streak", "1");
-        // // }
-    }, [streakNumber]);
+                if (difference > 1) {
+                    // Incrémente le streak uniquement une fois
+                    const newStreakNumber = streakNumber + 1;
+                    localStorage.setItem("streakDate", nowDate.toString());
+                    localStorage.setItem("Number_Of_streak", newStreakNumber.toString());
+                    setStreakNumber(newStreakNumber);
+                } else if (difference === 1) {
+                    // Récupère le streak actuel sans changer
+                    localStorage.setItem("streakDate", nowDate.toString());
+                    localStorage.setItem("Number_Of_streak", streakNumber.toString());
+                } else {
+                    setStreakNumber(0);
+                    localStorage.setItem("Number_Of_streak", "1");
+                }
+            } else {
+                console.log("Invalid lastDate format");
+            }
+        } else {
+            console.log("No lastDate in localStorage");
+            localStorage.setItem("streakDate", nowDate.toString());
+            localStorage.setItem("Number_Of_streak", "1");
+        }
+    }, []);
+    // Le tableau des dépendances est vide pour que l'effet s'exécute une seule fois au démarrage
 
     return (
         <StreakContext.Provider value={{ streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber }}>
