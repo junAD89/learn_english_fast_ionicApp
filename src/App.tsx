@@ -36,6 +36,7 @@ import CoursesPages from './CoursesPages/CoursesPages';
 import OnbordingPage from './Onbording/OnbordingPage';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
+import { StreakContextProvider } from './Context/StreakContext/StreakContext';
 
 setupIonicReact();
 
@@ -53,13 +54,15 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <ServerResponseProvider>
-        <DiamonContextProvider>
-          <IonReactRouter>
-            <AppWithTabs />
-          </IonReactRouter>
-        </DiamonContextProvider>
-      </ServerResponseProvider>
+      <StreakContextProvider>
+        <ServerResponseProvider>
+          <DiamonContextProvider>
+            <IonReactRouter>
+              <AppWithTabs />
+            </IonReactRouter>
+          </DiamonContextProvider>
+        </ServerResponseProvider>
+      </StreakContextProvider>
     </IonApp>
   );
 };

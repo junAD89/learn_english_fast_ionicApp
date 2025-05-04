@@ -37,6 +37,9 @@ export default function CoursesPages() {
     useEffect(() => {
         getCourses()
     }, [])
+
+
+    // fonction pour recuperer les donnes du cours concernant le jour
     const getCourses = async () => {
         const response = await axios.get("/dailyWords/dailyWordsData.json")
 
@@ -65,11 +68,6 @@ export default function CoursesPages() {
                 id: {idParams}
             </h1>
 
-            {/* <IonTabBar>
-                <IonTabButton tab='/tab2' href='/tab2'>
-                    VALIDER
-                </IonTabButton>
-            </IonTabBar> */}
 
 
 
@@ -137,6 +135,12 @@ export default function CoursesPages() {
                     Rejoindre
                 </IonButton>
             </IonContent> */}
+
+            <IonTabBar>
+                <IonTabButton tab='/tab2' href='/tab2'>
+                    VALIDER
+                </IonTabButton>
+            </IonTabBar>
         </IonPage >
     )
 }
