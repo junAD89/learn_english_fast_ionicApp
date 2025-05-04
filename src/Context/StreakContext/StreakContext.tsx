@@ -1,97 +1,73 @@
-import { createContext, useEffect, useState } from "react"
-
+import { createContext, useEffect, useState } from "react";
 import dayjs from "dayjs";
 
-
 export type StreakContextType = {
-    streakNumber: number,
-    setStreakNumber: (value: number) => void,
-    incrementStreakNumber: () => void,
-    decrementStreakNumber: () => void,
-}
-
-
-export type DaysContextType = {
-    days: number,
-    setDays: (value: number) => void,
-    incrementDays: () => void,
-}
-
-export const DaysContext = createContext<DaysContextType>({
-    days: 0,
-    setDays: (value: number) => { },
-    incrementDays: () => { },
-})
+    streakNumber: number;
+    setStreakNumber: (value: number) => void;
+    incrementStreakNumber: () => void;
+    decrementStreakNumber: () => void;
+};
 
 export const StreakContext = createContext<StreakContextType>({
     streakNumber: 0,
     setStreakNumber: (value: number) => { },
     incrementStreakNumber: () => { },
     decrementStreakNumber: () => { },
-})
-
+});
 
 type Props = {
-    children: React.ReactNode
-}
+    children: React.ReactNode;
+};
 
 export const StreakContextProvider = ({ children }: Props) => {
-
-
     const [streakNumber, setStreakNumber] = useState(() => {
-        const getStreakNumber_localStorage = Number(localStorage.getItem("streakNumber"));
+        const getStreakNumber_localStorage = Number(localStorage.getItem("Number_Of_streak"));
         return getStreakNumber_localStorage || 0;
-
     });
 
     const incrementStreakNumber = () => {
-
-        setStreakNumber(prev => {
-            const newStreakNumber = prev + 1;
-
-            return newStreakNumber;
-        })
-    }
+        setStreakNumber((prev) => prev + 1);
+    };
 
     const decrementStreakNumber = () => {
-        setStreakNumber(prev => {
-            const newStreakNumber = prev - 1;
+        setStreakNumber((prev) => prev - 1);
+    };
 
-            return newStreakNumber;
-        })
-    }
-
-
-    const [days, setDays] = useState(() => {
-        const getDays_localStorage = Number(localStorage.getItem("days"));
-        return getDays_localStorage || 0;
-
-    });
     useEffect(() => {
         const nowDate = dayjs();
-
         const lastDate = localStorage.getItem("streakDate");
 
-        const difference = nowDate.diff(Number(lastDate), "day");
+        console.log("lastDate", lastDate);
+        console.log("new date", nowDate);
 
-        if (difference > 1) {
-            incrementStreakNumber();
-            localStorage.setItem("streakDate", nowDate.toString());
+        // if (lastDate) {
+        //     const lastDateParsed = dayjs(lastDate);
+        //     if (lastDateParsed.isValid()) {
+        //         const difference = nowDate.diff(lastDateParsed, "day");
+        //         console.log("difference", difference);
 
-            localStorage.setItem("streakNumber", streakNumber.toString());
-
-
-        } else {
-            setStreakNumber(0);
-
-            localStorage.setItem("streakNumber", "0");
-
-        }
-    }, [])
+        //         if (difference > 1) {
+        //             incrementStreakNumber();
+        //             localStorage.setItem("streakDate", nowDate.toString());
+        //             localStorage.setItem("Number_Of_streak", (streakNumber + 1).toString()); // Utiliser la nouvelle valeur calculée
+        //         } else {
+        //             setStreakNumber(0);
+        //             localStorage.setItem("Number_Of_streak", "1");
+        //         }
+        //     } else {
+        //         console.log("Invalid lastDate format");
+        //     }
+        // }
+        // // else {
+        // console.log("No lastDate in localStorage");
+        // localStorage.setItem("streakDate", nowDate.toString());
+        // localStorage.setItem("Number_Of_streak", "1");
+        // // }
+    }, [streakNumber]);
 
     return (
-        <StreakContext.Provider value={{ streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber }} >
+        <StreakContext.Provider value={{ streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber }}>
             {children}
         </StreakContext.Provider>
-    )
-}
+    );
+};

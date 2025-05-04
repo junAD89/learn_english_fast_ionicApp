@@ -22,14 +22,22 @@ import thunder from "../assets/lottieAnimations/thunder.json";
 import diamond from "../assets/lottieAnimations/diamond.json";
 import fire from "../assets/lottieAnimations/fire.json";
 import clickv2 from "../assets/lottieAnimations/clickv2.json";
-import { IonPage, IonToolbar } from '@ionic/react';
+import { IonButton, IonPage, IonToolbar } from '@ionic/react';
 import { useHistory } from 'react-router';
+
+
+import { StreakContext } from "../Context/StreakContext/StreakContext";
+
 
 const Tab2: React.FC = () => {
 
 
+
   ///importation des contextes
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
+
+  const { streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber } = useContext(StreakContext);
+
 
   const { serverResponse, setServerResponse } = useContext(ServerResponseContext)
 
@@ -99,7 +107,7 @@ const Tab2: React.FC = () => {
               height: "59px"
             }} />
             <h1>
-              30
+              {streakNumber}
             </h1>
           </div>
           <div style={{
@@ -144,6 +152,22 @@ const Tab2: React.FC = () => {
       {/* <AdBanner /> */}
 
     </IonPage>
+
+    // <div
+    //   style={{
+    //     marginTop: '40vh',
+    //   }}>
+    //   <h1>
+    //     {streakNumber}
+    //   </h1>
+    //   <IonButton
+    //     onClick={() => {
+    //       incrementStreakNumber()
+    //     }}
+    //   >
+    //     Check
+    //   </IonButton>
+    // </div>
   );
 };
 
