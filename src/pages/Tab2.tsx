@@ -66,24 +66,6 @@ const Tab2: React.FC = () => {
 
 
 
-  const hookUpServer = async () => {
-    const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
-
-    console.log(response.data);
-
-  }
-  const testServer = async () => {
-    const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
-
-    console.log(response.data);
-
-  }
-
-
-  useEffect(() => {
-    hookUpServer();
-    testServer();
-  }, []);
 
 
   const history = useHistory();
@@ -131,7 +113,7 @@ const Tab2: React.FC = () => {
               20
             </h1>
           </div>
-          <div style={{
+          {/* <div style={{
             display: "flex"
           }}>
             <Lottie animationData={thunder} style={{
@@ -141,7 +123,7 @@ const Tab2: React.FC = () => {
             <h1>
               10
             </h1>
-          </div>
+          </div> */}
         </div>
       </IonToolbar>
 
@@ -168,7 +150,7 @@ const Tab2: React.FC = () => {
       </div>
       {/* <AdInterticial /> */}
 
-      {/* <AdBanner /> */}
+      <AdBanner />
 
     </IonPage>
   );

@@ -45,21 +45,10 @@ const initializeAdmob = async () => {
   });
 };
 
-const hookUpServer = async () => {
-  const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
-  console.log(response.data);
-};
-
-const testServer = async () => {
-  const response = await axios.post("https://fastenglishserver-chat.glitch.me/hookUpServer");
-  console.log(response.data);
-};
 
 const App: React.FC = () => {
   useEffect(() => {
     initializeAdmob();
-    hookUpServer();
-    testServer();
   }, []);
 
   return (
@@ -85,6 +74,11 @@ const AppWithTabs: React.FC = () => {
 
   const hideTabs = noTabsRoutes.some(route => location.pathname.startsWith(route));
 
+
+  // recuperation de si l user a deha vu l onbording page ou pas
+  const haveSeen_Onbording = localStorage.getItem("haveSeen_onbordingPage");
+
+
   return (
     <IonTabs>
       <IonRouterOutlet>
@@ -94,9 +88,23 @@ const AppWithTabs: React.FC = () => {
         <Route exact path="/tab1" component={Tab1} />
         <Route exact path="/tab2" component={Tab2} />
         <Route path="/tab3" component={Tab3} />
-        <Route exact path="/">
-          <Redirect to="/tab2" />
-        </Route>
+
+
+
+        {/* redirecttion dynamique en fonction de si 
+l user a deja vu l ' onbording page ou pas */}
+        {haveSeen_Onbording ? (
+          <Route exact path="/">
+            <Redirect to="/tab2" />
+          </Route>
+        )
+          : (
+            <Route exact path="/">
+              <Redirect to="/onbordingpage" />
+            </Route>
+          )
+
+        }
       </IonRouterOutlet>
 
       {!hideTabs && (

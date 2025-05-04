@@ -1,7 +1,5 @@
 //////ici on recupere juste les donnes json en local dans le ficher concerner et on le modifie en fonction du jour 
 ////il n y a rien vers une api exterieur 
-import Lottie from "lottie-react";
-import click from "../assets/lottieAnimations/click.json";
 
 
 import axios from 'axios'
@@ -19,13 +17,24 @@ import { useHistory } from 'react-router';
 function KeyWordData() {
 
     const history = useHistory();
+    ////state de day index et qui en meme temps return le local storage
+    const [dayIndex, setDayIndex] = useState(() => {
+        return Number(localStorage.getItem('dayIndex')) || 1;
+    });
 
+    // fonction pour incrementer le jour
+    const incrementDayIndex = () => {
+        setDayIndex(prev => {
+            const newIndex = prev + 1;
+            localStorage.setItem('dayIndex', String(newIndex));
+            return newIndex;
+        });
+    }
 
     ////partie de use effect
     useEffect(() => {
         // recuperer le dernier jour enregistré dans le local storage
         const lastDay = localStorage.getItem('today');
-
         // recuperer le jour actuel
         const today = daysjs().format('YYYY-MM-DD');
 
@@ -44,35 +53,13 @@ function KeyWordData() {
     }, [])
 
 
-    // fonction pour incrementer le jour
-    const incrementDayIndex = () => {
 
 
-
-
-
-        setDayIndex(prev => {
-            const newIndex = prev + 1;
-            localStorage.setItem('dayIndex', String(newIndex));
-            return newIndex;
-        });
-
-
-
-
-
-    }
-
-
-    const [dayIndex, setDayIndex] = useState(() => {
-        return Number(localStorage.getItem('dayIndex')) || 1;
-    });
 
 
     // use state pour recuperer le mot et la data correspondante de la journee actuel
     const [userkeyWord, setUserkeyWord] = useState("");
     const [significationOfKeyWord, setSignificationOfKeyWord] = useState("");
-
 
 
     ////recupeer l index du jour
@@ -82,10 +69,11 @@ function KeyWordData() {
 
         const serverResponse = response.data[`day${dayIndex}`];
 
-        const { word, signification } = serverResponse;
+        const { word, signification, id } = serverResponse;
         // on met la reponse dans la constante de userkeyWord
 
 
+        console.log("i m here", id);
         setUserkeyWord(word || "");
         setSignificationOfKeyWord(signification || "");
 
@@ -93,7 +81,7 @@ function KeyWordData() {
     }
 
     const navToCourses = () => {
-        history.push("/courses/123");
+        history.push(`/courses/${dayIndex}`);
     }
     return (
         <div className='keywordContainer'>
@@ -121,12 +109,7 @@ function KeyWordData() {
                 <div
 
                     className='showcase_button'
-
-
                 >
-
-
-                    {/* <BadgeInfo size={30} /> */}
                     <motion.button
                         whileTap={{ scale: 2.9 }}
 

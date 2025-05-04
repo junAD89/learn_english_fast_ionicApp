@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -15,9 +15,13 @@ import { addDoc, collection } from "firebase/firestore";
 import { IonButton } from '@ionic/react';
 
 import db from "../FirebaseConfig/fire-config";
+import PushNotificationPerms from '../components/PushNotificationPerms/PushNotificationPerms';
 const OnbordingPage: React.FC = () => {
     const history = useHistory();
 
+    const [howDiscover, setHowDiscover] = useState("");
+
+    const [userUtility, setUserUtility] = useState("")
 
     const swiperRef = useRef<SwiperType | null>(null);
 
@@ -25,6 +29,36 @@ const OnbordingPage: React.FC = () => {
         if (swiperRef.current) {
             swiperRef.current.slideNext();
         }
+    }
+
+
+    const howDiscoverFunction = async () => {
+        try {
+            const docRef = await addDoc(collection(db, "howDiscoverApp"), {
+                reasons: howDiscover
+            });
+            console.log("added")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const utilityFunction = async () => {
+        try {
+            const docRef = await addDoc(collection(db, "utility_for_user"), {
+                utility: userUtility
+            })
+        } catch (error) {
+
+        }
+    }
+
+    const finish = () => {
+        history.replace("/tab2")
+        ///mise en local storage du have seen pour l utiliser dans la redirection dynamique dans app tsx  
+        localStorage.setItem("haveSeen_onbordingPage", "true")
+        utilityFunction();
+        howDiscoverFunction()
     }
     return (
         <div className="onboarding-wrapper">
@@ -38,6 +72,7 @@ const OnbordingPage: React.FC = () => {
                 pagination={true}
                 spaceBetween={0}
                 slidesPerView={1}
+                allowTouchMove={false}
                 className="onboarding-swiper"
             >
                 <SwiperSlide>
@@ -55,7 +90,14 @@ const OnbordingPage: React.FC = () => {
                             mots anglais
                             pour ameliorer votre vocabulaire
                         </p>
-                    </div >
+                    </div>
+                    <IonButton
+                        onClick={() => {
+                            swiperToNext();
+                        }}
+                    >
+                        Commencons
+                    </IonButton>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
@@ -72,7 +114,8 @@ const OnbordingPage: React.FC = () => {
                             <motion.div className="question-option selected scale-in">
                                 <div
                                     onClick={() => {
-                                        console.log("Whatsapp")
+                                        swiperToNext();
+                                        setHowDiscover("status_whatsapp")
                                     }}
                                     className="option-content">
 
@@ -88,11 +131,14 @@ const OnbordingPage: React.FC = () => {
                                     </div>
                                 </div>
                             </motion.div>
+
+
                             <motion.div className="question-option scale-in"
                             >
                                 <div
                                     onClick={() => {
-                                        console.log("Friend")
+                                        swiperToNext();
+                                        setHowDiscover("friend_send")
                                     }}
                                     className="option-content">
                                     <div className="option-icon">💝</div>
@@ -104,7 +150,8 @@ const OnbordingPage: React.FC = () => {
                             <motion.div className="question-option scale-in">
                                 <div
                                     onClick={() => {
-                                        console.log("Reddit")
+                                        swiperToNext();
+                                        setHowDiscover("reddit_community")
                                     }}
                                     className="option-content">
                                     <div className="option-icon">✨</div>
@@ -150,7 +197,8 @@ const OnbordingPage: React.FC = () => {
                             <motion.div className="question-option selected scale-in">
                                 <div
                                     onClick={() => {
-                                        console.log("Whatsapp")
+                                        swiperToNext();
+                                        setUserUtility("Apprendre_quelque_mot_par_jour")
                                     }}
                                     className="option-content">
 
@@ -170,7 +218,8 @@ const OnbordingPage: React.FC = () => {
                             >
                                 <div
                                     onClick={() => {
-                                        console.log("Friend")
+                                        swiperToNext()
+                                        setUserUtility("juste_pour_voir")
                                     }}
                                     className="option-content">
                                     <div className="option-text">
@@ -183,7 +232,8 @@ const OnbordingPage: React.FC = () => {
                             <motion.div className="question-option scale-in">
                                 <div
                                     onClick={() => {
-                                        console.log("Reddit")
+                                        swiperToNext();
+                                        setUserUtility("avoir_de_la_motivation")
                                     }}
                                     className="option-content">
                                     <div className="option-text">
@@ -196,31 +246,45 @@ const OnbordingPage: React.FC = () => {
                         </div>
                     </div>
                 </SwiperSlide>
+
+
+
+
+                <SwiperSlide
+                    style={{
+                        display: "flex",
+                        justifyContent: 'center',
+                    }}
+                >
+                    <div
+                        onClick={() => {
+                            finish()
+                        }}>
+
+                        <PushNotificationPerms />
+
+                    </div>
+                    {/* <button
+                        style={{
+                            marginTop: '50vh',
+                            backgroundColor: "aliceblue",
+                            color: 'black',
+                            padding: "20px 20px",
+                            borderRadius: '20px',
+                            fontSize: '25px',
+                            position: 'absolute',
+                        }}
+
+                    >
+                        Finish
+                    </button> */}
+
+                </SwiperSlide>
+
+
+
             </Swiper>
 
-            <button
-                onClick={() => {
-                    swiperToNext();
-                }}
-            >
-                Aller au slide suivant
-            </button>
-
-
-            <IonButton
-                onClick={async () => {
-                    try {
-                        const docRef = await addDoc(collection(db, "howDiscoverApp"), {
-                            reasons: "facebook",
-                        });
-                        console.log("Document ajouté avec succès");
-                    } catch (error) {
-                        console.error("Erreur lors de l'ajout du document : ", error);
-                    }
-                }}
-            >
-                Add doc
-            </IonButton>
 
         </div>
 

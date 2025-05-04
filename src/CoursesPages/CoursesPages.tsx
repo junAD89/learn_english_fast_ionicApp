@@ -21,12 +21,11 @@ export default function CoursesPages() {
 
     return (
         <IonPage>
-            {/* <h1>
+            <h1>
                 id: {id}
             </h1>
 
-            <div>CoursesPages</div>
-            <IonTabBar>
+            {/* <IonTabBar>
                 <IonTabButton tab='/tab2' href='/tab2'>
                     VALIDER
                 </IonTabButton>

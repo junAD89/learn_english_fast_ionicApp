@@ -1,7 +1,9 @@
 import { ActionPerformed, PushNotifications, PushNotificationSchema, Token } from "@capacitor/push-notifications"
-import { IonButton } from "@ionic/react";
+import { IonButton, IonCard, IonContent, IonHeader, IonPage } from "@ionic/react";
+import { IdCard } from "lucide-react";
 import { useEffect } from "react";
 
+import './PushNotificationPerms.css'
 const PushNotificationPerms = () => {
 
     const initPushNotifications = async () => {
@@ -50,7 +52,13 @@ const PushNotificationPerms = () => {
     // }, []);
 
     return (
-        <div>
+        <IonPage>
+            <IonHeader>
+                <IonCard>
+                    On veut te rapeller de t'entrainer !
+                </IonCard>
+            </IonHeader>
+
             <IonButton
                 onClick={() => {
                     initPushNotifications();
@@ -59,7 +67,7 @@ const PushNotificationPerms = () => {
             >
                 Activer les notifications
             </IonButton>
-        </div>
+        </IonPage>
     )
 }
 

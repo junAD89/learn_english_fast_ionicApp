@@ -1,0 +1,18 @@
+ion-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-card {
+    padding: 0px 30px;
+    background-color: rgb(251, 251, 251);
+    color: black;
+    width: 300px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 10vh;
+}
