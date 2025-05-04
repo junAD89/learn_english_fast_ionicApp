@@ -39,6 +39,7 @@ const Tab2: React.FC = () => {
 
 
 
+
   ////demander la permission a l user 
 
   const checkPermission = async () => {
