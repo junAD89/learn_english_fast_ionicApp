@@ -130,22 +130,12 @@ const Tab2: React.FC = () => {
 
 
 
-
-
-
-
       <div>
-
-
-
 
         {/* pour obtenir le mots de data json en local en fonction du jour */}
         <KeyWordData />
 
-
         {/* pour contacter le vrai serveur en ligne */}
-
-
 
       </div>
       {/* <AdInterticial /> */}
