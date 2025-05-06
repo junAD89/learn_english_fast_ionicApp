@@ -29,6 +29,7 @@ import { useHistory } from 'react-router';
 import { StreakContext } from "../Context/StreakContext/StreakContext";
 
 
+import dayjs from 'dayjs';
 const Tab2: React.FC = () => {
 
 
@@ -36,13 +37,21 @@ const Tab2: React.FC = () => {
   ///importation des contextes
   const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
 
-  const { streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber } = useContext(StreakContext);
+  const { streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber, checkStreak } = useContext(StreakContext);
 
 
   const { serverResponse, setServerResponse } = useContext(ServerResponseContext)
 
 
+  useEffect(() => {
+    localStorage.setItem("blabla", String(dayjs()))
 
+    const date = dayjs(localStorage.getItem("blabla"));
+    // const date1 = dayjs('2019-01-27')
+    const date2 = dayjs('2025-05-04')
+    // alert(date.diff(date2, "day")) // 20214000000 default milliseconds
+
+  }, [])
 
 
 
@@ -136,7 +145,13 @@ const Tab2: React.FC = () => {
         </div>
       </IonToolbar>
 
-
+      <IonButton
+        onClick={() => {
+          checkStreak()
+        }}
+      >
+        Salut
+      </IonButton>
 
 
       <div>
@@ -151,23 +166,11 @@ const Tab2: React.FC = () => {
 
       {/* <AdBanner /> */}
 
+
+
     </IonPage>
 
-    // <div
-    //   style={{
-    //     marginTop: '40vh',
-    //   }}>
-    //   <h1>
-    //     {streakNumber}
-    //   </h1>
-    //   <IonButton
-    //     onClick={() => {
-    //       incrementStreakNumber()
-    //     }}
-    //   >
-    //     Check
-    //   </IonButton>
-    // </div>
+
   );
 };
 

@@ -6,6 +6,7 @@ export type StreakContextType = {
     setStreakNumber: (value: number) => void;
     incrementStreakNumber: () => void;
     decrementStreakNumber: () => void;
+    checkStreak: () => void;
 };
 
 export const StreakContext = createContext<StreakContextType>({
@@ -13,6 +14,7 @@ export const StreakContext = createContext<StreakContextType>({
     setStreakNumber: (value: number) => { },
     incrementStreakNumber: () => { },
     decrementStreakNumber: () => { },
+    checkStreak: () => { }
 });
 
 type Props = {
@@ -23,56 +25,113 @@ export const StreakContextProvider = ({ children }: Props) => {
     const [streakNumber, setStreakNumber] = useState(() => {
         const getStreakNumber_localStorage = Number(localStorage.getItem("Number_Of_streak"));
         return getStreakNumber_localStorage || 0;
+
+
+
     });
 
     const incrementStreakNumber = () => {
-        setStreakNumber((prev) => prev + 1);
-    };
+        setStreakNumber(prev => {
+            const newStreak = prev + 1;
 
+            return newStreak;
+        })
+    }
     const decrementStreakNumber = () => {
-        setStreakNumber((prev) => prev - 1);
-    };
+        setStreakNumber(prev => {
+            const newStreak = prev + 1;
 
-    useEffect(() => {
-        const nowDate = dayjs();
-        const lastDate = localStorage.getItem("streakDate");
+            return newStreak;
+        })
+    }
 
-        console.log("lastDate", lastDate);
-        console.log("new date", nowDate);
 
-        if (lastDate) {
-            const lastDateParsed = dayjs(lastDate);
-            if (lastDateParsed.isValid()) {
-                const difference = nowDate.diff(lastDateParsed, "day");
-                console.log("difference", difference);
+    // useEffect(() => {
+    //     // creation de date puis on le stocke dans le local storage
 
-                if (difference > 1) {
-                    // Incrémente le streak uniquement une fois
-                    const newStreakNumber = streakNumber + 1;
-                    localStorage.setItem("streakDate", nowDate.toString());
-                    localStorage.setItem("Number_Of_streak", newStreakNumber.toString());
-                    setStreakNumber(newStreakNumber);
-                } else if (difference === 1) {
-                    // Récupère le streak actuel sans changer
-                    localStorage.setItem("streakDate", nowDate.toString());
-                    localStorage.setItem("Number_Of_streak", streakNumber.toString());
-                } else {
-                    setStreakNumber(0);
-                    localStorage.setItem("Number_Of_streak", "1");
-                }
-            } else {
-                console.log("Invalid lastDate format");
-            }
-        } else {
-            console.log("No lastDate in localStorage");
-            localStorage.setItem("streakDate", nowDate.toString());
-            localStorage.setItem("Number_Of_streak", "1");
+    //     const getDate = (localStorage.getItem("newDate"));
+
+    //     if (!getDate) {
+    //         console.log("NOt existe");
+
+    //         //stockage de la date du jour meme au format iso  si il n  y a pas de date dans le local storage
+    //         const newDate = localStorage.setItem("newDate", dayjs().toISOString());
+
+
+    //     }
+
+    //     const difference = dayjs(getDate).diff(dayjs(), 'day');
+    //     // const difference = dayjs().diff(dayjs(getDate), 'day');
+
+
+    //     // alert(difference)
+
+    //     if (difference == 1) {
+    //         console.log("Nouveau streak");
+    //         incrementStreakNumber();
+    //         localStorage.setItem("Number_Of_streak", String(streakNumber))
+    //         localStorage.setItem("newDate", dayjs().toISOString());
+
+    //     }
+    //     else if (difference == 0) {
+    //         alert("C est le meme jour");
+    //     }
+
+    //     else {
+    //         setStreakNumber(0)
+    //         localStorage.setItem("Number_Of_streak", String(streakNumber))
+
+    //         console.log("Vous avez rate un jour");
+    //         localStorage.setItem("newDate", dayjs().toISOString());
+    //     }
+
+    //     console.log(difference)
+    //     // const lastDate = localStorage.getItem("newDate") || dayjs();
+
+    //     // console.log("recuperation de la date  qui est :", lastDate)
+    // }, [])
+
+    const checkStreak = () => {
+
+        const getDate = (localStorage.getItem("newDate"));
+
+        if (!getDate) {
+            console.log("NOt existe");
+
+            //stockage de la date du jour meme au format iso  si il n  y a pas de date dans le local storage
+            localStorage.setItem("newDate", dayjs().format('YYYY-MM-DD'));
+
+
         }
-    }, []);
-    // Le tableau des dépendances est vide pour que l'effet s'exécute une seule fois au démarrage
+
+        // const difference = dayjs(getDate).diff(dayjs(), 'day');
+        const difference = dayjs().diff(dayjs(getDate), 'day');
+
+
+        alert(difference)
+
+        if (difference == -1) {
+            alert("Nouveau streak");
+            incrementStreakNumber();
+            localStorage.setItem("Number_Of_streak", String(streakNumber))
+
+        }
+        else if (difference == 0) {
+            alert("C est le meme jour");
+        }
+
+        else {
+            setStreakNumber(0)
+            localStorage.setItem("Number_Of_streak", String(streakNumber))
+
+            alert("Vous avez rate un jour");
+        }
+
+        console.log(difference)
+    }
 
     return (
-        <StreakContext.Provider value={{ streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber }}>
+        <StreakContext.Provider value={{ streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber, checkStreak }}>
             {children}
         </StreakContext.Provider>
     );
