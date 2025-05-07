@@ -46,88 +46,35 @@ export const StreakContextProvider = ({ children }: Props) => {
     }
 
 
-    // useEffect(() => {
-    //     // creation de date puis on le stocke dans le local storage
-
-    //     const getDate = (localStorage.getItem("newDate"));
-
-    //     if (!getDate) {
-    //         console.log("NOt existe");
-
-    //         //stockage de la date du jour meme au format iso  si il n  y a pas de date dans le local storage
-    //         const newDate = localStorage.setItem("newDate", dayjs().toISOString());
-
-
-    //     }
-
-    //     const difference = dayjs(getDate).diff(dayjs(), 'day');
-    //     // const difference = dayjs().diff(dayjs(getDate), 'day');
-
-
-    //     // alert(difference)
-
-    //     if (difference == 1) {
-    //         console.log("Nouveau streak");
-    //         incrementStreakNumber();
-    //         localStorage.setItem("Number_Of_streak", String(streakNumber))
-    //         localStorage.setItem("newDate", dayjs().toISOString());
-
-    //     }
-    //     else if (difference == 0) {
-    //         alert("C est le meme jour");
-    //     }
-
-    //     else {
-    //         setStreakNumber(0)
-    //         localStorage.setItem("Number_Of_streak", String(streakNumber))
-
-    //         console.log("Vous avez rate un jour");
-    //         localStorage.setItem("newDate", dayjs().toISOString());
-    //     }
-
-    //     console.log(difference)
-    //     // const lastDate = localStorage.getItem("newDate") || dayjs();
-
-    //     // console.log("recuperation de la date  qui est :", lastDate)
-    // }, [])
-
     const checkStreak = () => {
-
-        const getDate = (localStorage.getItem("newDate"));
+        const getDate = localStorage.getItem("newDate");
 
         if (!getDate) {
             console.log("NOt existe");
-
-            //stockage de la date du jour meme au format iso  si il n  y a pas de date dans le local storage
             localStorage.setItem("newDate", dayjs().format('YYYY-MM-DD'));
-
-
+            return;
         }
 
-        // const difference = dayjs(getDate).diff(dayjs(), 'day');
-        const difference = dayjs().diff(dayjs(getDate), 'day');
+        // Calculer la différence en jours entre aujourd'hui et la dernière date enregistrée
+        const lastDate = dayjs(getDate);
+        const today = dayjs().startOf('day');
+        const difference = lastDate.diff(today, 'day');
 
-
-        alert(difference)
-
-        if (difference == -1) {
+        if (difference === 1) {
             alert("Nouveau streak");
             incrementStreakNumber();
-            localStorage.setItem("Number_Of_streak", String(streakNumber))
-
+            localStorage.setItem("newDate", today.format('YYYY-MM-DD'));
         }
-        else if (difference == 0) {
-            alert("C est le meme jour");
+        else if (difference === 0) {
+            alert("C'est le même jour");
         }
-
         else {
-            setStreakNumber(0)
-            localStorage.setItem("Number_Of_streak", String(streakNumber))
-
-            alert("Vous avez rate un jour");
+            setStreakNumber(0);
+            localStorage.setItem("newDate", today.format('YYYY-MM-DD'));
+            alert("Vous avez raté un jour");
         }
 
-        console.log(difference)
+        console.log("Différence en jours:", difference);
     }
 
     return (
