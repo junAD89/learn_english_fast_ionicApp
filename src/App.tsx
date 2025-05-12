@@ -104,7 +104,7 @@ const AppWithTabs: React.FC = () => {
 l user a deja vu l ' onbording page ou pas */}
         {haveSeen_Onbording ? (
           <Route exact path="/">
-            <Redirect to="/hub" />
+            <Redirect to="/tab2" />
           </Route>
         )
           : (

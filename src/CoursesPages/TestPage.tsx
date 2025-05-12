@@ -4,6 +4,7 @@ import axios from "axios";
 import "./TestPage.css";
 import { Languages } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion, scale } from "framer-motion";
 
 export default function TestPage() {
 
@@ -12,6 +13,10 @@ export default function TestPage() {
     const [messages, setMessages] = useState<{ speaker: string; text: string }[]>([]);
 
     const [currentIndex, setCurrentIndex] = useState(0);
+
+
+
+    const [showQuestion, setShowQuestion] = useState(false)
 
     const getData = async () => {
 
@@ -25,6 +30,7 @@ export default function TestPage() {
                 const { speaker, text } = data[currentIndex];
 
 
+
                 setSpeakerName(speaker);
                 setSpeakerText(text);
 
@@ -32,6 +38,9 @@ export default function TestPage() {
 
                 console.log(speaker, text)
                 setCurrentIndex((prev) => prev + 1);
+            }
+            else {
+                setShowQuestion(true)
             }
 
 
@@ -41,31 +50,31 @@ export default function TestPage() {
             console.error(error);
 
         }
+
+
+
     }
 
 
     function show() {
         getData();
+
     }
+
+    useEffect(() => {
+        getData();
+
+
+    }, [])
+
+
     return (
         <IonPage>
 
-            <h1 style={{ color: "white" }}>
-                {speakerName}:
-
-                {speakerText}
-            </h1>
 
             <IonContent>
 
 
-                <IonButton
-                    onClick={() => {
-                        show();
-                    }}
-                >
-                    show
-                </IonButton>
                 <div className="discusions_contaner ">
 
 
@@ -83,10 +92,32 @@ export default function TestPage() {
                             <Languages size={39} />
                         </div>
                     ))}
+
+                    {showQuestion &&
+                        <div>
+
+                        </div>
+
+                    }
                 </div>
 
 
+
+
+
+                <motion.div
+                    whileTap={{ scale: '1.5px' }}
+                    className="button_container">
+                    <button
+
+                        onClick={() => {
+                            show();
+                        }}
+                    >
+                        Continuer
+                    </button>
+                </motion.div>
             </IonContent>
-        </IonPage>
+        </IonPage >
     )
 }

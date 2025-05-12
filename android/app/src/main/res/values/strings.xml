@@ -4,5 +4,5 @@
     <string name="title_activity_main">FastEnglish</string>
     <string name="package_name">com.studiesapp.nom</string>
     <string name="custom_url_scheme">com.studiesapp.nom</string>
-        <string name="admob_app_id">ca-app-pub-9593128253360038~7444505707</string>
+            <string name="admob_app_id">ca-app-pub-9593128253360038~7444505707</string>
 </resources>

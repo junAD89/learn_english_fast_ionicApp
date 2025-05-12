@@ -1,177 +1,35 @@
-import './Tab2.css';
-import KeyWordData from '../keyWord/KeyWord';
-import { useContext, useEffect, useState } from 'react';
-import { DiamonContext } from '../Context/DiamonContext/DiamonContext';
-
-import { LocalNotifications } from "@capacitor/local-notifications";
-
-
-import Modal from "react-modal";
-import { ServerResponseContext } from '../Context/ServerResponseContext';
-import AdBanner from '../AdmobPages/AdBanner';
-import AdInterticial from '../AdmobPages/AdInterticial';
-import axios from 'axios';
-
-
-import Lottie from "lottie-react";
-import click from "../assets/lottieAnimations/click.json";
-
-// import animaTion from "../assets/lottieAnimations";
-
-import thunder from "../assets/lottieAnimations/thunder.json";
-import diamond from "../assets/lottieAnimations/diamond.json";
-import fire from "../assets/lottieAnimations/fire.json";
-import clickv2 from "../assets/lottieAnimations/clickv2.json";
-import { IonButton, IonPage, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react'
+import "./Tab2.css";
 import { useHistory } from 'react-router';
-
-
-import { StreakContext } from "../Context/StreakContext/StreakContext";
-
-
-import dayjs from 'dayjs';
 const Tab2: React.FC = () => {
 
 
-
-  ///importation des contextes
-  const { diamondNumber, setDiamondNumber, incrementDiamonNumber, decrementDiamonNumber } = useContext(DiamonContext)
-
-  const { streakNumber, setStreakNumber, incrementStreakNumber, decrementStreakNumber, checkStreak } = useContext(StreakContext);
-
-
-  const { serverResponse, setServerResponse } = useContext(ServerResponseContext)
-
-
-  useEffect(() => {
-    localStorage.setItem("blabla", String(dayjs()))
-
-    const date = dayjs(localStorage.getItem("blabla"));
-    // const date1 = dayjs('2019-01-27')
-    const date2 = dayjs('2025-05-04')
-    // alert(date.diff(date2, "day")) // 20214000000 default milliseconds
-
-  }, [])
-
-
-
-
-
-  ////demander la permission a l user 
-
-  const checkPermission = async () => {
-    const permission = await LocalNotifications.requestPermissions();
-
-    alert("voici la permission donne :" + JSON.stringify(permission));
-  }
-
-
-
-
-
-  const [isOpen, setIsOpen] = useState(false);
-
-
-
-
-
-  useEffect(() => {
-    if (serverResponse) {
-      setIsOpen(true);
-    }
-  }, [serverResponse]);
-
-
-
-
-
-
   const history = useHistory();
-
-
+  const handleClick = () => {
+    history.push("/testPage");
+  }
   return (
     <IonPage>
 
-      <IonToolbar>
+      <IonContent>
         <div
-          style={{
-            display: 'flex',
-            marginTop: '10px',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            width: '100%',
-            color: "white"
-          }}
-        >
-
+          onClick={handleClick}
+          className='level_all_container'>
           <div
-            onClick={() => {
-              history.push("/onbordingpage")
-            }}
-            style={{
-              display: "flex"
-            }}>
-            <Lottie animationData={fire} style={{
-              width: '50px',
-              height: "59px"
-            }} />
-            <h1>
-              {streakNumber}
-            </h1>
+            className='level_container'
+          >
+            <img
+              className='level_container_image'
+              src="https://imgs.search.brave.com/R-y6i1IMtgLSSII9GzS1fYPRr_y6FC3x2AcBFZDb1v0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cmV1dGVycy5jb20v/cmVzaXplci92Mi9Y/VEhHRU9VR1JGTEtC/SzdDR1lVN0xRQUZQ/US5qcGc_YXV0aD1l/ZGM2MjJlZmY1ZWFi/NjEwMWU1NzMxNGUy/MGUwMWFjMDQ3MTk1/Njk2NWQwZGYxYzdh/ZjA3ZTcwYjEwZmQ5/OTU3JndpZHRoPTQ4/MCZxdWFsaXR5PTgw" alt="" />
+            <h2>
+              Level 1
+            </h2>
           </div>
-          <div style={{
-            display: "flex"
-          }}>
-            <Lottie animationData={diamond} style={{
-              width: '100px',
-              height: "59px"
-            }} />
-
-            <h1>
-              20
-            </h1>
-          </div>
-          {/* <div style={{
-            display: "flex"
-          }}>
-            <Lottie animationData={thunder} style={{
-              width: '100px',
-              height: "59px"
-            }} />
-            <h1>
-              10
-            </h1>
-          </div> */}
         </div>
-      </IonToolbar>
-
-      <IonButton
-        onClick={() => {
-          checkStreak()
-        }}
-      >
-        Salut
-      </IonButton>
-
-
-      <div>
-
-        {/* pour obtenir le mots de data json en local en fonction du jour */}
-        <KeyWordData />
-
-        {/* pour contacter le vrai serveur en ligne */}
-
-      </div>
-      {/* <AdInterticial /> */}
-
-      {/* <AdBanner /> */}
-
-
-
+      </IonContent>
     </IonPage>
+  )
+}
 
-
-  );
-};
 
 export default Tab2;
