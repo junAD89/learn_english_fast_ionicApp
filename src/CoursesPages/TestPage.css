@@ -1,0 +1,46 @@
+.discusions_contaner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5vh;
+
+}
+
+.avatar_img_container {
+    display: flex;
+    margin-left: 5vh;
+    margin: 10px;
+}
+
+.avatar_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.dialog {
+    width: 200px;
+    height: 200px;
+
+}
+
+.dialog_container {
+    background-color: aliceblue;
+    color: black;
+    border-radius: 20px;
+
+
+
+    flex-direction: row;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: center;
+
+
+}
+
+.dialog_avatar_name {
+    text-decoration: underline rgb(17, 0, 255);
+    text-underline-offset: 1px;
+}

@@ -1,0 +1,32 @@
+.level_all_container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    margin-top: 5vh;
+}
+
+.level_container {
+    border: 20px red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 20px 20px;
+}
+
+.level_container_image {
+    width: 200px;
+    height: 200px;
+
+
+    border: 0.5rem solid rgb(255, 255, 255);
+    /* outline: 0.5rem solid khaki; */
+    /* box-shadow: 0 0 0 2rem skyblue; */
+
+
+    border-radius: 50%;
+
+}

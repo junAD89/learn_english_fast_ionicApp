@@ -37,6 +37,8 @@ import OnbordingPage from './Onbording/OnbordingPage';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { StreakContextProvider } from './Context/StreakContext/StreakContext';
+import HubPages from './HubPages/HubPages';
+import TestPage from './CoursesPages/TestPage';
 
 setupIonicReact();
 
@@ -72,7 +74,9 @@ const AppWithTabs: React.FC = () => {
 
   const noTabsRoutes = [
     "/onbordingpage",
-    "/courses"
+    "/courses",
+    "/hub",
+    "/testPage",
   ];
 
   const hideTabs = noTabsRoutes.some(route => location.pathname.startsWith(route));
@@ -85,6 +89,8 @@ const AppWithTabs: React.FC = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
+        <Route exact path="/testPage" component={TestPage} />
+        <Route exact path="/hub" component={HubPages} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />
         <Route exact path="/courses/:idParams" component={CoursesPages} />
         <Route exact path="/json" component={KeyWordData} />
@@ -98,7 +104,7 @@ const AppWithTabs: React.FC = () => {
 l user a deja vu l ' onbording page ou pas */}
         {haveSeen_Onbording ? (
           <Route exact path="/">
-            <Redirect to="/tab2" />
+            <Redirect to="/hub" />
           </Route>
         )
           : (
