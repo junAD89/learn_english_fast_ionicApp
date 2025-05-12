@@ -56,10 +56,16 @@
 .question_button {
     color: black;
     background-color: rgb(19, 191, 235) !important;
-    box-shadow: 0px 10px rgba(236, 215, 215, 0.8);
+
+
+    width: 200px;
+    height: 50px;
+
+
+    border-radius: 20px;
 }
 
-button {
+.start_button {
     color: black;
     background-color: rgb(236, 215, 215);
     box-shadow: 0px 10px rgba(236, 215, 215, 0.8);

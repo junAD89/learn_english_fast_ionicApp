@@ -1,18 +1,22 @@
 [
     {
         "speaker": "mark",
-        "text": "HI everyone"
+        "text": "hi you wouldn't have seen my bag ?",
+        "img": "chapiterOne/avatar/mark.png"
     },
     {
         "speaker": "jessie",
-        "text": "HI Mark"
+        "text": "Have you search in your bag ?",
+        "img": "chapiterOne/avatar/jessie.png"
     },
     {
         "speaker": "mark",
-        "text": "How are you?"
+        "text": "someone stole it!",
+        "img": "chapiterOne/avatar/mark.png"
     },
     {
         "speaker": "jessie",
-        "text": "I'm good, thanks!"
+        "text": "oh sorry I didn't see it",
+        "img": "chapiterOne/avatar/jessie.png"
     }
 ]

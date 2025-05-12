@@ -10,7 +10,7 @@ export default function TestPage() {
 
     const [speakerName, setSpeakerName] = useState("");
     const [speakerText, setSpeakerText] = useState("");
-    const [messages, setMessages] = useState<{ speaker: string; text: string }[]>([]);
+    const [messages, setMessages] = useState<{ speaker: string; text: string; avatarImage: string }[]>([]);
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -19,22 +19,17 @@ export default function TestPage() {
     const [showQuestion, setShowQuestion] = useState(false)
 
     const getData = async () => {
-
         try {
             const response = await axios.get("/chapiterOne/chapiterOneDialog.json")
-
             const data = response.data;
 
-
             if (currentIndex < data.length) {
-                const { speaker, text } = data[currentIndex];
-
-
+                const { speaker, text, img } = data[currentIndex];
 
                 setSpeakerName(speaker);
                 setSpeakerText(text);
 
-                setMessages((prev) => [...prev, { speaker, text }]);
+                setMessages((prev) => [...prev, { speaker, text, avatarImage: img }]);
 
                 console.log(speaker, text)
                 setCurrentIndex((prev) => prev + 1);
@@ -43,16 +38,11 @@ export default function TestPage() {
                 setShowQuestion(true)
             }
 
-
             return data;
         }
         catch (error) {
             console.error(error);
-
         }
-
-
-
     }
 
 
@@ -80,10 +70,11 @@ export default function TestPage() {
 
 
 
+
                     {messages.map((msg, index) => (
                         <div className="dialog" key={index}>
                             <div className="avatar_img_container">
-                                <img className="avatar_img" src="..." />
+                                <img className="avatar_img" src={msg.avatarImage} />
                             </div>
                             <div className="dialog_container">
                                 <p className="dialog_avatar_name">{msg.speaker}</p>
@@ -117,6 +108,8 @@ export default function TestPage() {
                                 whileTap={{ scale: '1.5px' }}
                                 className="button_container">
                                 <button
+
+                                    className="start_button"
 
                                     onClick={() => {
                                         show();
