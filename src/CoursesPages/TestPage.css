@@ -53,6 +53,12 @@
     align-items: center;
 }
 
+.question_button {
+    color: black;
+    background-color: rgb(19, 191, 235) !important;
+    box-shadow: 0px 10px rgba(236, 215, 215, 0.8);
+}
+
 button {
     color: black;
     background-color: rgb(236, 215, 215);
@@ -63,4 +69,11 @@ button {
 
     border-radius: 20px;
 
+}
+
+.question_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

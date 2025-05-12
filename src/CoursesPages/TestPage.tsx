@@ -93,30 +93,49 @@ export default function TestPage() {
                         </div>
                     ))}
 
-                    {showQuestion &&
+                    {showQuestion ?
+                        <div className="question_container">
+
+                            <h1>
+                                De quoi es qu'il parle?
+                            </h1>
+
+                            <button className="question_button">
+                                de sa bague de mariage
+                            </button>
+
+                            <button className="question_button">
+                                de sa voiture
+                            </button>
+
+                            <button className="question_button">
+                                de son sac a dos
+                            </button>
+                        </div> :
                         <div>
+                            <motion.div
+                                whileTap={{ scale: '1.5px' }}
+                                className="button_container">
+                                <button
+
+                                    onClick={() => {
+                                        show();
+                                    }}
+                                >
+                                    Continuer
+                                </button>
+                            </motion.div>
 
                         </div>
 
+
                     }
+
+
+
                 </div>
 
 
-
-
-
-                <motion.div
-                    whileTap={{ scale: '1.5px' }}
-                    className="button_container">
-                    <button
-
-                        onClick={() => {
-                            show();
-                        }}
-                    >
-                        Continuer
-                    </button>
-                </motion.div>
             </IonContent>
         </IonPage >
     )
