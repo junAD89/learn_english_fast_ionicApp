@@ -78,17 +78,8 @@ export default function TestPage() {
 
     return (
         <IonPage>
-
-
             <IonContent>
-
-
-                <div className="discusions_contaner ">
-
-
-
-
-
+                <div className="discusions_contaner">
                     {messages.map((msg, index) => (
                         <div className="dialog" key={index}>
                             <div className="avatar_img_container">
@@ -102,10 +93,9 @@ export default function TestPage() {
                         </div>
                     ))}
 
-                    {showQuestion && (
+                    {showQuestion ? (
                         <div className="question_container">
                             <h1>De quoi es qu'il parle?</h1>
-
                             {questionList.map((question, index) => (
                                 <div key={index}>
                                     <button className="question_button">
@@ -120,34 +110,24 @@ export default function TestPage() {
                                 </div>
                             ))}
                         </div>
+                    ) : (
+                        <div>
+                            <motion.div
+                                whileTap={{ scale: '1.2px' }}
+                                className="button_container">
+                                <button
+                                    className="start_button"
+                                    onClick={() => {
+                                        show();
+                                    }}
+                                >
+                                    Continuer
+                                </button>
+                            </motion.div>
+                        </div>
                     )}
-                    <div />
                 </div>
-
-
-                : (
-                <div>
-                    <motion.div
-                        whileTap={{ scale: '1.2px' }}
-                        className="button_container">
-                        <button
-
-                            className="start_button"
-
-                            onClick={() => {
-                                show();
-                            }}
-                        >
-                            Continuer
-                        </button>
-                    </motion.div>
-
-                </div>
-                )
-
-
-
-            </IonContent >
-        </IonPage >
+            </IonContent>
+        </IonPage>
     )
 }
