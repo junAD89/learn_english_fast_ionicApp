@@ -31,3 +31,10 @@ yarn-error.log*
 .eslintcache
 
 resources/android/**/*
+
+google-services.json
+**/google-services.json
+android/app/google-services.json
+
+
+App.tsx

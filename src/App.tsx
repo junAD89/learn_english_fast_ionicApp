@@ -42,7 +42,8 @@ import TestPage from './CoursesPages/TestPage';
 import textSpeech from './text-speech';
 
 
-import firebaseConfig from "./FirebaseConfig/fire-config";
+import { firebaseConfig } from "./FirebaseConfig/fire-config";
+import { initializeApp } from 'firebase/app';
 setupIonicReact();
 
 const initializeAdmob = async () => {
@@ -50,6 +51,8 @@ const initializeAdmob = async () => {
     initializeForTesting: false,
   });
 };
+
+const app = initializeApp(firebaseConfig);
 
 
 
