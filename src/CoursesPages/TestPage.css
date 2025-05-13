@@ -2,24 +2,24 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 5vh;
+    margin-top: 2vh;
 
 }
 
 .avatar_img_container {
+
     display: flex;
-    margin-left: 5vh;
-    margin: 10px;
+    margin: 0px 0px;
 }
 
 .avatar_img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
 .dialog {
-    margin: 30px;
+    margin: 20px 5px;
     width: 500px;
     height: 70px;
 

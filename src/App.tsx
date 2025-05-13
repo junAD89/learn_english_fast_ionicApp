@@ -77,6 +77,7 @@ const AppWithTabs: React.FC = () => {
     "/courses",
     "/hub",
     "/testPage",
+    "/tab2"
   ];
 
   const hideTabs = noTabsRoutes.some(route => location.pathname.startsWith(route));

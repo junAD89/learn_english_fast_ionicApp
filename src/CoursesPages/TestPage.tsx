@@ -12,11 +12,12 @@ export default function TestPage() {
     const [speakerText, setSpeakerText] = useState("");
     const [messages, setMessages] = useState<{ speaker: string; text: string; avatarImage: string }[]>([]);
 
+    const [questionList, setQuestionList] = useState<{ reponse1: string; reponse2: string; reponse3: string }[]>([])
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
 
-    const [showQuestion, setShowQuestion] = useState(false)
+    const [showQuestion, setShowQuestion] = useState(false);
 
     const getData = async () => {
         try {
@@ -54,8 +55,25 @@ export default function TestPage() {
     useEffect(() => {
         getData();
 
+        getQuestions();
+
 
     }, [])
+
+    const getQuestions = async () => {
+        const response = await axios.get("chapiterOne/questionOne.json")
+
+        const data = response.data;
+
+        const { reponse1, reponse2, reponse3 } = data;
+
+        setQuestionList((prev) => [...prev, { reponse1, reponse2, reponse3 }]);
+
+
+        console.log(questionList)
+
+
+    }
 
 
     return (
@@ -84,52 +102,52 @@ export default function TestPage() {
                         </div>
                     ))}
 
-                    {showQuestion ?
+                    {showQuestion && (
                         <div className="question_container">
+                            <h1>De quoi es qu'il parle?</h1>
 
-                            <h1>
-                                De quoi es qu'il parle?
-                            </h1>
-
-                            <button className="question_button">
-                                de sa bague de mariage
-                            </button>
-
-                            <button className="question_button">
-                                de sa voiture
-                            </button>
-
-                            <button className="question_button">
-                                de son sac a dos
-                            </button>
-                        </div> :
-                        <div>
-                            <motion.div
-                                whileTap={{ scale: '1.5px' }}
-                                className="button_container">
-                                <button
-
-                                    className="start_button"
-
-                                    onClick={() => {
-                                        show();
-                                    }}
-                                >
-                                    Continuer
-                                </button>
-                            </motion.div>
-
+                            {questionList.map((question, index) => (
+                                <div key={index}>
+                                    <button className="question_button">
+                                        {question.reponse1}
+                                    </button>
+                                    <button className="question_button">
+                                        {question.reponse2}
+                                    </button>
+                                    <button className="question_button">
+                                        {question.reponse3}
+                                    </button>
+                                </div>
+                            ))}
                         </div>
-
-
-                    }
-
-
-
+                    )}
+                    <div />
                 </div>
 
 
-            </IonContent>
+                : (
+                <div>
+                    <motion.div
+                        whileTap={{ scale: '1.2px' }}
+                        className="button_container">
+                        <button
+
+                            className="start_button"
+
+                            onClick={() => {
+                                show();
+                            }}
+                        >
+                            Continuer
+                        </button>
+                    </motion.div>
+
+                </div>
+                )
+
+
+
+            </IonContent >
         </IonPage >
     )
 }
