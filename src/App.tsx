@@ -39,7 +39,10 @@ import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { StreakContextProvider } from './Context/StreakContext/StreakContext';
 import HubPages from './HubPages/HubPages';
 import TestPage from './CoursesPages/TestPage';
+import textSpeech from './text-speech';
 
+
+import firebaseConfig from "./FirebaseConfig/fire-config";
 setupIonicReact();
 
 const initializeAdmob = async () => {
@@ -47,6 +50,8 @@ const initializeAdmob = async () => {
     initializeForTesting: false,
   });
 };
+
+
 
 
 const App: React.FC = () => {
@@ -90,6 +95,7 @@ const AppWithTabs: React.FC = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
+        <Route exact path="/speech" component={textSpeech} />
         <Route exact path="/testPage" component={TestPage} />
         <Route exact path="/hub" component={HubPages} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />

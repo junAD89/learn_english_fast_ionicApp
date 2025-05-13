@@ -1,7 +1,6 @@
 import { ActionPerformed, PushNotifications, PushNotificationSchema, Token } from "@capacitor/push-notifications"
-import { IonButton, IonCard, IonContent, IonHeader, IonPage } from "@ionic/react";
-import { IdCard } from "lucide-react";
-import { useEffect } from "react";
+import { IonButton, IonCard, IonHeader, IonPage } from "@ionic/react";
+
 
 import './PushNotificationPerms.css'
 const PushNotificationPerms = () => {
@@ -41,15 +40,7 @@ const PushNotificationPerms = () => {
         );
     };
 
-    // useEffect(() => {
-    //     initPushNotifications();
-    //     addListeners();
 
-    //     // Nettoyage lors du démontage du composant
-    //     return () => {
-    //         PushNotifications.removeAllListeners();
-    //     };
-    // }, []);
 
     return (
         <IonPage>

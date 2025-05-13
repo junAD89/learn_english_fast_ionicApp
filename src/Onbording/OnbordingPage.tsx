@@ -264,20 +264,6 @@ const OnbordingPage: React.FC = () => {
                         <PushNotificationPerms />
 
                     </div>
-                    {/* <button
-                        style={{
-                            marginTop: '50vh',
-                            backgroundColor: "aliceblue",
-                            color: 'black',
-                            padding: "20px 20px",
-                            borderRadius: '20px',
-                            fontSize: '25px',
-                            position: 'absolute',
-                        }}
-
-                    >
-                        Finish
-                    </button> */}
 
                 </SwiperSlide>
 

@@ -36,7 +36,9 @@ export default function TestPage() {
                 setCurrentIndex((prev) => prev + 1);
             }
             else {
-                setShowQuestion(true)
+                setShowQuestion(true);
+                getQuestions();
+
             }
 
             return data;
@@ -55,7 +57,6 @@ export default function TestPage() {
     useEffect(() => {
         getData();
 
-        getQuestions();
 
 
     }, [])
