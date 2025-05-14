@@ -6,6 +6,8 @@ import { Languages } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, scale } from "framer-motion";
 
+
+
 export default function TestPage() {
 
     const [speakerName, setSpeakerName] = useState("");
@@ -26,6 +28,7 @@ export default function TestPage() {
 
             if (currentIndex < data.length) {
                 const { speaker, text, img } = data[currentIndex];
+
 
                 setSpeakerName(speaker);
                 setSpeakerText(text);
@@ -77,6 +80,32 @@ export default function TestPage() {
     }
 
 
+    const handleCheckReponse = async (question: string) => {
+
+        try {
+            const response = await axios.get("chapiterOne/questionOne.json");
+
+            const data = response.data;
+
+            const { trueReponse } = data;///on recupere la reponse correcte
+
+            // #faire la fonction de comparaison
+
+
+            if (question == String(trueReponse)) {
+                alert("Trouve");
+            } else {
+                alert("Faux")
+            }
+
+
+        } catch (error) {
+            console.error(error)
+        }
+
+    }
+
+
     return (
         <IonPage>
             <IonContent>
@@ -96,16 +125,29 @@ export default function TestPage() {
 
                     {showQuestion ? (
                         <div className="question_container">
-                            <h1>De quoi es qu'il parle?</h1>
+                            <h1>De quoi parle-t-il ?</h1>
                             {questionList.map((question, index) => (
-                                <div key={index}>
-                                    <button className="question_button">
+                                <div key={index} className="question_button_container">
+                                    <button className="question_button"
+                                        onClick={() => {
+                                            handleCheckReponse(question.reponse1);
+                                        }}
+                                    >
                                         {question.reponse1}
                                     </button>
-                                    <button className="question_button">
+                                    <button
+                                        onClick={() => {
+                                            handleCheckReponse(question.reponse2);
+                                        }
+                                        }
+                                        className="question_button">
                                         {question.reponse2}
                                     </button>
-                                    <button className="question_button">
+                                    <button
+                                        onClick={() => {
+                                            handleCheckReponse(question.reponse3);
+                                        }}
+                                        className="question_button">
                                         {question.reponse3}
                                     </button>
                                 </div>

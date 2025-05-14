@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "ext": "ionic cap run android -l --external",
+    "android": "ionic cap run android",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",

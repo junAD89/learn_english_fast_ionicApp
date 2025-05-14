@@ -1,6 +1,7 @@
 {
-    "question": "De quoi es qu'il parle?",
+    "question": "De quoi parle-t-il ?",
     "reponse1": "  de sa bague de mariage",
     "reponse2": "de sa voiture",
-    "reponse3": "de son sac a dos"
+    "reponse3": "de son sac a dos",
+    "trueReponse": "de son sac a dos"
 }

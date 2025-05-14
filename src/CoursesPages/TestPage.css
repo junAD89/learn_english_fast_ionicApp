@@ -9,7 +9,7 @@
 .avatar_img_container {
 
     display: flex;
-    margin: 0px 0px;
+    margin: 20px 0px;
 }
 
 .avatar_img {
@@ -39,6 +39,11 @@
     height: auto;
     text-align: center;
 
+
+    h5 {
+        font-size: 1.1em;
+        padding: 0px 20px;
+    }
 
 }
 
@@ -82,4 +87,24 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.question_button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin: 20px 20px;
+
+    padding: 20px 20px;
+
+    box-sizing: border-box;
+
+
+}
+
+.question_button {
+    margin: 20px 20px;
 }
