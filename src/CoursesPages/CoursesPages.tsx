@@ -18,10 +18,7 @@ const CoursesPages: React.FC = () => {
         console.log("levelIndex =", levelIndex);
         console.log("data[levelIndex] =", data[levelIndex]);
 
-        if (!data[levelIndex]) {
-            console.error("Niveau introuvable :", levelIndex);
-            return;
-        }
+
 
         const { id } = data[levelIndex];
         console.log("id =", id);
