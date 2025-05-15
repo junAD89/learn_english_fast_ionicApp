@@ -1,0 +1,52 @@
+[
+    {
+        "speaker": "emma",
+        "text": "Hello! How are you today?",
+        "img": "chapiter2/avatar/emma.png"
+    },
+    {
+        "speaker": "thomas",
+        "text": "I'm fine, thank you. And you?",
+        "img": "chapiter2/avatar/thomas.png"
+    },
+    {
+        "speaker": "emma",
+        "text": "I'm good. I'm planning to go to the restaurant tonight.",
+        "img": "chapiter2/avatar/emma.png"
+    },
+    {
+        "speaker": "thomas",
+        "text": "That sounds nice! Which restaurant?",
+        "img": "chapiter2/avatar/thomas.png"
+    },
+    {
+        "speaker": "emma",
+        "text": "The new Italian place downtown. Would you like to join me?",
+        "img": "chapiter2/avatar/emma.png"
+    },
+    {
+        "speaker": "thomas",
+        "text": "I'd love to! What time?",
+        "img": "chapiter2/avatar/thomas.png"
+    },
+    {
+        "speaker": "emma",
+        "text": "How about 7 PM?",
+        "img": "chapiter2/avatar/emma.png"
+    },
+    {
+        "speaker": "thomas",
+        "text": "Perfect! Should I pick you up?",
+        "img": "chapiter2/avatar/thomas.png"
+    },
+    {
+        "speaker": "emma",
+        "text": "Yes, please. I'll be ready at 6:45 PM.",
+        "img": "chapiter2/avatar/emma.png"
+    },
+    {
+        "speaker": "thomas",
+        "text": "Great! I'm looking forward to it.",
+        "img": "chapiter2/avatar/thomas.png"
+    }
+]

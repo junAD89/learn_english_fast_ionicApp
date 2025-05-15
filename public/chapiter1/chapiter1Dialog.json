@@ -1,22 +1,47 @@
 [
     {
         "speaker": "mark",
-        "text": "hi you wouldn't have seen my bag ?",
+        "text": "Hey what up?",
         "img": "chapiter1/avatar/mark.png"
     },
     {
         "speaker": "jessie",
-        "text": "Have you search in your bag ?",
+        "text": "Great ",
         "img": "chapiter1/avatar/jessie.png"
     },
     {
         "speaker": "mark",
-        "text": "someone stole it!",
+        "text": "you wouldn't have seen my bag right?",
         "img": "chapiter1/avatar/mark.png"
     },
     {
         "speaker": "jessie",
         "text": "oh sorry I didn't see it",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Do you think anyone has stolen it ?",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "I hope that's not the case!",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "My laptop , my phone and my wallet",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Oh no!",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Let's look for it together",
         "img": "chapiter1/avatar/jessie.png"
     }
 ]
