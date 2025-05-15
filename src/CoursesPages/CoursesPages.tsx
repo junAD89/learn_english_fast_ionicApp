@@ -6,24 +6,28 @@ import { useParams } from 'react-router'
 
 
 const CoursesPages: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
+    const { idParams } = useParams<{ idParams: string }>();
 
 
     const getData = async () => {
-        const response = await axios.get("/levels/levelsData.json")
+        const response = await axios.get("/levels/levelsData.json");
         const data = response.data;
+        const levelIndex = `level${idParams}`;
 
-        const { level1 } = data;
+        console.log("data =", data);
+        console.log("levelIndex =", levelIndex);
+        console.log("data[levelIndex] =", data[levelIndex]);
 
-        const { id } = level1;
-        console.log("voici la data " + JSON.stringify(id)); // Transforme l'objet en texte lisible
+        if (!data[levelIndex]) {
+            console.error("Niveau introuvable :", levelIndex);
+            return;
+        }
 
+        const { id } = data[levelIndex];
+        console.log("id =", id);
 
-
-
-        return data
-
-    }
+        return data;
+    };
 
     useEffect(() => {
         getData()
@@ -33,7 +37,7 @@ const CoursesPages: React.FC = () => {
             <IonContent >
                 CoursesPages
 
-                {id}
+                {idParams}
 
                 <IonButton
                     onClick={() => {

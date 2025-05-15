@@ -103,7 +103,7 @@ const AppWithTabs: React.FC = () => {
         <Route exact path="/speech" component={textSpeech} />
         <Route exact path="/testPage" component={TestPage} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />
-        <Route exact path="/courses/:id" component={CoursesPages} />
+        <Route exact path="/courses/:idParams" component={CoursesPages} />
         <Route exact path="/tab1" component={Tab1} />
         <Route exact path="/tab2" component={Tab2} />
         <Route path="/tab3" component={Tab3} />
