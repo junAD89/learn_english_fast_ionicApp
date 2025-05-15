@@ -2,21 +2,21 @@
     {
         "speaker": "mark",
         "text": "hi you wouldn't have seen my bag ?",
-        "img": "chapiterOne/avatar/mark.png"
+        "img": "chapiter1/avatar/mark.png"
     },
     {
         "speaker": "jessie",
         "text": "Have you search in your bag ?",
-        "img": "chapiterOne/avatar/jessie.png"
+        "img": "chapiter1/avatar/jessie.png"
     },
     {
         "speaker": "mark",
         "text": "someone stole it!",
-        "img": "chapiterOne/avatar/mark.png"
+        "img": "chapiter1/avatar/mark.png"
     },
     {
         "speaker": "jessie",
         "text": "oh sorry I didn't see it",
-        "img": "chapiterOne/avatar/jessie.png"
+        "img": "chapiter1/avatar/jessie.png"
     }
 ]

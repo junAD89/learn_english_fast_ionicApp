@@ -4,11 +4,15 @@ import axios from "axios";
 import "./TestPage.css";
 import { Languages } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
+
+
 
 
 
 export default function TestPage() {
+
+
 
     const [speakerName, setSpeakerName] = useState("");
     const [speakerText, setSpeakerText] = useState("");
@@ -23,7 +27,7 @@ export default function TestPage() {
 
     const getData = async () => {
         try {
-            const response = await axios.get("/chapiterOne/chapiterOneDialog.json")
+            const response = await axios.get("/chapiter1/chapiter1Dialog.json")
             const data = response.data;
 
             if (currentIndex < data.length) {
@@ -59,15 +63,13 @@ export default function TestPage() {
 
     useEffect(() => {
         getData();
-
-
-
     }, [])
 
     const getQuestions = async () => {
-        const response = await axios.get("chapiterOne/questionOne.json")
+        const response = await axios.get("chapiter1/question1.json")
 
         const data = response.data;
+
 
         const { reponse1, reponse2, reponse3 } = data;
 
@@ -83,7 +85,7 @@ export default function TestPage() {
     const handleCheckReponse = async (question: string) => {
 
         try {
-            const response = await axios.get("chapiterOne/questionOne.json");
+            const response = await axios.get("chapiter1/questionOne.json");
 
             const data = response.data;
 

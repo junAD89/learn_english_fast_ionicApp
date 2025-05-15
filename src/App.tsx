@@ -31,19 +31,18 @@ import { House } from 'lucide-react';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
-import KeyWordData from './keyWord/KeyWord';
 import CoursesPages from './CoursesPages/CoursesPages';
 import OnbordingPage from './Onbording/OnbordingPage';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { StreakContextProvider } from './Context/StreakContext/StreakContext';
-import HubPages from './HubPages/HubPages';
 import TestPage from './CoursesPages/TestPage';
 import textSpeech from './text-speech';
 
 
 import { firebaseConfig } from "./FirebaseConfig/fire-config";
 import { initializeApp } from 'firebase/app';
+import { CheckResponseContextProvider } from './Context/CheckResponseContext/CheckResponseContext';
 setupIonicReact();
 
 const initializeAdmob = async () => {
@@ -64,15 +63,18 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <StreakContextProvider>
-        <ServerResponseProvider>
-          <DiamonContextProvider>
-            <IonReactRouter>
-              <AppWithTabs />
-            </IonReactRouter>
-          </DiamonContextProvider>
-        </ServerResponseProvider>
-      </StreakContextProvider>
+      <CheckResponseContextProvider>
+        <StreakContextProvider>
+          <ServerResponseProvider>
+            <DiamonContextProvider>
+              <IonReactRouter>
+                <AppWithTabs />
+              </IonReactRouter>
+            </DiamonContextProvider>
+          </ServerResponseProvider>
+        </StreakContextProvider>
+      </CheckResponseContextProvider>
+
     </IonApp>
   );
 };
@@ -100,10 +102,8 @@ const AppWithTabs: React.FC = () => {
       <IonRouterOutlet>
         <Route exact path="/speech" component={textSpeech} />
         <Route exact path="/testPage" component={TestPage} />
-        <Route exact path="/hub" component={HubPages} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />
-        <Route exact path="/courses/:idParams" component={CoursesPages} />
-        <Route exact path="/json" component={KeyWordData} />
+        <Route exact path="/courses/:id" component={CoursesPages} />
         <Route exact path="/tab1" component={Tab1} />
         <Route exact path="/tab2" component={Tab2} />
         <Route path="/tab3" component={Tab3} />
