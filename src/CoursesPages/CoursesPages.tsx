@@ -1,6 +1,6 @@
 import { IonButton, IonContent, IonPage } from '@ionic/react'
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router'
 
 
@@ -9,26 +9,31 @@ const CoursesPages: React.FC = () => {
     const { idParams } = useParams<{ idParams: string }>();
 
 
-    const getData = async () => {
-        const response = await axios.get("/levels/levelsData.json");
+    const [speakerName, setSpeakerName] = useState("");
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [speakerText, setSpeakerText] = useState("");
+    const [messages, setMessages] = useState<{ speaker: string; text: string; avatarImage: string }[]>([]);
+    const [questionList, setQuestionList] = useState<{ reponse1: string; reponse2: string; reponse3: string }[]>([])
+
+
+
+
+    const getQuestions = async () => {
+        const response = await axios.get(`chapiter${idParams}/chapiter${idParams}Dialog.json`)
+
         const data = response.data;
-        const levelIndex = `level${idParams}`;
-
-        console.log("data =", data);
-        console.log("levelIndex =", levelIndex);
-        console.log("data[levelIndex] =", data[levelIndex]);
 
 
+        const { reponse1, reponse2, reponse3 } = data;
 
-        const { id } = data[levelIndex];
-        console.log("id =", id);
+        setQuestionList((prev) => [...prev, { reponse1, reponse2, reponse3 }]);
 
-        return data;
-    };
 
-    useEffect(() => {
-        getData()
-    }, [])
+        console.log(questionList)
+
+
+    }
+
     return (
         <IonPage>
             <IonContent >
@@ -38,7 +43,7 @@ const CoursesPages: React.FC = () => {
 
                 <IonButton
                     onClick={() => {
-                        getData()
+                        // getData()
                     }}
                 >
                     show

@@ -40,7 +40,7 @@ const Tab2: React.FC = () => {
 
           <div
             onClick={() => {
-              history.push("/courses/:2")
+              history.push("/courses/2")
             }}
 
             className='level_container'
