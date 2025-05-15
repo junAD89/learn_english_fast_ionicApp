@@ -1,52 +1,47 @@
 [
     {
-        "speaker": "emma",
-        "text": "Hello! How are you today?",
-        "img": "chapiter2/avatar/emma.png"
+        "speaker": "mark",
+        "text": "Jessie, I still can't find my bag anywhere.",
+        "img": "chapiter1/avatar/mark.png"
     },
     {
-        "speaker": "thomas",
-        "text": "I'm fine, thank you. And you?",
-        "img": "chapiter2/avatar/thomas.png"
+        "speaker": "jessie",
+        "text": "Did you check the classroom again?",
+        "img": "chapiter1/avatar/jessie.png"
     },
     {
-        "speaker": "emma",
-        "text": "I'm good. I'm planning to go to the restaurant tonight.",
-        "img": "chapiter2/avatar/emma.png"
+        "speaker": "mark",
+        "text": "Yes, but it's not there.",
+        "img": "chapiter1/avatar/mark.png"
     },
     {
-        "speaker": "thomas",
-        "text": "That sounds nice! Which restaurant?",
-        "img": "chapiter2/avatar/thomas.png"
+        "speaker": "mr. smith",
+        "text": "Hello, is there a problem here?",
+        "img": "chapiter1/avatar/mrsmith.png"
     },
     {
-        "speaker": "emma",
-        "text": "The new Italian place downtown. Would you like to join me?",
-        "img": "chapiter2/avatar/emma.png"
+        "speaker": "jessie",
+        "text": "Mark lost his bag. We can't find it.",
+        "img": "chapiter1/avatar/jessie.png"
     },
     {
-        "speaker": "thomas",
-        "text": "I'd love to! What time?",
-        "img": "chapiter2/avatar/thomas.png"
+        "speaker": "mr. smith",
+        "text": "Don't worry. We have security cameras in the hallway. Let's check the footage.",
+        "img": "chapiter1/avatar/mrsmith.png"
     },
     {
-        "speaker": "emma",
-        "text": "How about 7 PM?",
-        "img": "chapiter2/avatar/emma.png"
+        "speaker": "mark",
+        "text": "That's a great idea! Thank you, Mr. Smith.",
+        "img": "chapiter1/avatar/mark.png"
     },
     {
-        "speaker": "thomas",
-        "text": "Perfect! Should I pick you up?",
-        "img": "chapiter2/avatar/thomas.png"
+        "speaker": "jessie",
+        "text": "I hope we find out what happened.",
+        "img": "chapiter1/avatar/jessie.png"
     },
     {
-        "speaker": "emma",
-        "text": "Yes, please. I'll be ready at 6:45 PM.",
-        "img": "chapiter2/avatar/emma.png"
-    },
-    {
-        "speaker": "thomas",
-        "text": "Great! I'm looking forward to it.",
-        "img": "chapiter2/avatar/thomas.png"
+        "speaker": "mr. smith",
+        "text": "Let's go to the security office together.",
+        "img": "chapiter1/avatar/mrsmith.png"
     }
 ]

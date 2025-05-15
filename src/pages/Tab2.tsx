@@ -10,6 +10,7 @@ const Tab2: React.FC = () => {
   }
 
   const imageUrl = "chapiter1/avatar/mark.png";///url de l img
+  const imageUrlChap2 = "chapiter1/avatar/mrsmith.png";///url de l img
 
 
   ////const de test 
@@ -48,7 +49,7 @@ const Tab2: React.FC = () => {
             <img
               className={`level_container_image ${isActive ? "img_effect" : ""}`}
 
-              src={imageUrl} alt="" />
+              src={imageUrlChap2} alt="" />
             <h2>
               Level 2
             </h2>
