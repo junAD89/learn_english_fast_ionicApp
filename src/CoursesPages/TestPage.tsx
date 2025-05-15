@@ -85,7 +85,7 @@ export default function TestPage() {
     const handleCheckReponse = async (question: string) => {
 
         try {
-            const response = await axios.get("chapiter1/questionOne.json");
+            const response = await axios.get("chapiter1/question1.json");
 
             const data = response.data;
 
