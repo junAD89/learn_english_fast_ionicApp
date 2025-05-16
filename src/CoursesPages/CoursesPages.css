@@ -4,6 +4,7 @@ ion-content {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 ion-card {
@@ -57,7 +58,9 @@ ion-card {
 
     display: inline-block;
     width: auto;
-    height: auto;
+
+    /* height: auto; */
+
     text-align: center;
 
 
