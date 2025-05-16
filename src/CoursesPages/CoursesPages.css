@@ -59,15 +59,18 @@ ion-card {
     display: inline-block;
     width: auto;
 
+    height: 90px;
     /* height: auto; */
 
     text-align: center;
+
 
 
     h5 {
         font-size: 1em;
         padding: 0px 20px;
     }
+
 
 }
 
