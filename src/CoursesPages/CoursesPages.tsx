@@ -5,6 +5,7 @@ import { useParams } from 'react-router'
 import { Languages } from "lucide-react";
 import { motion } from "framer-motion";
 
+import './CoursesPages.css'
 
 const CoursesPages: React.FC = () => {
     const { idParams } = useParams<{ idParams: string }>();
@@ -100,13 +101,17 @@ const CoursesPages: React.FC = () => {
                                 <p className="dialog_avatar_name">{msg.speaker}</p>
                                 <h5>{msg.text}</h5>
                             </div>
-                            <Languages size={39} />
+                            {/* <Languages size={39} /> */}
                         </div>
                     ))}
 
                     {showQuestion ? (
                         <div className="question_container">
-                            <h1>De quoi parle-t-il ?</h1>
+                            <h1
+                                style={{
+                                    color: "black"
+                                }}
+                            >De quoi parle-t-il ?</h1>
                             {questionList.map((question, index) => (
                                 <div key={index} className="question_button_container">
                                     <button

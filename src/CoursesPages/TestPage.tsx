@@ -89,7 +89,9 @@ export default function TestPage() {
 
             const data = response.data;
 
-            const { trueReponse } = data;///on recupere la reponse correcte
+            const { trueReponse } = data;
+
+            ///on recupere la reponse correcte
 
             // #faire la fonction de comparaison
 
@@ -109,6 +111,7 @@ export default function TestPage() {
 
 
     return (
+
         <IonPage>
             <IonContent>
                 <div className="discusions_contaner">

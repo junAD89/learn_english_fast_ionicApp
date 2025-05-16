@@ -7,12 +7,7 @@ const config: CapacitorConfig = {
   appName: 'FastEnglish',
   webDir: 'dist',
   plugins: {
-    LiveUpdates: {  // Notez que c'est "LiveUpdates" et non "liveUpdates"
-      appId: 'e4c57dff',
-      channel: 'Production',
-      autoUpdateMethod: 'background',
-      maxVersions: 2
-    },
+
     LocalNotifications: {
       smallIcon: 'ic_stat_myicon',
       iconColor: '#488AFF',

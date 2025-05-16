@@ -1,4 +1,6 @@
 import { IonCard, IonContent, IonPage } from '@ionic/react'
+
+
 import "./CongratulationPages.css"
 
 export default function CongratulationPages() {
@@ -6,6 +8,7 @@ export default function CongratulationPages() {
         <IonPage>
 
             <IonContent>
+
                 <div className='congrat_text_container'>
 
                     <h1 className="congrat_text">
