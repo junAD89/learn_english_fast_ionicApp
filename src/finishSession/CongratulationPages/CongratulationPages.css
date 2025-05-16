@@ -1,0 +1,21 @@
+ion-content {
+    --ion-background-color: rgb(156, 234, 123);
+}
+
+.congrat_text_container {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.congrat_text {
+    font-size: 40px;
+
+}
+
+.congrat_text_h2 {
+    font-size: 30px;
+}

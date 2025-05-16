@@ -43,6 +43,7 @@ import textSpeech from './text-speech';
 import { firebaseConfig } from "./FirebaseConfig/fire-config";
 import { initializeApp } from 'firebase/app';
 import { CheckResponseContextProvider } from './Context/CheckResponseContext/CheckResponseContext';
+import CongratulationPages from './finishSession/CongratulationPages/CongratulationPages';
 setupIonicReact();
 
 const initializeAdmob = async () => {
@@ -87,7 +88,8 @@ const AppWithTabs: React.FC = () => {
     "/courses",
     "/hub",
     "/testPage",
-    "/tab2"
+    "/tab2",
+    "/congratulations"
   ];
 
   const hideTabs = noTabsRoutes.some(route => location.pathname.startsWith(route));
@@ -101,6 +103,7 @@ const AppWithTabs: React.FC = () => {
     <IonTabs>
       <IonRouterOutlet>
         <Route exact path="/speech" component={textSpeech} />
+        <Route exact path="/congratulations" component={CongratulationPages} />
         <Route exact path="/testPage" component={TestPage} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />
         <Route exact path="/courses/:idParams" component={CoursesPages} />
