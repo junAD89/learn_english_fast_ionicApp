@@ -3,13 +3,14 @@
     align-items: center;
     display: flex;
 
+
     flex-direction: column;
     margin-top: 5vh;
 }
 
+
 .level_container {
     border: 20px red;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +20,11 @@
 }
 
 .level_container_image {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
 
 
     border: 0.5rem solid rgb(255, 255, 255);
-
-
-
     border-radius: 50%;
 
 }

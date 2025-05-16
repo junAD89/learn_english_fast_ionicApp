@@ -1,6 +1,8 @@
 import { IonContent, IonPage } from '@ionic/react'
 import "./Tab2.css";
 import { useHistory } from 'react-router';
+import axios from 'axios';
+import { useEffect } from 'react';
 const Tab2: React.FC = () => {
 
 
@@ -15,6 +17,29 @@ const Tab2: React.FC = () => {
 
   ////const de test 
   const isActive = true
+
+
+  let numberD = 2
+
+  const getData = async () => {
+    const response = await axios.get("levels/levelsData.json");
+
+    const data = response.data;
+
+    const { level1 } = data;    // recuperation des donnes de leve 1
+
+    const { level } = level1;///recuperation du level lui meme exple level : 1 , 2 ou 3
+
+
+    // const {}
+
+
+    // alert(level)
+
+    // alert(JSON.stringify(data))
+  }
+
+  // usesre
 
 
   return (

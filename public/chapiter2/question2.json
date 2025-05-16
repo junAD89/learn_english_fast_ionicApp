@@ -1,5 +1,5 @@
 {
-    "question": "Qui a proposé de vérifier les caméras de sécurité ?",
+    "questionForUser": "Qui a proposé de vérifier les caméras de sécurité ?",
     "reponse1": "Jessie",
     "reponse2": "Mr. Smith",
     "reponse3": "Mark",

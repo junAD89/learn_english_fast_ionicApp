@@ -1,11 +1,13 @@
 {
     "level1": {
+        "level": 1,
         "id": 1,
         "name": "Level 1",
         "exp": 10,
         "imgUrl": ""
     },
     "level2": {
+        "level": 2,
         "id": 2,
         "name": "Level 2",
         "exp": 20,

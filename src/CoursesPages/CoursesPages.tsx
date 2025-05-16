@@ -17,6 +17,8 @@ const CoursesPages: React.FC = () => {
     const [questionList, setQuestionList] = useState<{ reponse1: string; reponse2: string; reponse3: string }[]>([]);
     const [showQuestion, setShowQuestion] = useState(false);
 
+
+    const [question, setQuestion] = useState("");////pour recuperer la question grace a un state 
     const getData = async () => {
         try {
             const response = await axios.get(`/chapiter${idParams}/chapiter${idParams}Dialog.json`);
@@ -56,7 +58,9 @@ const CoursesPages: React.FC = () => {
     const getQuestions = async () => {
         const response = await axios.get(`chapiter${idParams}/question${idParams}.json`);
         const data = response.data;
-        const { reponse1, reponse2, reponse3 } = data;
+        const { reponse1, reponse2, reponse3, questionForUser } = data;
+        setQuestion(questionForUser);
+
         setQuestionList((prev) => [...prev, { reponse1, reponse2, reponse3 }]);
     }
 
@@ -69,11 +73,14 @@ const CoursesPages: React.FC = () => {
             const data = response.data;
             const { trueReponse } = data;
 
+            // recuperation de la reponse de l'utilisateur grace a un state
             if (question === String(trueReponse)) {
                 alert("Trouve");
             } else {
                 alert("Faux");
             }
+
+
         } catch (error) {
             console.error(error);
         }
@@ -111,7 +118,9 @@ const CoursesPages: React.FC = () => {
                                 style={{
                                     color: "black"
                                 }}
-                            >De quoi parle-t-il ?</h1>
+                            >
+                                {question}
+                            </h1>
                             {questionList.map((question, index) => (
                                 <div key={index} className="question_button_container">
                                     <button
