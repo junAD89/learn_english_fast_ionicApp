@@ -19,3 +19,11 @@ ion-content {
 .congrat_text_h2 {
     font-size: 30px;
 }
+
+.exp_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-button {}

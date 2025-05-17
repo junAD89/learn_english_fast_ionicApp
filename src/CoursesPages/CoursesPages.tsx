@@ -1,14 +1,18 @@
 import { IonButton, IonContent, IonPage } from '@ionic/react'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router'
-import { Languages } from "lucide-react";
+import { useHistory, useParams } from 'react-router'
 import { motion } from "framer-motion";
 
 import './CoursesPages.css'
+import { toast, Toaster } from 'sonner';
+
+import react, { useRef } from "react";
 
 const CoursesPages: React.FC = () => {
     const { idParams } = useParams<{ idParams: string }>();
+
+    const history = useHistory()
 
     const [speakerName, setSpeakerName] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,6 +21,9 @@ const CoursesPages: React.FC = () => {
     const [questionList, setQuestionList] = useState<{ reponse1: string; reponse2: string; reponse3: string }[]>([]);
     const [showQuestion, setShowQuestion] = useState(false);
 
+
+    const [successMusicUrl, setSuccessMusicUrl] = useState("Audio/success.mp3")
+    const [errorMusicUrl, setErrorMusicUrl] = useState("Audio/error.mp3")
 
     const [question, setQuestion] = useState("");////pour recuperer la question grace a un state 
     const getData = async () => {
@@ -75,9 +82,17 @@ const CoursesPages: React.FC = () => {
 
             // recuperation de la reponse de l'utilisateur grace a un state
             if (question === String(trueReponse)) {
-                alert("Trouve");
+                toast.success("Trouve");////le toast de success
+
+
+
+                localStorage.setItem(`${idParams}_chapiter${idParams}`, `true`)
+                SuccessAudioRef.current?.play();
+                history.replace('/congratulations')  ///routage vers la page de success
             } else {
-                alert("Faux");
+                toast.error("Mauvais reponse");///toast de l'erreur
+
+                ErrorAudioRef.current?.play();
             }
 
 
@@ -90,14 +105,26 @@ const CoursesPages: React.FC = () => {
 
 
 
-    // use effect pour appeler la fonction getData
+    // use effect pour appeler la fonction getData car au lancement de la partie 
+    // au moins le premier dialogue doit apparaitre
     useEffect(() => {
         getData();
     }, []);
 
+
+    const SuccessAudioRef = useRef<HTMLAudioElement | null>(null)
+    const ErrorAudioRef = useRef<HTMLAudioElement | null>(null)
+
+
     return (
         <IonPage>
+            <audio ref={SuccessAudioRef} src={successMusicUrl} />
+            <audio ref={ErrorAudioRef} src={errorMusicUrl} />
             <IonContent>
+
+                <Toaster
+                    position="top-center" richColors />
+
                 <div className="discusions_contaner">
                     {messages.map((msg, index) => (
                         <div className="dialog" key={index}>
@@ -160,6 +187,8 @@ const CoursesPages: React.FC = () => {
                         </div>
                     )}
                 </div>
+
+
             </IonContent>
         </IonPage>
     )

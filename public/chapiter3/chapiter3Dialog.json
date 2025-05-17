@@ -1,0 +1,47 @@
+[
+    {
+        "speaker": "mark",
+        "text": "Jessie, I still can't find my bag anywhere.",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Did you check the classroom again?",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "Yes, but it's not there.",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "mr. smith",
+        "text": "Hello, is there a problem here?",
+        "img": "chapiter1/avatar/mrsmith.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Mark lost his bag. We can't find it.",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mr. smith",
+        "text": "Don't worry. We will  check the footage of security cameras.",
+        "img": "chapiter1/avatar/mrsmith.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "That's a great idea! Thank you, Mr. Smith.",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "I hope we find out what happened.",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mr. smith",
+        "text": "Let's go to the security office together.",
+        "img": "chapiter1/avatar/mrsmith.png"
+    }
+]

@@ -17,6 +17,7 @@ import { IonButton } from '@ionic/react';
 import db from "../FirebaseConfig/fire-config";
 import PushNotificationPerms from '../components/PushNotificationPerms/PushNotificationPerms';
 const OnbordingPage: React.FC = () => {
+
     const history = useHistory();
 
     const [howDiscover, setHowDiscover] = useState("");

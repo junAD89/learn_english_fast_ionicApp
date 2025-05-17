@@ -36,7 +36,6 @@ import OnbordingPage from './Onbording/OnbordingPage';
 import { DiamonContextProvider } from './Context/DiamonContext/DiamonContext';
 import { ServerResponseProvider } from './Context/ServerResponseContext';
 import { StreakContextProvider } from './Context/StreakContext/StreakContext';
-import TestPage from './CoursesPages/TestPage';
 import textSpeech from './text-speech';
 
 
@@ -44,6 +43,7 @@ import { firebaseConfig } from "./FirebaseConfig/fire-config";
 import { initializeApp } from 'firebase/app';
 import { CheckResponseContextProvider } from './Context/CheckResponseContext/CheckResponseContext';
 import CongratulationPages from './finishSession/CongratulationPages/CongratulationPages';
+import { FinishLessonStateContextProvider } from './Context/FinishLessonStateContext/FinishLessonStateContext';
 setupIonicReact();
 
 const initializeAdmob = async () => {
@@ -64,17 +64,19 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <CheckResponseContextProvider>
-        <StreakContextProvider>
-          <ServerResponseProvider>
-            <DiamonContextProvider>
-              <IonReactRouter>
-                <AppWithTabs />
-              </IonReactRouter>
-            </DiamonContextProvider>
-          </ServerResponseProvider>
-        </StreakContextProvider>
-      </CheckResponseContextProvider>
+      <FinishLessonStateContextProvider>
+        <CheckResponseContextProvider>
+          <StreakContextProvider>
+            <ServerResponseProvider>
+              <DiamonContextProvider>
+                <IonReactRouter>
+                  <AppWithTabs />
+                </IonReactRouter>
+              </DiamonContextProvider>
+            </ServerResponseProvider>
+          </StreakContextProvider>
+        </CheckResponseContextProvider>
+      </FinishLessonStateContextProvider>
 
     </IonApp>
   );
@@ -104,7 +106,6 @@ const AppWithTabs: React.FC = () => {
       <IonRouterOutlet>
         <Route exact path="/speech" component={textSpeech} />
         <Route exact path="/congratulations" component={CongratulationPages} />
-        <Route exact path="/testPage" component={TestPage} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />
         <Route exact path="/courses/:idParams" component={CoursesPages} />
         <Route exact path="/tab1" component={Tab1} />
@@ -112,10 +113,12 @@ const AppWithTabs: React.FC = () => {
         <Route path="/tab3" component={Tab3} />
 
 
-
+        <Route exact path="/">
+          <Redirect to="/tab2" />
+        </Route>
         {/* redirecttion dynamique en fonction de si 
-l user a deja vu l ' onbording page ou pas */}
-        {haveSeen_Onbording ? (
+        l'user a deja vu l ' onbording page ou pas */}
+        {/* {haveSeen_Onbording ? (
           <Route exact path="/">
             <Redirect to="/tab2" />
           </Route>
@@ -126,7 +129,7 @@ l user a deja vu l ' onbording page ou pas */}
             </Route>
           )
 
-        }
+        } */}
       </IonRouterOutlet>
 
       {!hideTabs && (
@@ -145,5 +148,6 @@ l user a deja vu l ' onbording page ou pas */}
     </IonTabs>
   );
 };
+
 
 export default App;
