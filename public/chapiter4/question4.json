@@ -1,7 +1,7 @@
 {
-    "questionForUser": "Qui a proposé de vérifier les caméras de sécurité ?",
-    "reponse1": "Jessie",
-    "reponse2": "Mr. Smith",
-    "reponse3": "Mark",
-    "trueReponse": "Mr. Smith"
+    "questionForUser": "Pourquoi Alex a-t-il volé le sac ?",
+    "reponse1": "Pour acheter un nouveau téléphone",
+    "reponse2": "Pour payer les frais d'hôpital de sa mère",
+    "reponse3": "Pour partir en vacances",
+    "trueReponse": "Pour payer les frais d'hôpital de sa mère"
 }

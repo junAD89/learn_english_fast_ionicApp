@@ -86,7 +86,8 @@ const CoursesPages: React.FC = () => {
 
 
 
-                localStorage.setItem(`${idParams}_chapiter${idParams}`, `true`)
+                localStorage.setItem(`chapiter1lesson${idParams}`, `true`)
+
                 SuccessAudioRef.current?.play();
                 history.replace('/congratulations')  ///routage vers la page de success
             } else {

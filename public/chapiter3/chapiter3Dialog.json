@@ -43,5 +43,35 @@
         "speaker": "mr. smith",
         "text": "Let's go to the security office together.",
         "img": "chapiter1/avatar/mrsmith.png"
+    },
+    {
+        "speaker": "mr. smith",
+        "text": "Here is the camera footage. Let's watch carefully.",
+        "img": "chapiter1/avatar/mrsmith.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Wait, I think I recognize that person!",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "Who is it? Can you see their face?",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "Yes... It's Alex from our class.",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mr. smith",
+        "text": "Are you sure? This is important.",
+        "img": "chapiter1/avatar/mrsmith.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "I'm sure. I saw Alex take the bag.",
+        "img": "chapiter1/avatar/jessie.png"
     }
 ]

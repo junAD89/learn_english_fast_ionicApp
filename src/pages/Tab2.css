@@ -19,6 +19,10 @@
     padding: 20px 20px;
 }
 
+.not_finish {
+    opacity: 0.4;
+}
+
 .level_container_image {
     width: 160px;
     height: 160px;

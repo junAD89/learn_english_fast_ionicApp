@@ -43,5 +43,30 @@
         "speaker": "mr. smith",
         "text": "Let's go to the security office together.",
         "img": "chapiter1/avatar/mrsmith.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "Alex, we saw you on the camera. Why did you take my bag?",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "alex",
+        "text": "I'm sorry... I needed money for my mother's hospital bills.",
+        "img": "chapiter1/avatar/alex.png"
+    },
+    {
+        "speaker": "jessie",
+        "text": "You should have told us. We could have helped.",
+        "img": "chapiter1/avatar/jessie.png"
+    },
+    {
+        "speaker": "mark",
+        "text": "We don't want you to get in trouble. Let's find another solution.",
+        "img": "chapiter1/avatar/mark.png"
+    },
+    {
+        "speaker": "alex",
+        "text": "Thank you. I didn't know what else to do.",
+        "img": "chapiter1/avatar/alex.png"
     }
 ]
