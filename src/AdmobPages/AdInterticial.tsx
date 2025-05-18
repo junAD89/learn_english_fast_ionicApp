@@ -1,19 +1,10 @@
-import { AdMob, AdOptions } from "@capacitor-community/admob";
-import React, { useEffect } from 'react'
+import { AdMob, AdOptions } from "@capacitor-community/admob"
 
-export default function AdInterticial() {
-    useEffect(() => {
+export async function showInterstitialAd() {
+    const interstitialOption: AdOptions = {
+        adId: "ca-app-pub-9593128253360038/4519587754",
+    }
 
-        const showInterticial = async () => {
-            const intertitialOption: AdOptions = {
-                adId: "ca-app-pub-9593128253360038/4519587754"
-            }
-            await AdMob.prepareInterstitial(intertitialOption);
-            await AdMob.showInterstitial()
-        };
-        showInterticial();
-    }, [])
-    return (
-        <div>AdInterticial</div>
-    )
+    // await AdMob.prepareInterstitial(interstitialOption)
+    await AdMob.showInterstitial()
 }

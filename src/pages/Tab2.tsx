@@ -42,19 +42,8 @@ const Tab2: React.FC = () => {
   }
 
 
-  useEffect(() => {
-    const stateLevel1 = localStorage.getItem("1_chapiter1")
 
-    // if (stateLevel1) {
-    //   alert("Level 1 termine")
-    // }
-    // else {
-    //   alert("Level 1 non termine")
-    // }
 
-    // alert(typeof chapiter1lesson1)
-
-  })
 
   return (
     <IonPage>

@@ -4,6 +4,8 @@ import { IonButton, IonCard, IonContent, IonPage } from '@ionic/react'
 import "./CongratulationPages.css"
 import { useHistory } from 'react-router'
 import { useEffect, useRef } from 'react'
+import { showInterstitialAd } from '../../AdmobPages/AdInterticial'
+import { AdMob } from '@capacitor-community/admob'
 
 export default function CongratulationPages() {
 
@@ -11,16 +13,30 @@ export default function CongratulationPages() {
 
     const history = useHistory()
     const navToHome = () => {
-        history.replace("/tab2")
-    }
+        history.replace("/tab2");
+        window.location.reload();
+    };
+
 
     const SuccessAudioUrl = 'Audio/success.mp3'
 
+    const interstitialOption = {
+        adId: 'ca-app-pub-9593128253360038/4519587754', // ton ID de pub
+        // autres options si besoin
+
+    }
+
 
     useEffect(() => {
+        async function ad() {
+            await AdMob.prepareInterstitial(interstitialOption);
+
+        }
+        ad()
 
         SuccessAudioRef.current?.play()
     }, [])
+
     return (
         <IonPage>
 
@@ -55,7 +71,8 @@ export default function CongratulationPages() {
 
 
                 <div className="exp_container">
-                    <IonButton onClick={() => {
+                    <IonButton onClick={async () => {
+                        await showInterstitialAd()
                         navToHome()
                     }}>
                         Continue
