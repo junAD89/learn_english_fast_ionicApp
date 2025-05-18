@@ -12,7 +12,10 @@ export default function CongratulationPages() {
     const SuccessAudioRef = useRef<HTMLAudioElement>(null)
 
     const history = useHistory()
-    const navToHome = () => {
+    const navToHome = async () => {
+        // await showInterstitialAd()
+
+        showInterstitialAd()
         history.replace("/tab2");
         window.location.reload();
     };
@@ -37,6 +40,10 @@ export default function CongratulationPages() {
         SuccessAudioRef.current?.play()
     }, [])
 
+
+    const navToTabs2 = () => {
+        history.replace("/tab2");
+    }
     return (
         <IonPage>
 
@@ -71,10 +78,17 @@ export default function CongratulationPages() {
 
 
                 <div className="exp_container">
-                    <IonButton onClick={async () => {
-                        await showInterstitialAd()
-                        navToHome()
-                    }}>
+                    <IonButton
+                        // onClick={
+                        //     async () => {
+                        //         await showInterstitialAd()
+                        //         navToHome()
+                        //     }}
+
+                        onClick={() => {
+                            navToHome
+                        }}
+                    >
                         Continue
                     </IonButton>
                 </div>
