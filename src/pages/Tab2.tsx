@@ -15,9 +15,10 @@ const Tab2: React.FC = () => {
 
   const imageUrl = "chapiter1/avatar/mark.png";///url de l img
   const imageUrlChap2 = "chapiter1/avatar/mrsmith.png";///url de l img
-  const imageUrlChap3 = "chapiter1/avatar/mrsmith.png";///url de l img
-  const imageUrlChap4 = "chapiter1/avatar/mrsmith.png";///url de l img
+  const imageUrlChap3 = "chapiter3/avatar/inknow_thief.png";///url de l img
+  const imageUrlChap4 = "chapiter3/avatar/thief.png";///url de l img
   const imageUrlChap5 = "chapiter1/avatar/mrsmith.png";///url de l img
+
 
 
   ////const de test 
