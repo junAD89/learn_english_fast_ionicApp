@@ -1,4 +1,4 @@
-import { IonContent, IonPage } from '@ionic/react'
+import { IonButton, IonContent, IonPage } from '@ionic/react'
 import "./Tab2.css";
 import { useHistory } from 'react-router';
 import axios from 'axios';
@@ -9,9 +9,7 @@ const Tab2: React.FC = () => {
 
 
   const history = useHistory();
-  const handleClick = () => {
-    history.push("/testPage");
-  }
+
 
   const imageUrl = "chapiter1/avatar/mark.png";///url de l img
   const imageUrlChap2 = "chapiter1/avatar/mrsmith.png";///url de l img
@@ -25,22 +23,9 @@ const Tab2: React.FC = () => {
   const [isActive, setIsActive] = useState(true)
 
 
-  let numberD = 2
 
   const { chapiter1lesson1, chapiter1lesson2, chapiter1lesson3, chapiter1lesson4, chapiter1lesson5 } = useContext(FinishLessonStateContext)
 
-  const getData = async () => {
-    const response = await axios.get("levels/levelsData.json");
-
-    const data = response.data;
-
-    const { level1 } = data;    // recuperation des donnes de leve 1
-
-    const { level } = level1;///recuperation du level lui meme exple level : 1 , 2 ou 3
-
-
-
-  }
 
 
 
@@ -49,6 +34,15 @@ const Tab2: React.FC = () => {
   return (
     <IonPage>
 
+      {/* <IonButton
+        style={{
+          marginTop: "20vh",
+        }}
+        onClick={() => {
+          history.push("/tab1")
+        }}>
+        clcik me
+      </IonButton> */}
       <Toaster />
       <IonContent>
         <div

@@ -8,6 +8,8 @@ import './CoursesPages.css'
 import { toast, Toaster } from 'sonner';
 
 import react, { useRef } from "react";
+import { AudioLines, Languages } from 'lucide-react';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
 const CoursesPages: React.FC = () => {
     const { idParams } = useParams<{ idParams: string }>();
@@ -132,11 +134,29 @@ const CoursesPages: React.FC = () => {
                             <div className="avatar_img_container">
                                 <img className="avatar_img" src={msg.avatarImage} alt={msg.speaker} />
                             </div>
+
                             <div className="dialog_container">
                                 <p className="dialog_avatar_name">{msg.speaker}</p>
-                                <h5>{msg.text}</h5>
+                                <h5>{msg.text}
+                                    <AudioLines
+                                        onClick={async () => {
+                                            console.log("HI");
+
+                                            try {
+                                                await TextToSpeech.speak({
+                                                    text: msg.text, lang: "en-US", rate: 1.0, pitch: 1.0, volume: 1.0, voice: 0, category: "ambient",
+                                                    queueStrategy: 1
+                                                });
+
+                                            } catch (error) {
+                                                alert(error)
+                                            }
+                                        }}
+                                        style={{ color: "red" }} size={39} />
+
+                                </h5>
+
                             </div>
-                            {/* <Languages size={39} /> */}
                         </div>
                     ))}
 

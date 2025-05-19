@@ -13,19 +13,23 @@ export default function CongratulationPages() {
 
     const history = useHistory()
     const navToHome = async () => {
-        // await showInterstitialAd()
+        try {
+            console.log("Nav")
+            // await showInterstitialAd()
 
-        showInterstitialAd()
-        history.replace("/tab2");
-        window.location.reload();
+            showInterstitialAd()
+            history.replace("/tab2");
+            window.location.reload();
+        } catch (error) {
+            console.error(error)
+        }
     };
 
 
     const SuccessAudioUrl = 'Audio/success.mp3'
 
     const interstitialOption = {
-        adId: 'ca-app-pub-9593128253360038/4519587754', // ton ID de pub
-        // autres options si besoin
+        adId: 'ca-app-pub-9593128253360038/4519587754',
 
     }
 
@@ -41,9 +45,7 @@ export default function CongratulationPages() {
     }, [])
 
 
-    const navToTabs2 = () => {
-        history.replace("/tab2");
-    }
+
     return (
         <IonPage>
 
@@ -79,14 +81,10 @@ export default function CongratulationPages() {
 
                 <div className="exp_container">
                     <IonButton
-                        // onClick={
-                        //     async () => {
-                        //         await showInterstitialAd()
-                        //         navToHome()
-                        //     }}
+
 
                         onClick={() => {
-                            navToHome
+                            navToHome()
                         }}
                     >
                         Continue
