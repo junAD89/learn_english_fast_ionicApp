@@ -44,6 +44,7 @@ import { initializeApp } from 'firebase/app';
 import { CheckResponseContextProvider } from './Context/CheckResponseContext/CheckResponseContext';
 import CongratulationPages from './finishSession/CongratulationPages/CongratulationPages';
 import { FinishLessonStateContextProvider } from './Context/FinishLessonStateContext/FinishLessonStateContext';
+import QuestionFinal from './finishSession/QuestionFinal/QuestionFinal';
 setupIonicReact();
 
 const initializeAdmob = async () => {
@@ -77,7 +78,6 @@ const App: React.FC = () => {
           </StreakContextProvider>
         </CheckResponseContextProvider>
       </FinishLessonStateContextProvider>
-
     </IonApp>
   );
 };
@@ -91,7 +91,8 @@ const AppWithTabs: React.FC = () => {
     "/hub",
     "/testPage",
     "/tab2",
-    "/congratulations"
+    "/congratulations",
+    "/finishSessionChapiter1"
   ];
 
   const hideTabs = noTabsRoutes.some(route => location.pathname.startsWith(route));
@@ -104,6 +105,7 @@ const AppWithTabs: React.FC = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
+        <Route exact path="/finishSessionChapiter1" component={QuestionFinal} />
         <Route exact path="/speech" component={textSpeech} />
         <Route exact path="/congratulations" component={CongratulationPages} />
         <Route exact path="/onbordingpage" component={OnbordingPage} />

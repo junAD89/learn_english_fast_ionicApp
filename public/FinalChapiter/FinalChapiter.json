@@ -1,0 +1,30 @@
+[
+    {
+        "questionOne": "Quel objet Mark a-t-il perdu au début de l'histoire ?",
+        "reponse1": "Sa montre",
+        "reponse2": "Son sac à dos",
+        "reponse3": "Son téléphone",
+        "trueReponse": "Son sac à dos"
+    },
+    {
+        "questionTwo": "Qui a permis de reconnaître le voleur grâce à la vidéo ?",
+        "reponse1": "La caméra",
+        "reponse2": "Jessie",
+        "reponse3": "Mr. Smith",
+        "trueReponse": "Jessie"
+    },
+    {
+        "questionThree": "Pourquoi Alex a-t-il volé le sac de Mark ?",
+        "reponse1": "Pour partir en vacances",
+        "reponse2": "Pour payer les frais d'hôpital de sa mère",
+        "reponse3": "Pour acheter un nouveau téléphone",
+        "trueReponse": "Pour payer les frais d'hôpital de sa mère"
+    },
+    {
+        "questionFour": "Quelle a été la réaction de Mark et Jessie à la fin de l'histoire ?",
+        "reponse1": "Ils ont puni Alex",
+        "reponse2": "Ils ont décidé de l'aider",
+        "reponse3": "Ils ont ignoré Alex",
+        "trueReponse": "Ils ont décidé de l'aider"
+    }
+]

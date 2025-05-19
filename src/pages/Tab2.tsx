@@ -15,7 +15,7 @@ const Tab2: React.FC = () => {
   const imageUrlChap2 = "chapiter1/avatar/mrsmith.png";///url de l img
   const imageUrlChap3 = "chapiter3/avatar/inknow_thief.png";///url de l img
   const imageUrlChap4 = "chapiter3/avatar/thief.png";///url de l img
-  const imageUrlChap5 = "chapiter1/avatar/mrsmith.png";///url de l img
+  const imageUrlChap5 = "FinalChapiter/chapiterFinishImage.png";///url de l img
 
 
 
@@ -163,14 +163,14 @@ const Tab2: React.FC = () => {
           }
 
           {!chapiter1lesson4 == false ?
-            <div onClick={() => { history.push("/courses/5") }} className='level_container'>
+            <div onClick={() => { history.push("/finishSessionChapiter1") }} className='level_container'>
               <img className={"level_container_image"} src={imageUrlChap5} alt="" />
               <h2>Level 5</h2>
             </div>
             :
             <div onClick={() => { toast.info("please finish the prevous lesson") }} className='level_container not_finish'>
               <img className={"level_container_image"} src={imageUrlChap5} />
-              <h2>Level 5</h2>
+              <h2>Final Level</h2>
             </div>
           }
 

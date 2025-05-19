@@ -37,7 +37,6 @@ export default function CongratulationPages() {
     useEffect(() => {
         async function ad() {
             await AdMob.prepareInterstitial(interstitialOption);
-
         }
         ad()
 
