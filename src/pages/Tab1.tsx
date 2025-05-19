@@ -11,7 +11,8 @@ import { useHistory } from 'react-router';
 
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
-import { FinishLessonStateContext, FinishLessonStateContextProvider } from '../Context/FinishLessonStateContext/FinishLessonStateContext';
+
+
 const Tab1: React.FC = () => {
 
   const history = useHistory();

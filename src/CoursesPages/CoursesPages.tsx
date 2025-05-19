@@ -8,7 +8,7 @@ import './CoursesPages.css'
 import { toast, Toaster } from 'sonner';
 
 import react, { useRef } from "react";
-import { AudioLines, Languages } from 'lucide-react';
+import { AudioLines, Languages, Play } from 'lucide-react';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
 const CoursesPages: React.FC = () => {
@@ -138,22 +138,36 @@ const CoursesPages: React.FC = () => {
                             <div className="dialog_container">
                                 <p className="dialog_avatar_name">{msg.speaker}</p>
                                 <h5>{msg.text}
-                                    <AudioLines
-                                        onClick={async () => {
-                                            console.log("HI");
-
-                                            try {
-                                                await TextToSpeech.speak({
-                                                    text: msg.text, lang: "en-US", rate: 1.0, pitch: 1.0, volume: 1.0, voice: 0, category: "ambient",
-                                                    queueStrategy: 1
-                                                });
-
-                                            } catch (error) {
-                                                alert(error)
-                                            }
+                                    <motion.div
+                                        whileTap={{
+                                            scale: '1.5px'
                                         }}
-                                        style={{ color: "red" }} size={39} />
+                                        className="play_icon_container"
+                                    >
+                                        <Play
+                                            onClick={async () => {
+                                                console.log("HI");
 
+                                                try {
+                                                    toast.success("Audio en cours de lecture");
+
+                                                    await TextToSpeech.speak({
+                                                        text: msg.text, lang: "en-US", rate: 1.0, pitch: 1.0, volume: 1.0, voice: 0, category: "ambient",
+                                                        queueStrategy: 1
+                                                    });
+
+
+                                                } catch (error) {
+                                                    // alert(error)
+                                                }
+                                            }}
+                                            style={{
+                                                color: "#ef5d60",
+                                            }}
+
+                                            size={39} />
+
+                                    </motion.div>
                                 </h5>
 
                             </div>
@@ -164,7 +178,8 @@ const CoursesPages: React.FC = () => {
                         <div className="question_container">
                             <h1
                                 style={{
-                                    color: "black"
+                                    color: "white",
+                                    margin: "20px"
                                 }}
                             >
                                 {question}
@@ -195,7 +210,14 @@ const CoursesPages: React.FC = () => {
                     ) : (
                         <div>
                             <motion.div
-                                whileTap={{ scale: '1.2px' }}
+                                whileTap={{
+                                    scale: 1.2,
+                                    transition: {
+                                        duration: 0.2,
+                                        ease: "easeInOut"
+                                    }
+                                }}
+
                                 className="button_container"
                             >
                                 <button
