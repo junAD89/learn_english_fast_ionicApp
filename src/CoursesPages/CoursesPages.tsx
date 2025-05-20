@@ -19,7 +19,7 @@ const CoursesPages: React.FC = () => {
     const [speakerName, setSpeakerName] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [speakerText, setSpeakerText] = useState("");
-    const [messages, setMessages] = useState<{ speaker: string; text: string; avatarImage: string }[]>([]);
+    const [messages, setMessages] = useState<{ speaker: string; text: string; avatarImage: string }[]>([]);///tableau pour recuperer les valeurs et le stocker sous forme de tableau
     const [questionList, setQuestionList] = useState<{ reponse1: string; reponse2: string; reponse3: string }[]>([]);
     const [showQuestion, setShowQuestion] = useState(false);
 
@@ -70,6 +70,7 @@ const CoursesPages: React.FC = () => {
         const { reponse1, reponse2, reponse3, questionForUser } = data;
         setQuestion(questionForUser);
 
+
         setQuestionList((prev) => [...prev, { reponse1, reponse2, reponse3 }]);
     }
 
@@ -85,8 +86,6 @@ const CoursesPages: React.FC = () => {
             // recuperation de la reponse de l'utilisateur grace a un state
             if (question === String(trueReponse)) {
                 toast.success("Trouve");////le toast de success
-
-
 
                 localStorage.setItem(`chapiter1lesson${idParams}`, `true`)
 

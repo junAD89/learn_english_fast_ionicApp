@@ -57,10 +57,10 @@ const Tab1: React.FC = () => {
           backgroundColor: "white",
         }}
         onClick={() => {
-          speak()
+          history.push('/finishSessionChapiter1')
         }}
       >
-        nav
+        finishSessionChapiter1
       </IonButton>
 
       <IonButton

@@ -34,15 +34,15 @@ const Tab2: React.FC = () => {
   return (
     <IonPage>
 
-      {/* <IonButton
+      <IonButton
         style={{
           marginTop: "20vh",
         }}
         onClick={() => {
-          history.push("/tab1")
+          history.push("/finishSessionChapiter1")
         }}>
         clcik me
-      </IonButton> */}
+      </IonButton>
       <Toaster />
       <IonContent>
         <div
