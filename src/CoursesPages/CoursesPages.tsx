@@ -154,7 +154,7 @@ const CoursesPages: React.FC = () => {
                                                     toast.success("Audio en cours de lecture");
 
                                                     await TextToSpeech.speak({
-                                                        text: msg.text, lang: "en-US", rate: 1.0, pitch: 1.0, volume: 1.0, voice: 0, category: "ambient",
+                                                        text: msg.text, lang: "en-US", rate: 0.8, pitch: 1.0, volume: 1.0, voice: 0, category: "ambient",
                                                         queueStrategy: 1
                                                     });
 

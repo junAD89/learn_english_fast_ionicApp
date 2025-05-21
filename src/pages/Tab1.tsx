@@ -22,7 +22,7 @@ const Tab1: React.FC = () => {
     await TextToSpeech.speak({
       text: 'This is a sample text.',
       lang: 'en-US',
-      rate: 1.0,
+      rate: 0.8,
       pitch: 1.0,
       volume: 1.0,
       category: 'ambient',
