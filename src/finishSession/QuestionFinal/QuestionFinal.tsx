@@ -17,43 +17,10 @@ export default function QuestionFinal() {
 
     const [tableau, setTableau] = useState<number[]>([])
 
-    let questionIndex = 0;///il s agit de l'index pour recupere l'objet des questionnaires 
+    const [questionIndex, setQuestionIndex] = useState(0);
+    ///il s agit de l'index pour recupere l'objet des questionnaires 
     ///ca commence par 0 ,1 ,2
 
-
-    // const getData = async () => {
-    //     const response = await axios.get("FinalChapiter/FinalChapiter.json")
-
-    //     const data = response.data;
-
-    //     // alert(data.length)
-
-
-
-
-    //     const questionObj = data[questionIndex]//// const pour recupere la question 
-
-
-    //     console.log("Voici la question " + JSON.stringify(questionObj))
-
-    //     const { question } = questionObj;
-
-    //     const { reponse1, reponse2, reponse3 } = questionObj;
-
-
-    //     setTableau(prev => [...prev, reponse1, reponse2, reponse3]);
-
-    //     // mettre les questions dans le tableau use state 
-
-
-    //     setQuestionTitle(question)
-    //     console.log("Voici la question" + JSON.stringify(question))
-
-
-    //     console.log("lllss" + JSON.stringify(data[questionIndex]["question1"]) + "voici la")
-
-    //     return questionIndex;
-    // }
 
     useEffect(() => {
         console.log("Tableau mis à jour :", tableau);
@@ -81,7 +48,8 @@ export default function QuestionFinal() {
             const { reponse1, reponse2, reponse3 } = questionObj;
 
 
-            setTableau(prev => [...prev, reponse1, reponse2, reponse3]);
+            setTableau([reponse1, reponse2, reponse3]);
+
 
             // mettre les questions dans le tableau use state 
 
@@ -110,7 +78,8 @@ export default function QuestionFinal() {
 
         if (text == trueReponse) {
             alert("True");
-            questionIndex++;
+            setQuestionIndex(prev => prev + 1)
+
         } else {
             alert("Faux")
         }
@@ -142,25 +111,26 @@ export default function QuestionFinal() {
                     }}
                     modules={[Pagination]}
                     pagination={true}
-
                 >
-                    {tableau.map((item, index) => (
 
-                        <SwiperSlide
-                            key={index}
-                        >
-                            <h1>
-                                <IonButton
-                                    onClick={() => {
-                                        swiperToNext()
-                                        handleVerifyAnswer(item)
-                                    }}
-                                >
-                                    {item}
-                                </IonButton>
-                            </h1>
-                        </SwiperSlide>
-                    ))}
+
+                    <SwiperSlide>
+                        {tableau.map((item, index) => (
+
+                            <div
+                                key={index}
+                                onClick={() => {
+                                    swiperToNext()
+                                    handleVerifyAnswer(item)
+                                }}
+                            >
+                                {item}
+
+
+                            </div>
+                        ))}
+
+                    </SwiperSlide>
 
                 </Swiper>
 

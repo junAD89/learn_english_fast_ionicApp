@@ -52,7 +52,7 @@
     {
         "speaker": "alex",
         "text": "I'm sorry... I needed money for my mother's hospital bills.",
-        "img": "chapiter1/avatar/alex.png"
+        "img": "chapiter3/avatar/thief.png"
     },
     {
         "speaker": "jessie",
@@ -67,6 +67,6 @@
     {
         "speaker": "alex",
         "text": "Thank you. I didn't know what else to do.",
-        "img": "chapiter1/avatar/alex.png"
+        "img": "chapiter3/avatar/thief.png"
     }
 ]
