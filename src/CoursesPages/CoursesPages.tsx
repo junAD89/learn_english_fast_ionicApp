@@ -201,7 +201,6 @@ const CoursesPages: React.FC = () => {
                                         {question.reponse2}
                                     </button>
                                     <button
-                                        className="question_button"
                                         onClick={() => handleCheckReponse(question.reponse3)}
                                     >
                                         {question.reponse3}
