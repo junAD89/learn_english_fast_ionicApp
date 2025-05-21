@@ -33,7 +33,7 @@ const Tab2: React.FC = () => {
 
   return (
     <IonPage>
-
+      {/* 
       <IonButton
         style={{
           marginTop: "20vh",
@@ -42,7 +42,7 @@ const Tab2: React.FC = () => {
           history.push("/finishSessionChapiter1")
         }}>
         clcik me
-      </IonButton>
+      </IonButton> */}
       <Toaster />
       <IonContent>
         <div

@@ -1,14 +1,16 @@
 import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Swiper as SwiperType } from 'swiper';
+
 import { FaWhatsapp } from "react-icons/fa";
 
 import './OnbordingPage.css';
 import { motion } from 'framer-motion';
-import { Swiper as SwiperType } from 'swiper';
 
 
 import { addDoc, collection } from "firebase/firestore";

@@ -124,6 +124,9 @@ const CoursesPages: React.FC = () => {
             <audio ref={ErrorAudioRef} src={errorMusicUrl} />
             <IonContent>
 
+                <div style={{ marginTop: "10vh" }}>
+                </div>
+
                 <Toaster
                     position="top-center" richColors />
 
