@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonPage } from '@ionic/react'
+import { IonButton, IonContent, IonHeader, IonPage } from '@ionic/react'
 import "./Tab2.css";
 import { useHistory } from 'react-router';
 import axios from 'axios';
@@ -44,6 +44,13 @@ const Tab2: React.FC = () => {
         clcik me
       </IonButton> */}
       <Toaster />
+      <IonHeader onClick={() => {
+        history.push("/tab3")
+      }}>
+        <h1>
+          Je suis here
+        </h1>
+      </IonHeader>
       <IonContent>
         <div
           className='level_all_container'
