@@ -10,17 +10,11 @@ const Tab3: React.FC = () => {
 
   const showAd = async () => {
     try {
-      // Vérifier si une pub est prête
-      // const { ready } = await StartApp.isAdReady();
-
       // Afficher la pub (elle se recharge automatiquement après)
       await StartApp.showInterstitial();
-
       // Précharger manuellement si besoin
       // await StartApp.loadInterstitial();
       console.log('Showing ad...');
-      await StartApp.showInterstitial();
-      console.log('Ad shown!');
     } catch (error) {
       console.error('Error:', error);
     }
