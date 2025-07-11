@@ -2,7 +2,6 @@ package com.studiesapp.nom;
 
 import android.os.Bundle;
 import android.util.Log;
-
 import com.getcapacitor.BridgeActivity;
 import com.startapp.sdk.adsbase.StartAppSDK;
 import com.studiesapp.nom.StartAppPlugin;
